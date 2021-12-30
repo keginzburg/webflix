@@ -1,3 +1,22 @@
+.login-header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 h1 {
   font-size: 40px;
+}
+
+h2 {
+  font-size: 4rem;
+  font-weight: 600;
+  transform: scaleY(0.95);
+}
+
+h3 {
+  font-size:  1.625rem;
+}
+
+h4 {
+  font-size: 1.2rem;
 }
