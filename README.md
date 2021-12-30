@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+For bootstrapping:
+<% if logged_in? %>
+  <script type="text/javascript">
+  window.currentUser = <%=
+    render(
+      "api/users/user.json.jbuilder", user: current_user
+    ).html_safe
+  %>
+  </script>
+<% end %>
