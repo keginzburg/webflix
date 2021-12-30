@@ -9,7 +9,7 @@
 User.destroy_all
 
 User.create(email: "keginzburg@gmail.com", password: "password");
-User.create(username: "farzam@gmail.com", password: "password");
-User.create(username: "maddie@gmail.com", password: "password");
-User.create(username: "victor@gmail.com", password: "password");
-User.create(username: "alexd@gmail.com", password: "password");
+User.create(email: "farzam@gmail.com", password: "password");
+User.create(email: "maddie@gmail.com", password: "password");
+User.create(email: "victor@gmail.com", password: "password");
+User.create(email: "alexd@gmail.com", password: "password");
