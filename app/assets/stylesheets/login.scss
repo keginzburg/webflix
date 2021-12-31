@@ -1,0 +1,23 @@
+.login-container {
+  background-image: linear-gradient(
+          rgba(0, 0, 0, 0.5), 
+          rgba(0, 0, 0, 0.5)
+        ), url('https://assets.nflxext.com/ffe/siteui/vlv3/5c235903-02cc-4228-85a2-5fcef1e47627/ca14817e-a9cb-460a-8865-f53dc27950e4/US-en-20211227-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  height: 660px;
+  width: fit-content;
+
+  .login-input-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .new-to-netflix {
+    display: flex;
+  }
+}
+

@@ -1,12 +1,20 @@
 import React from "react";
 import SplashPage from "./splash/splash_page";
-import { Route } from "react-router";
+import SplashPageContainer from "./splash/splash_page_container";
+import Login from "./login/login";
+import SignUp from "./signup/signup_page";
+import SignUpContainer from "./signup/signup_page_container";
+import Browse from "./browse/browse";
+import { Route, Switch } from "react-router";
 
 const App = () => (
   <div>
-    <Route path="/login" />
-    <Route path="/signup" />
-    <Route path="/" component={SplashPage} />
+    <Switch>
+      <Route path="/login" component={Login}/>
+      <Route path="/signup" component={SignUpContainer} />
+      <Route path="/browse" component={Browse} />
+      <Route path="/" component={SplashPage} />
+    </Switch>
   </div>
 
 )

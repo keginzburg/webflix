@@ -1,13 +1,41 @@
+.splash-background {
+  background-color: #333;
+}
+ 
 .splash-container {
   background-color: black;
   color: white;
 }
 
+.main-splash-container {
+
+
+  // .splash-background {
+  //   display: block;
+  //   width: 100%;
+  //   height: 100%;
+  //   z-index: 0;
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   overflow: hidden;
+  // }
+
+  .header-tagline-container {
+    z-index: 1;
+    background-image: linear-gradient(
+          rgba(0, 0, 0, 0.5), 
+          rgba(0, 0, 0, 0.5)
+        ), url('https://assets.nflxext.com/ffe/siteui/vlv3/5c235903-02cc-4228-85a2-5fcef1e47627/ca14817e-a9cb-460a-8865-f53dc27950e4/US-en-20211227-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+  }
+}
+
 .login-header-container {
-  padding: 20px 0 0 0;
+  padding: 15px 0 0 0;
 
   .login-header-inner {
-    margin: 0 56px 0 50px;
+    margin: 0 56px 0 46px;
     padding: 8px 0 0;
     display: flex;
     justify-content: space-between;
@@ -15,17 +43,22 @@
     .splash-login-link {
       background-color: #e50914;
       color: #fff;
-      padding: 7px 17px;
+      padding: 9px 17px 7px 17px;
       font-size: 1rem;
-      font-weight: 400;
+      font-weight: 200;
       line-height: normal;
       border-radius: 3px;
       float: none;
       margin-top: 0;
       white-space: nowrap;
       text-decoration: none;
+      height: fit-content;
     }
   }
+}
+
+.tagline-signup {
+  z-index: 1;
 }
 
 h1 {
@@ -59,19 +92,57 @@ h4 {
 
 }
 
-.signup-email-div {
+.tagline-signup {
+  border-bottom: 8px solid #222;
+
+  .signup-email-div {
   width: 500px;
   max-width: 500px;
-    margin: 0 auto;
+  margin: 0 auto;
+
+  button {
+    background-color: #e50914;
+      color: #fff;
+      padding: 9px 17px 7px 17px;
+      font-size: 1rem;
+      font-weight: 200;
+      line-height: normal;
+      border-radius: 3px;
+      float: none;
+      margin-top: 0;
+      white-space: nowrap;
+      text-decoration: none;
+      height: fit-content;
+  }
 
 }
 
 .signup-email-div > label {
 
 }
+}
+
+.watch-on-tv {
+  border-bottom: 8px solid #222;
+
+}
+
+.download-and-watch {
+  border-bottom: 8px solid #222;
+
+}
+
+.watch-everywhere {
+  border-bottom: 8px solid #222;
+
+}
+
+.create-profiles {
+  border-bottom: 8px solid #222;
+
+}
 
 footer {
-  border-top: 5px solid #757575;
   margin: 0 175px;
   padding: 70px 45px 0;
 
@@ -82,7 +153,6 @@ footer {
       margin: 0 0 30px;
       font-size: 1em;
       color: #757575;
-          direction: ltr;
     }
 
     ul {
