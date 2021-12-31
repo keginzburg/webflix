@@ -1,6 +1,31 @@
+.splash-container {
+  background-color: black;
+  color: white;
+}
+
 .login-header-container {
-  display: flex;
-  justify-content: space-between;
+  padding: 20px 0 0 0;
+
+  .login-header-inner {
+    margin: 0 56px 0 50px;
+    padding: 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+
+    .splash-login-link {
+      background-color: #e50914;
+      color: #fff;
+      padding: 7px 17px;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: normal;
+      border-radius: 3px;
+      float: none;
+      margin-top: 0;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+  }
 }
 
 h1 {
@@ -8,15 +33,72 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem;
-  font-weight: 600;
-  transform: scaleY(0.95);
+
+  max-width: 800px;
+  font-size: 3.125rem;
+  font-weight: 500;
+  transform: scaleY(0.9);
+  text-align: center;
+  margin: 0 auto;
+  padding: 75px 0 0 0;
+
 }
 
 h3 {
   font-size:  1.625rem;
+  text-align: center;
+  margin: 16px 75px;
+
 }
 
 h4 {
   font-size: 1.2rem;
+  text-align: center;
+    margin: 0 auto;
+    padding: 0 47.5px 20px;
+
+}
+
+.signup-email-div {
+  width: 500px;
+  max-width: 500px;
+    margin: 0 auto;
+
+}
+
+.signup-email-div > label {
+
+}
+
+footer {
+  border-top: 5px solid #757575;
+  margin: 0 175px;
+  padding: 70px 45px 0;
+
+  .links-wrapper {
+    padding: 0 0 20px;
+
+    p {
+      margin: 0 0 30px;
+      font-size: 1em;
+      color: #757575;
+          direction: ltr;
+    }
+
+    ul {
+      max-width: 1000px;
+      font-size: 13px;
+      display: flex;
+
+      li {
+        margin: 0 0 16px;
+        padding: 0 12px 0 0;
+        width: 15%;
+      }
+      li > a {
+        text-decoration: none;
+        color: #757575;
+      }
+    }
+  }
 }
