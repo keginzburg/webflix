@@ -15,7 +15,7 @@ class SignUp extends React.Component {
 
   componentDidMount() {
     
-      if (this.props.location.state.newEmail === null) {
+      if (!this.props.location.state.newEmail) {
         
         return;
       } else {

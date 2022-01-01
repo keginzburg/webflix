@@ -17,6 +17,7 @@ class Login extends React.Component {
     e.preventDefault();
     this.props.login(this.state);
     this.setState({ email: "", password: "" });
+    debugger;
   }
 
   update(field) {
@@ -27,7 +28,10 @@ class Login extends React.Component {
 
   render() {
     if (this.props.currentUser) {
-      <Redirect to="/browse" />
+      debugger
+      return (
+        <Redirect to = "/browse" />
+      )
     } else {
       return (
         <div className='login-background'>
@@ -36,24 +40,27 @@ class Login extends React.Component {
               {/* <img src="https://assets.nflxext.com/ffe/siteui/vlv3/5c235903-02cc-4228-85a2-5fcef1e47627/ca14817e-a9cb-460a-8865-f53dc27950e4/US-en-20211227-popsignuptwoweeks-perspective_alpha_website_small.jpg" className="splash-background" alt="background image of webflix titles" /> */}
               <div className='header-login-form-container'>
                 <LoginHeaderContainer />
-                <div className="login-form">
-                  <h2>Sign In</h2>
-                  <form onSubmit={this.handleSubmit}>
-                    <div className="login-input-div">
-                      <label>Email
-                        <input type="text" value={this.state.email} onChange={this.update('email')} />
-                      </label>
-                      <label>Password
-                        <input type="password" value={this.state.password} onChange={this.update('password')} />
-                      </label>
-                      <button type="submit">Sign In</button>
+                <div className="login-body">
+                  <div className="login-form">
+                    <form onSubmit={this.handleSubmit}>
+                      <h2>Sign In</h2>
+                      <div className="login-inputs-div">
+                        <div className="login-input-div">
+                          <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email"/>
+                          {/* <label>Email</label> */}
+                        </div>
+                        <div className="login-input-div">
+                          <input type="password" value={this.state.password} onChange={this.update('password')} placeholder="Password"/>
+                          {/* <label>Password</label> */}
+                        </div>
+                        <button type="submit">Sign In</button>
+                      </div>
+                    </form>
+                    <div className="new-to-webflix">
+                      <p>New to Webflix?</p>
+                      <Link to="/">Sign up now.</Link>
                     </div>
-                  </form>
-                  <div className="new-to-webflix">
-                    <p>New to Webflix?</p>
-                    <Link to="/">Sign up now.</Link>
                   </div>
-
                 </div>
               </div>
             </div>
