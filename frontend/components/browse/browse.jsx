@@ -7,7 +7,7 @@ class Browse extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    
   }
 
   render() {

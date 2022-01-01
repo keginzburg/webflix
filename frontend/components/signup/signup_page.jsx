@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router';
 import LoginHeader from '../splash/login_header';
+import LoginHeaderContainer from '../splash/login_header_container';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -13,9 +14,9 @@ class SignUp extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    
       if (this.props.location.state.newEmail === null) {
-        debugger
+        
         return;
       } else {
         this.setState({ email: this.props.location.state.newEmail })
@@ -44,7 +45,7 @@ class SignUp extends React.Component {
           <div className='signup-container'>
             <div className='main-signup-container'>
               <div className='header-tagline-container'>
-                <LoginHeader />
+                <LoginHeaderContainer />
                 <div className="plan-signup">
                   <h2>Create a password to start your membership</h2>
                   <h3>Just a few more steps and you're done!</h3>

@@ -7,7 +7,7 @@ class LoginHeader extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    
   }
 
   render() {
