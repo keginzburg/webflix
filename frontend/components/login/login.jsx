@@ -17,7 +17,6 @@ class Login extends React.Component {
     e.preventDefault();
     this.props.login(this.state);
     this.setState({ email: "", password: "" });
-    debugger;
   }
 
   update(field) {
@@ -28,7 +27,6 @@ class Login extends React.Component {
 
   render() {
     if (this.props.currentUser) {
-      debugger
       return (
         <Redirect to = "/browse" />
       )
@@ -47,17 +45,19 @@ class Login extends React.Component {
                       <div className="login-inputs-div">
                         <div className="login-input-div">
                           <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email"/>
+                          {(this.props.errors.length > 0) ? <div className="inputError">Please enter a valid email.</div> : <div></div>}
                           {/* <label>Email</label> */}
                         </div>
                         <div className="login-input-div">
                           <input type="password" value={this.state.password} onChange={this.update('password')} placeholder="Password"/>
                           {/* <label>Password</label> */}
+                          {(this.props.errors.length > 0) ? <div className="inputError">Your password must contain between 4 and 60 characters.</div> : <div></div>}
                         </div>
                         <button type="submit">Sign In</button>
                       </div>
                     </form>
                     <div className="new-to-webflix">
-                      <p>New to Webflix?</p>
+                      <p className="new-to-webflix-p">New to Webflix?</p>
                       <Link to="/">Sign up now.</Link>
                     </div>
                   </div>

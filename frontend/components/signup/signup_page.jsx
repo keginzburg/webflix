@@ -1,7 +1,8 @@
 import React from 'react';
 import { Redirect } from 'react-router';
-import LoginHeader from '../splash/login_header';
-import LoginHeaderContainer from '../splash/login_header_container';
+//import LoginHeader from '../splash/login_header';
+//import LoginHeaderContainer from '../splash/login_header_container';
+import SignUpHeader from './signup_header';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -44,23 +45,23 @@ class SignUp extends React.Component {
         <div className='signup-background'>
           <div className='signup-container'>
             <div className='main-signup-container'>
-              <div className='header-tagline-container'>
-                <LoginHeaderContainer />
-                <div className="plan-signup">
-                  <h2>Create a password to start your membership</h2>
-                  <h3>Just a few more steps and you're done!</h3>
-                  <h3>We hate paperwork, too.</h3>
-                  <form onSubmit={this.handleSubmit}>
-                    <div className="signup-email-div">
-                      <label>Email
-                        <input type="text" value={this.state.email} onChange={this.update('email')} />
-                      </label>
-                      <label>Add a password
+              <div className='main-signup-container-inner'>
+                <SignUpHeader />
+                <div className='plan-signup-container'>
+                  <div className="plan-signup">
+                    <h2>Create a password to start your membership</h2>
+                    <h3>Just a few more steps and you're done!</h3>
+                    <h3>We hate paperwork, too.</h3>
+                    <form onSubmit={this.handleSubmit}>
+                      <div className="signup-email-div">
+                        <input type="text" value={this.state.email} onChange={this.update('email')} placeholder='Email' />
+                        {/* <label>Email</label> */}
                         <input type="password" value={this.state.password} onChange={this.update('password')} />
-                      </label>
-                      <button type="submit">Start Membership</button>
-                    </div>
-                  </form>
+                        {/* <label>Add a password</label> */}
+                        <button type="submit">Start Membership</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>

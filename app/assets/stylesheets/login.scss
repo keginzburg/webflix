@@ -8,22 +8,22 @@
 
         footer {
           background-color: rgba(0, 0, 0, 0.5);
+          margin: 0 0;
+          padding: 70px 227px 50px;
         }
 }
 
 .login-body {
   display: flex;
   flex-direction: column;
-  height: 660px;
   max-width: 450px;
-  min-height: 100vh;
-  margin: 0 auto -236px;
+  margin: 0 auto 150px;
   background-color: transparent;
 
   .login-form {
     background-color: rgba(0,0,0,.75);
     color: #333;
-    min-height: 660px;
+    min-height: 450px;
     padding: 60px 68px 40px;
 
     h2 {
@@ -65,9 +65,15 @@
       font-size: 16px;
       color: #8c8c8c;
       z-index: 2;
-
-      transition: font .1s ease,top .1s ease,transform .1s ease,-webkit-transform .1s ease,-moz-transform .1s ease,-o-transform .1s ease;
       }
+
+      .inputError {
+        color: #e87c03;
+        margin-bottom: -6px;
+        padding: 6px 3px;
+        font-size: 13px;
+      }
+      
       
 
       
@@ -92,16 +98,23 @@
     }
   }
 
-  .new-to-netflix {
+  .new-to-webflix {
     display: flex;
     flex-direction: row;
+    color: #737373;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 16px;
 
-    p {
+    .new-to-webflix-p {
       width: fit-content;
     }
 
     a {
       width: fit-content;
+      color: #fff;
+      text-decoration: none;
+      margin-left: 4px;
     }
   }
 
