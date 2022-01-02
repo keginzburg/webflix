@@ -1,5 +1,6 @@
 .signup-header-container {
   padding: 15px 0 0 0;
+  border-bottom: 0.1px solid #d1d1d1;
 
   .signup-header-inner {
     margin: 0 56px 0 46px;
@@ -12,7 +13,7 @@
       color: black;
       padding: 9px 17px 7px 17px;
       font-size: 1rem;
-      font-weight: 200;
+      font-weight: bold;
       line-height: normal;
       border: none;
       float: none;
@@ -22,5 +23,67 @@
       height: fit-content;
       cursor: pointer;
     }
+  }
+}
+
+.signup-body {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+  margin: 0 auto 60px;
+  background-color: transparent;
+
+  .signup-form {
+    min-height: 450px;
+    padding: 60px 0px 40px;
+
+    h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 16px;
+      line-height: 40px;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: lighter;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.signup-inputs {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    width: 100%;
+    padding: 19px 8px;
+    font-size: 16px;
+    color: #8c8c8c;
+    font-weight: lighter;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 105%;
+    padding: 19px 8px;
+    margin-top: 12px;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: white;
+    background-color: #e50914;
+    border: none;
+    border-radius: 4px;
+  }
+}
+
+.signup-container {
+  footer {
+    margin: 0;
+    padding: 40px 75px 10px;
+    border-top: 1px solid #d1d1d1;
+    background-color: #f3f3f3;
   }
 }
