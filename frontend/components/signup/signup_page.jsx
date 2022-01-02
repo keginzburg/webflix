@@ -15,7 +15,7 @@ class SignUp extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    
     this.setState({ email: this.props.newEmail });
   }
 

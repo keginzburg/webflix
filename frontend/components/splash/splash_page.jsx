@@ -30,7 +30,7 @@ class SplashPage extends React.Component {
 
   render() {
     if (this.state.newUser) {
-      debugger
+      
       return (
         <Redirect to={{
           pathname: '/signup'
@@ -38,7 +38,7 @@ class SplashPage extends React.Component {
         }} />
       )
     } else {
-      debugger
+      
       return (
         <div className='splash-background'>
           <div className='splash-container'>
