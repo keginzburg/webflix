@@ -14,7 +14,7 @@ class Browse extends React.Component {
   }
 
   render() {
-    if (currentUser) {
+    if (this.props.currentUser) {
       return (
         <div className="browse_page">
           <BrowseHeader logout={this.props.logout} />
@@ -32,7 +32,9 @@ class Browse extends React.Component {
         </div>
       )
     } else {
-      <Redirect to="/" />
+      return (  
+        <Redirect to="/" />
+      )
     }
   }
 }

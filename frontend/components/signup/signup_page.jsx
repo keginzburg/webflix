@@ -50,9 +50,25 @@ class SignUp extends React.Component {
                     <h3>We hate paperwork, too.</h3>
                     <form className="signup-form-element" onSubmit={this.handleSubmit}>
                       <div className="signup-inputs">
-                        <input type="text" value={this.state.email} onChange={this.update('email')} placeholder='Email' />
+                        {(this.props.errors.length > 0) ? 
+                        <div>
+                            <input className="input-error" type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email" />
+                            <p>Email is required!</p>
+                        </div> : 
+                        <div>
+                            <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email" />
+                        </div>
+                        }
                         {/* <label>Email</label> */}
-                        <input type="password" value={this.state.password} onChange={this.update('password')} />
+                        {(this.props.errors.length > 0) ?
+                        <div>
+                          <input className="input-error" type="password" value={this.state.password} onChange={this.update('password')} />
+                          <p>Password is required!</p>
+                        </div>
+                         : 
+                         <div>
+                            <input type="password" value={this.state.password} onChange={this.update('password')} />
+                         </div> }
                         {/* <label>Add a password</label> */}
                         <button type="submit">Start Membership</button>
                       </div>
