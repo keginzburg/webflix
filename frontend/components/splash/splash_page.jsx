@@ -7,10 +7,13 @@ class SplashPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      email: "whatever",
+      email: "newuser@gmail.com",
       newEmail: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
   }
 
   update(field) {
@@ -21,24 +24,21 @@ class SplashPage extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.setState({newEmail: true})
-    // <Redirect to={{
-    //   pathname: '/signup',
-    //   state: { newEmail: this.state.email }
-    // }}/>
-
-    // <Redirect to="/signup" />
+    this.props.receiveNewEmail(this.state.email);
+    this.setState({newUser: true})
   }
 
   render() {
-    if (this.state.newEmail) {
+    if (this.state.newUser) {
+      debugger
       return (
         <Redirect to={{
-          pathname: '/signup',
-          state: { newEmail: this.state.email },
+          pathname: '/signup'
+          // state: { newEmail: this.state.email },
         }} />
       )
     } else {
+      debugger
       return (
         <div className='splash-background'>
           <div className='splash-container'>

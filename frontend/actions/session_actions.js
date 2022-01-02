@@ -1,5 +1,16 @@
 import { postNewUser, postUser, deleteUser } from '../util/session_api_util';
 
+export const RECEIVE_NEW_EMAIL = 'RECEIVE_NEW_EMAIL';
+export const receiveNewEmail = (newEmail) => ({
+  type: RECEIVE_NEW_EMAIL,
+  newEmail
+})
+
+export const REMOVE_NEW_EMAIL = 'REMOVE_NEW_EMAIL';
+export const removeNewEmail = () => ({
+  type: REMOVE_NEW_EMAIL,
+})
+
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,

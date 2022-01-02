@@ -1,6 +1,13 @@
-// import { connect } from "http2";
-// import SplashPage from "./splash_page";
-// import { withRouter } from "react-router";
+import { connect } from "react-redux";
+import SplashPage from "./splash_page";
+import { receiveNewEmail } from "../../actions/session_actions";
 
+const mapStateToProps = (state, ownProps) => ({
 
-// export default withRouter(connect(null, null)(SplashPage));
+});
+
+const mapDispatchToProps = dispatch => ({
+  receiveNewEmail: newEmail => dispatch(receiveNewEmail(newEmail)),
+});
+
+export default connect(null, mapDispatchToProps)(SplashPage);

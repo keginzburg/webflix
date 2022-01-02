@@ -15,18 +15,14 @@ class SignUp extends React.Component {
   }
 
   componentDidMount() {
-    
-      if (!this.props.location.state.newEmail) {
-        
-        return;
-      } else {
-        this.setState({ email: this.props.location.state.newEmail })
-      }
+    debugger
+    this.setState({ email: this.props.newEmail });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state)
+    this.props.processForm(this.state);
+    this.props.removeNewEmail();
   }
 
   update(field) {
