@@ -16,7 +16,7 @@ class LoginHeader extends React.Component {
       return (
         <div className="signup-header-container">
           <div className="signup-header-inner">
-            <img src="https://fontmeme.com/permalink/211231/59e1689bbdeb149518599fd21c6562ab.png" alt="netflix-font" border="0" />
+            <img src={window.webflixLogoMedium} alt="netflix-font" border="0" />
             <Link to="/login" className="signup-login-link">Sign In</Link>
           </div>
         </div>
@@ -25,7 +25,7 @@ class LoginHeader extends React.Component {
       return (
         <div className="login-header-container">
           <div className="login-header-inner">
-            <img src="https://fontmeme.com/permalink/211231/59e1689bbdeb149518599fd21c6562ab.png" alt="netflix-font" border="0" />
+            <img src={window.webflixLogoMedium} alt="netflix-font" border="0" />
             {(this.props.history.location.pathname === '/login') ? <span></span> : <Link to="/login" className="splash-login-link">Sign In</Link>}
           </div>
         </div>

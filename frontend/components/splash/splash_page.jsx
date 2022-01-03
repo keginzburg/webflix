@@ -57,7 +57,7 @@ class SplashPage extends React.Component {
                         <div>
                           <input type="text" value={this.state.email} onChange={this.update('email')} placeholder='Email address'/>
                           {/* <label>Email address</label> */}
-                          <button type="submit">Get Started <img width="35px" height="35px" src="https://cdn1.iconfinder.com/data/icons/material-design-icons-light/24/chevron-right-512.png" alt="chevron right" /></button>
+                          <button type="submit">Get Started <img width="35px" height="35px" src={window.chevronURL} alt="chevron right" /></button>
                         </div>
                       </div>
                     </form>
@@ -72,12 +72,12 @@ class SplashPage extends React.Component {
                     <h2>Enjoy on your TV.</h2>
                     <h3>Watch on Smart TVs, Playstation, Xbox, Microwaves, Gameboys, LaserDisc players, and more.</h3>
                   </div>
-                  <img width="530px" height="397px" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="tv image" />
+                  <img width="530px" height="397px" src={window.watchOnTvImage} alt="tv image" />
                 </div>
               </div>
               <div className='download-and-watch'>
                 <div className='download-and-watch-inner'>
-                  <img width="504px" height="378px" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="smart phone image" />
+                  <img width="504px" height="378px" src={window.downloadAndWatchImage} alt="smart phone image" />
                   <div>
                     <h2>Download your shows to watch offline.</h2>
                     <h3>Save your favorites easily and never stop watching.</h3>
@@ -90,12 +90,12 @@ class SplashPage extends React.Component {
                     <h2>Watch everywhere.</h2>
                     <h3>Stream unlimited movies on your phone, tablet, laptop, and TV without paying more.</h3>
                   </div>
-                  <img width="555px" height="416px" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png" alt="multiple streaming devices" />
+                  <img width="555px" height="416px" src={window.watchEverywhereImage} alt="multiple streaming devices" />
                 </div>
               </div>
               <div className='create-profiles'>
                 <div className='create-profiles-inner'>
-                  <img width="504px" height="378px" src="https://occ-0-1009-1007.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABdFTpLmANuJpYneLq8L5m7CunMCi8e8Nl4y7xaPVWzG3IeoDoq17egTQAthApKg_4sdRWdwuR8KadWu1frjL3JQImpwq.png?r=fcd" alt="" />
+                  <img width="504px" height="378px" src={window.createProfilesImage} alt="" />
                   <div>
                     <h2>Create profiles for dogs (or kids).</h2>
                     <h3>Send dogs (or kids) on adventures with their favorite characters in a space made just for them- free with your memebership.</h3>
