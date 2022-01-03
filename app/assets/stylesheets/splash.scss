@@ -81,6 +81,9 @@
 
   .splash-email-form {
     padding: 13.7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   h4 {
@@ -94,7 +97,7 @@
 
 .tagline-signup {
   border-bottom: 8px solid #222;
-  padding: 75px 0 170px;
+  padding: 75px 0 65px;
   margin: 0 auto;
 
   .signup-email-div {
@@ -155,6 +158,24 @@
     }
     }
 
+  }
+
+  .demo_user_button {
+    background-color: #e50914;
+      color: #fff;
+      padding: 16px 20px 17px 20px;
+      font-size: 1.625rem;
+      font-weight: lighter;
+      line-height: normal;
+      letter-spacing: 1px;
+      border-style: none;
+      border-radius: 3px;
+      float: none;
+      margin: 20px auto;
+      white-space: nowrap;
+      text-decoration: none;
+      height: fit-content;
+      cursor: pointer;
   }
 
 }

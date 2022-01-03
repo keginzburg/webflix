@@ -11,6 +11,7 @@ class SplashPage extends React.Component {
       newEmail: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +27,11 @@ class SplashPage extends React.Component {
     e.preventDefault();
     this.props.receiveNewEmail(this.state.email);
     this.setState({newUser: true})
+  }
+
+  handleDemo(e) {
+    e.preventDefault();
+    this.props.login({ email: "demouser@gmail.com", password: "demouser" })
   }
 
   render() {
@@ -61,6 +67,7 @@ class SplashPage extends React.Component {
                         </div>
                       </div>
                     </form>
+                    <button onClick={this.handleDemo} className='demo_user_button'>Demo User</button>
                   </div>
                 </div>
               </div>
