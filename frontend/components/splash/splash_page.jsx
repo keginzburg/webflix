@@ -7,7 +7,7 @@ class SplashPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      email: "newuser@gmail.com",
+      email: "",
       newEmail: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -54,10 +54,11 @@ class SplashPage extends React.Component {
                     <form onSubmit={this.handleSubmit}>
                       <h4>Ready to watch? Enter your email to create or restart your bloodpact.</h4>
                       <div className="signup-email-div">
-                        <label>Email address
-                          <input type="text" value={this.state.email} onChange={this.update('email')} />
-                        </label>
-                        <button type="submit">Get Started </button>
+                        <div>
+                          <input type="text" value={this.state.email} onChange={this.update('email')} placeholder='Email address'/>
+                          {/* <label>Email address</label> */}
+                          <button type="submit">Get Started <img width="35px" height="35px" src="https://cdn1.iconfinder.com/data/icons/material-design-icons-light/24/chevron-right-512.png" alt="chevron right" /></button>
+                        </div>
                       </div>
                     </form>
                   </div>

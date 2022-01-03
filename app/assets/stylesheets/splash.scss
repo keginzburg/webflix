@@ -73,6 +73,7 @@
 
   h3 {
     font-size:  1.625rem;
+    font-weight: lighter;
     text-align: center;
     margin: 16px 75px;
 
@@ -87,39 +88,75 @@
     text-align: center;
     margin: 0 auto;
     padding: 0 47.5px 20px;
-
+    font-weight: lighter;
   }
 }
 
 .tagline-signup {
   border-bottom: 8px solid #222;
-  padding: 75px 0 150px;
-
-  .signup-email-div {
-  width: 500px;
-  max-width: 500px;
+  padding: 75px 0 170px;
   margin: 0 auto;
 
-    button {
+  .signup-email-div {
+    margin: 0 auto;
+    width: 682px;
+    max-width: 682px;
+  
+    div {
+      display: flex;
+      justify-content: center;
+      width: fit-content;
+
+      input {
+        max-width: 500px;
+        min-width: 450px;
+        height: 60px!important;
+        padding-left: 6px;
+        padding-right: -6px;
+        padding-top: 3px;
+        padding-bottom: -3px;
+        font-size: 16px;
+        
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      input::placeholder {
+        font-size: 16px;
+        font-weight: lighter;
+        color: rgb(158, 157, 157);
+      }
+
+      button {
       background-color: #e50914;
       color: #fff;
-      padding: 9px 17px 7px 17px;
-      font-size: 1rem;
-      font-weight: 200;
+      padding: 16px 20px 17px 20px;
+      font-size: 1.625rem;
+      font-weight: lighter;
       line-height: normal;
+      letter-spacing: 1px;
+      border-style: none;
       border-radius: 3px;
       float: none;
-      margin-top: 0;
+      margin: 1px 0 0 0;
       white-space: nowrap;
       text-decoration: none;
       height: fit-content;
+      cursor: pointer;
+
+      img {
+        margin-bottom: -8px;
+        margin-left: -2px;
+        margin-right: -10px;
+        filter: brightness(0) invert(1);
+      }
+    }
     }
 
   }
 
-  .signup-email-div > label {
-
-  }
 }
 
 .webflix-story {

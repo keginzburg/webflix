@@ -16,8 +16,8 @@ class BrowseHeader extends React.Component {
     return (
       <div className="browse-header-container">
         <div className="browse-header-inner">
-          <img src="https://fontmeme.com/permalink/211231/59e1689bbdeb149518599fd21c6562ab.png" alt="netflix-font" border="0" />
-          <button onClick={this.props.logout}>Logout</button>
+          <img src="https://fontmeme.com/permalink/220103/f620b2b6fd3201eccfe749a9f645225d.png" alt="webflix-logo-small" border="0" />
+          <button onClick={this.props.logout}>Sign out of Webflix</button>
         </div>
       </div>
     )
