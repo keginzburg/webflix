@@ -21,10 +21,11 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :password, length: { minimum: 4, maximum: 60, allow_nil: true }
 
-  # has_many :profiles
-  #   primary_key: :id,
-  #   foreign_key: :id,
-  #   class_name: Profile
+  has_many :profiles,
+    primary_key: :id,
+    foreign_key: :id,
+    class_name: :Profile,
+    dependent: :destroy
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

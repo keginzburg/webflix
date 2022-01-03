@@ -12,4 +12,9 @@ User.create(email: "keginzburg@gmail.com", password: "password");
 User.create(email: "farzam@gmail.com", password: "password");
 User.create(email: "maddie@gmail.com", password: "password");
 User.create(email: "victor@gmail.com", password: "password");
-User.create(email: "alexd@gmail.com", password: "password");
+User.create(email: "demouser@gmail.com", password: "demouser");
+
+Profile.destroy_all
+
+Profile.create(user_id: 1, avatar: "chicken", name: "Kyle");
+Profile.create(user_id: 5, avatar: "pirate", name: "Demo User");
