@@ -1,6 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import BrowseHeader from "./browse_header";
+import ProfilesIndex from "../profiles/profiles_index";
 
 
 class Browse extends React.Component {
@@ -21,7 +22,7 @@ class Browse extends React.Component {
           <div className="profiles-modal">
             <div className="profiles-main-container">
               <h2>Who's watching?</h2>
-              {/* <Profiles /> */}
+              <ProfilesIndex />
               <div className="manage-profiles-container">
                 <div className="manage-profiles-link-container">
                   {/* <Link to="/ManageProfiles">Manage Profiles</Link> */}
