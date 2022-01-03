@@ -1,8 +1,6 @@
 class Api::ProfilesController < ApplicationController
   def index
-    debugger
     @profiles = Profile.all
-    debugger
     render :index
   end
 

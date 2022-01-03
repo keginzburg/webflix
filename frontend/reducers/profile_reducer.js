@@ -1,6 +1,6 @@
 import { RECEIVE_CURRENT_USER_PROFILES } from "../actions/profile_actions";
 
-const profileReducer = (state = {}, action) => {
+const profileReducer = (state = [], action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state);
   switch (action.type) {

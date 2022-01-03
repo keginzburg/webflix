@@ -22,6 +22,17 @@ export const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER,
 })
 
+export const RECEIVE_CURRENT_PROFILE = 'RECEIVE_CURRENT_PROFILE';
+export const receiveCurrentProfile = (currentProfile) => ({
+  type: RECEIVE_CURRENT_PROFILE,
+  currentProfile
+})
+
+export const LOGOUT_CURRENT_PROFILE = 'LOGOUT_CURRENT_PROFILE';
+export const logoutCurrentProfile = () => ({
+  type: LOGOUT_CURRENT_PROFILE,
+})
+
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const receiveErrors = (errors) => ({
   type: RECEIVE_SESSION_ERRORS,
