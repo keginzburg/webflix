@@ -2,6 +2,8 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import BrowseHeader from "./browse_header";
 import ProfilesIndex from "../profiles/profiles_index";
+import ProfilesIndexContainer from '../profiles/profiles_index_container';
+import { fetchUserProfiles } from "../../actions/profile_actions";
 
 
 class Browse extends React.Component {
@@ -22,7 +24,7 @@ class Browse extends React.Component {
           <div className="profiles-modal">
             <div className="profiles-main-container">
               <h2>Who's watching?</h2>
-              <ProfilesIndex />
+              <ProfilesIndexContainer fetchUserProfiles={this.props.fetchUserProfiles} />
               <div className="manage-profiles-container">
                 <div className="manage-profiles-link-container">
                   {/* <Link to="/ManageProfiles">Manage Profiles</Link> */}

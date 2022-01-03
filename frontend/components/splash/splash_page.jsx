@@ -60,6 +60,7 @@ class SplashPage extends React.Component {
                           <button type="submit">Get Started <img width="35px" height="35px" src="https://cdn1.iconfinder.com/data/icons/material-design-icons-light/24/chevron-right-512.png" alt="chevron right" /></button>
                         </div>
                       </div>
+                      <button className='demo_user_button'>Demo User</button>
                     </form>
                   </div>
                 </div>

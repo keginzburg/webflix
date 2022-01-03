@@ -4,5 +4,7 @@ class Api::ProfilesController < ApplicationController
     render :index
   end
 
-  def 
+  def profile_params
+     params.require(:profile).permit(:name, :string, :user_id)
+  end
 end
