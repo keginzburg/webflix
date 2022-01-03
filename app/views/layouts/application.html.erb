@@ -6,8 +6,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
     <script type="text/javascript">
       window.chevronURL = "<%= image_url('chevron_right.png') %>"
       window.createProfilesImage = "<%= image_url('create_profiles_image.png') %>"
@@ -18,6 +16,8 @@
       window.watchOnTvImage = "<%= image_url('watch_on_tv_image.png') %>"
       window.webflixLogoMedium = "<%= image_url('webflix_logo_medium.png') %>"
     </script>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
