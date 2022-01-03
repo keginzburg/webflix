@@ -35,7 +35,7 @@ class Login extends React.Component {
         <div className='login-background'>
           <div className='login-container'>
             <div className='main-splash-container'>
-              {/* <img src="https://assets.nflxext.com/ffe/siteui/vlv3/5c235903-02cc-4228-85a2-5fcef1e47627/ca14817e-a9cb-460a-8865-f53dc27950e4/US-en-20211227-popsignuptwoweeks-perspective_alpha_website_small.jpg" className="splash-background" alt="background image of webflix titles" /> */}
+              
               <div className='header-login-form-container'>
                 <LoginHeaderContainer />
                 <div className="login-body">
