@@ -9,7 +9,7 @@ class ProfilesIndex extends React.Component {
   }
 
   componentDidMount() {
-
+    console.log("profile index has mounted");
   }
 
   render() {
