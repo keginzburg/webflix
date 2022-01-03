@@ -8,6 +8,6 @@ export const receiveCurrentUserProfiles = (profiles) => ({
 
 export const fetchUserProfiles = (userId) => {
   return getUserProfiles(userId)
-    .then(profiles => { dispatch(receiveCurrentUserProfiles(profiles))})
+    .then(profiles => console.log(profiles));
 }
 

@@ -9,7 +9,6 @@ class BrowseHeader extends React.Component {
   }
 
   componentDidMount() {
-    console.log("browse header has mounting")
   }
 
   render() {

@@ -13,7 +13,6 @@ class Browse extends React.Component {
   }
 
   componentDidMount() {
-    console.log("browse page has mounted")
   }
 
   render() {

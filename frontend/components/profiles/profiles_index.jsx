@@ -1,4 +1,5 @@
 import React from "react";
+import { fetchUserProfiles } from "../../actions/profile_actions";
 
 class ProfilesIndex extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class ProfilesIndex extends React.Component {
   }
 
   componentDidMount() {
-    console.log("profile index has mounted");
+    fetchUserProfiles(this.props.currentUser);
   }
 
   render() {
