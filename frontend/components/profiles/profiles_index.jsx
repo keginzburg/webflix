@@ -60,7 +60,7 @@ class ProfilesIndex extends React.Component {
               </li>
             )
           })}
-          <li>
+          <li className="profile-index-list-item"> 
             <div onClick={this.addProfile}>
               <img width="144px" height="144px" src="https://image.pngaaa.com/892/2528892-middle.png" alt="add profile icon" />
               <p>Add Profile</p>

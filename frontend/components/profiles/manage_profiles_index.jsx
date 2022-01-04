@@ -1,5 +1,5 @@
 import React from "react";
-import ProfilesIndexItem from "./profiles_index_item";
+import ManageProfilesIndexItem from "./manage_profile_index_item";
 
 class ManageProfilesIndex extends React.Component {
   constructor(props) {
@@ -55,12 +55,12 @@ class ManageProfilesIndex extends React.Component {
             return (
               <li className="manage-profile-index-list-item" key={profile.id}>
                 <div className="manage-profile-index-item-container">
-                  <ProfilesIndexItem profile={profile} />
+                  <ManageProfilesIndexItem profile={profile} updateUserProfile={this.props.updateUserProfile} />
                 </div>
               </li>
             )
           })}
-          <li>
+          <li className="manage-profile-index-list-item">
             <div onClick={this.addProfile}>
               <img width="144px" height="144px" src="https://image.pngaaa.com/892/2528892-middle.png" alt="add profile icon" />
               <p>Add Profile</p>

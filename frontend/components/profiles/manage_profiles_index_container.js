@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import ManageProfilesIndex from "./manage_profiles_index";
-import { createNewUserProfile, fetchUserProfiles } from "../../actions/profile_actions";
+import { createNewUserProfile, fetchUserProfiles, updateUserProfile } from "../../actions/profile_actions";
 
 const mapStateToProps = state => ({
   currentUser: state.session.id,
@@ -9,7 +9,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchUserProfiles: userId => dispatch(fetchUserProfiles(userId)), 
-  createNewUserProfile: userId => dispatch(createNewUserProfile(userId))
+  createNewUserProfile: userId => dispatch(createNewUserProfile(userId)),
+  updateUserProfile: updatedProfile => dispatch(updateUserProfile(updatedProfile)),
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ManageProfilesIndex);

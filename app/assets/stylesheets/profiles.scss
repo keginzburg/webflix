@@ -12,6 +12,7 @@
   align-items: center;
 
     .profiles-main-container {
+      margin-top: -70px;
 
       h2 {
         margin: 0.67em auto;
@@ -24,10 +25,58 @@
         z-index: 1;
         display: flex;
 
-        li {
-          color: white;
-          margin: 0 20px 0;
+        .profile-index-list-item {
+          color: gray;
+          margin: 0 16px 0;
+
+          img {
+            box-sizing: border-box;
+            border-radius: 4px;
+            outline: 2px solid transparent;
+          }
+
+          p {
+            margin: 10px 0;
+            font-size: 18px;
+          }
         };
+
+        .profile-index-list-item:hover {
+          img {
+            box-sizing: border-box;
+            outline: 2px solid white;
+            cursor: pointer;
+          }
+
+          p {
+            color: white;
+
+          }
+        }
+      }
+
+      .manage-profiles-container {
+        margin: 60px 0 17px;
+
+        .manage-profiles-link-container {
+ 
+          a {
+          border: 1px solid gray;
+          padding: 0.5em 1.5em;
+          background-color: transparent;
+          color: gray;
+          font-size: 1.2vw;
+          letter-spacing: 2px;
+          text-decoration: none;
+          cursor: pointer;
+          }
+
+          a:hover {
+            border: 1px solid white;
+            color: white;
+          }
+
+        }
       }
 
       .add-profile-modal {
@@ -165,6 +214,7 @@
   align-items: center;
 
     .manage-profiles-main-container {
+      margin-top: -70px;
 
       h2 {
         margin: 0.67em auto;
@@ -174,12 +224,64 @@
       }
 
       .manage-profiles-index-list {
+        z-index: 1;
         display: flex;
 
-        li {
-          color: white;
-          margin: 0 20px 0;
-        };
+        .manage-profile-index-list-item {
+          color: gray;
+          margin: 0 16px 0;
+
+          img {
+            box-sizing: border-box;
+            border-radius: 4px;
+            outline: 2px solid transparent;
+          }
+
+          p {
+            margin: 10px 0;
+            font-size: 18px;
+          }
+
+        }
+
+        .manage-profile-index-list-item:hover {
+          img {
+            box-sizing: border-box;
+            outline: 2px solid white;
+            cursor: pointer;
+          }
+
+          p {
+            color: white;
+
+          }
+        }
+      }
+
+      .manage-profiles-container {
+        margin: 60px 0 17px;
+
+        .manage-profiles-link-container {
+ 
+          a {
+          border: 1px solid white;
+          padding: 0.5em 1.5em;
+          background-color: white;
+          color: none;
+          font-size: 1.2vw;
+          font-weight: bold;
+          letter-spacing: 2px;
+          text-decoration: none;
+          cursor: pointer;
+          }
+
+          a:hover {
+            border: 1px solid red;
+            background-color: red;
+            color: white;
+          }
+
+        }
       }
 
       .add-profile-modal {

@@ -14,3 +14,13 @@ export const postUserProfile = (profile) => {
     data: { profile },
   })
 }
+
+
+export const patchUserProfile = (profile) => {
+
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/profiles/${profile.id}`,
+    data: { profile },
+  })
+}
