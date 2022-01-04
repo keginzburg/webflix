@@ -23,7 +23,7 @@ class ManageProfiles extends React.Component {
             <ManageProfilesIndexContainer />
             <div className="manage-profiles-container">
               <div className="manage-profiles-link-container">
-                <Link to="/browse">Done</Link>
+                <Link className="" to="/browse">Done</Link>
               </div>
             </div>
           </div>

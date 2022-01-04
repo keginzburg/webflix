@@ -48,14 +48,36 @@ class ManageProfilesIndex extends React.Component {
   }
 
   render() {
-    if (!this.state.add) {
+    if (this.props.modal === 'editProfile') {
+      debugger
+      return (
+        <div className="edit-profile-modal">
+          <div className="edit-profile-modal-container">
+            <div className="edit-profile-heading-container">
+              <h2>
+                Edit Profile
+              </h2>
+            </div>
+            <div className="edit-profile-main-container">
+              <img src="" alt="" />
+              <input type="text" />
+            </div>
+            <div className="edit-profile-button-container">
+              <button>Save</button>
+              <button>Cancel</button>
+              <button>Delete Profile</button>
+            </div>
+          </div>
+        </div>
+      )
+    } else if (!this.state.add) {
       return (
         <ul className="manage-profiles-index-list">
           {this.props.profiles.map(profile => {
             return (
               <li className="manage-profile-index-list-item" key={profile.id}>
                 <div className="manage-profile-index-item-container">
-                  <ManageProfilesIndexItem profile={profile} updateUserProfile={this.props.updateUserProfile} />
+                  <ManageProfilesIndexItem profile={profile} updateUserProfile={this.props.updateUserProfile} receiveEditModal={this.props.receiveEditModal} receiveEditProfile = {this.props.receiveEditProfile} />
                 </div>
               </li>
             )

@@ -33,6 +33,17 @@ export const logoutCurrentProfile = () => ({
   type: LOGOUT_CURRENT_PROFILE,
 })
 
+export const RECEIVE_EDIT_PROFILE = 'RECEIVE_EDIT_PROFILE';
+export const receiveEditProfile = (profileId) => ({
+  type: RECEIVE_EDIT_PROFILE,
+  profileId
+})
+
+export const DISCARD_EDIT_PROFILE = 'DISCARD_EDIT_PROFILE';
+export const discardEditProfile = () => ({
+  type: DISCARD_EDIT_PROFILE,
+})
+
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const receiveErrors = (errors) => ({
   type: RECEIVE_SESSION_ERRORS,

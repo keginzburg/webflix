@@ -30,6 +30,7 @@ export const createNewUserProfile = newProfile => dispatch => {
 
 export const UPDATE_PROFILE = 'UPDATE_PROFILE';
 export const updateProfile = (profile) => {
+  debugger
   return {
     type: UPDATE_PROFILE,
     profile
@@ -37,7 +38,7 @@ export const updateProfile = (profile) => {
 }
 
 export const updateUserProfile = updatedProfile => dispatch => {
-
+  debugger
   return patchUserProfile(updateProfile)
     .then(profile => dispatch(receiveNewProfile(profile)))
 }
