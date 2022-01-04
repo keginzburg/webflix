@@ -277,13 +277,12 @@
 
           .pencil-image {
             z-index: 3;
-            position: relative;
+            position: absolute;
             width: 40px;
             height: 40px;
-            left: 50%;
-            top: 50%;
-            transform: translateX(-50%);
-            transform: translateY(-50%);
+            left: 36%;
+            top: 30%;
+            filter: brightness(0) invert(1);
           }
 
           p {
@@ -294,7 +293,7 @@
         }
 
         .manage-profile-index-list-item:hover {
-          img {
+          .icon {
             box-sizing: border-box;
             outline: 2px solid white;
             cursor: pointer;
@@ -485,3 +484,144 @@
       }
     }
 }
+
+.edit-profile-modal {
+        z-index: 4;
+        position: absolute;
+        top: 63px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        background: #141414;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .edit-profile-modal-container {
+          margin-top: 7%;
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          
+          .edit-profile-heading-container {
+            text-align: left;
+
+            h2 {
+              margin: 0 0 15px;
+              font-size: 4vw;
+              letter-spacing: 1px;
+            }
+
+          }
+
+          .edit-profile-main-container {
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 21.6px 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            .pencil {
+            z-index: 4;
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            left: 2%;
+            top: 63%;
+            border-radius: 100%;
+            border: 1px solid transparent;
+            filter: brightness(0) invert(1);
+            }
+
+            .pencil-circle {
+            z-index: 3;
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            left: 2%;
+            top: 63%;
+            border-radius: 100%;
+            background-color: #333;
+            box-shadow: 1px 1px 2px #000;
+            
+            }
+
+            .icon {
+              z-index: 2;
+              border-radius: 3px;
+              width: 116px;
+              height: 116px;
+            }
+
+            input {
+              width: 18em;
+              height: 2em;
+              background: #666;
+              border: 1px solid transparent;
+              margin: 0 0.8em 0 20px;
+              padding: 0.2em 0.6em;
+              color: #fff;
+              font-size: 1.3vw;
+              -webkit-box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              box-sizing: border-box;
+              text-indent: 0.1vw;
+
+        
+              
+            }
+
+            input:focus {
+              outline: none;
+              
+            }
+
+            input::placeholder {
+              margin-top: 20px;
+              color: #fff;
+              font-weight: lighter;
+            }          
+          }
+
+          .edit-profile-button-container {
+
+            .edit-profile-save {
+              display: inline-block;
+              margin: 2em 0 1em 0;
+              padding: 0.5em 1.5em;
+              background: #fff;
+              color: #000;
+              border: 1px solid #fff;
+              font-size: 1.2vw;
+              font-weight: 700;
+              letter-spacing: 2px;
+              cursor: pointer;
+            }
+
+            .edit-profile-save:hover {
+              background: #c00;
+              border: 1px solid #c00;
+              color: #fff;
+            }
+
+            .edit-profile-cancel {
+              display: inline-block;
+              margin: 2em 0 1em 20px;
+              padding: 0.5em 1.5em;
+              background: transparent;
+              color: grey;
+              border: 1px solid grey;
+              font-size: 1.2vw;
+              letter-spacing: 2px;
+              cursor: pointer;
+            }
+
+            .edit-profile-cancel:hover {
+              color: #fff;
+              border: 1px solid #fff;
+            }
+          }
+        }
+      }

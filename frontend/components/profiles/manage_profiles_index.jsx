@@ -48,8 +48,34 @@ class ManageProfilesIndex extends React.Component {
   }
 
   render() {
-    if (this.props.modal === 'editProfile') {
-      
+    if (this.props.modal === 'editProfileIcon') {
+      return (
+        <div className="icon-modal">
+          <div className="headings-profile-icon-container">
+            <div className="headings-container">
+              <div className="return-button">
+                <img src="" alt="" />
+              </div>
+              <div className="headings">
+                <h2>Edit Profile</h2>
+                <h3>Choose a profile icon.</h3>
+              </div>
+            </div>
+            <div className="profile-icon-container">
+              <h4>Kyle</h4>
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div className="icon-choices-container">
+            <h2>The Classics</h2>
+            <div className="icon-choices">
+              1 2 3 4 5 6
+            </div>
+          </div>
+        </div>
+      )
+    
+    } else if (this.props.modal === 'editProfile') {
       return (
         <div className="edit-profile-modal">
           <div className="edit-profile-modal-container">
@@ -59,13 +85,16 @@ class ManageProfilesIndex extends React.Component {
               </h2>
             </div>
             <div className="edit-profile-main-container">
-              <img src={this.state.avatar} alt="avatar icon" />
+              <div className="pencil-circle">
+              </div>
+              <img onClick={() => {this.props.receiveIconModal()} } className="pencil" img src={window.editPencilImage} alt="pencil button" />
+              <img className="icon" src={this.state.avatar} alt="avatar icon" />
               <input type="text" value={this.state.name} placeholder="Name" onChange={this.updateName}/>
             </div>
             <div className="edit-profile-button-container">
-              <button onClick={this.saveProfile}>Save</button>
-              <button onClick={this.cancelEdit} >Cancel</button>
-              <button onClick={this.deleteProfile} >Delete Profile</button>
+              <button className="edit-profile-save" onClick={this.saveProfile}>Save</button>
+              <button className="edit-profile-cancel" onClick={this.cancelEdit} >Cancel</button>
+              <button className="edit-profile-cancel" onClick={this.deleteProfile} >Delete Profile</button>
             </div>
           </div>
         </div>

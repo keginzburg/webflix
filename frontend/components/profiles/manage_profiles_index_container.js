@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import ManageProfilesIndex from "./manage_profiles_index";
 import { createNewUserProfile, fetchUserProfiles, updateUserProfile, destroyUserProfile } from "../../actions/profile_actions";
-import { receiveEditModal, discardEditModal } from "../../actions/ui_actions";
+import { receiveEditModal, discardEditModal, receiveIconModal, discardIconModal } from "../../actions/ui_actions";
 import { receiveEditProfile, discardEditProfile } from "../../actions/session_actions";
 
 const mapStateToProps = state => ({
@@ -18,6 +18,8 @@ const mapDispatchToProps = dispatch => ({
   destroyUserProfile: profileId => dispatch(destroyUserProfile(profileId)),
   receiveEditModal: () => dispatch(receiveEditModal()),
   discardEditModal: () => dispatch(discardEditModal()),
+  receiveIconModal: () => dispatch(receiveIconModal()),
+  discardIconModal: () => dispatch(discardIconModal()),
   receiveEditProfile: (profileId) => dispatch(receiveEditProfile(profileId)),
 
 })
