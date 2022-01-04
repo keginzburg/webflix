@@ -6,3 +6,11 @@ export const getUserProfiles = (userId) => {
   })
 }
 
+export const postUserProfile = (profile) => {
+  
+  return $.ajax({
+    method: 'POST',
+    url: `/api/users/${profile.user_id}/profiles`,
+    data: { profile },
+  })
+}

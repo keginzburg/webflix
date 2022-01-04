@@ -16,7 +16,10 @@ User.create!(email: "demouser@gmail.com", password: "demouser");
 
 Profile.destroy_all
 
-Profile.create!(user_id: 1, avatar: "chicken", name: "Kyle1");
-Profile.create!(user_id: 5, avatar: "pirate", name: "Bob");
-Profile.create!(user_id: 5, avatar: "superhero", name: "Tom");
-Profile.create!(user_id: 5, avatar: "pirate", name: "Alex");
+Profile.create!(user_id: 1, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Kyle");
+Profile.create!(user_id: 2, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Farzam");
+Profile.create!(user_id: 3, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Maddie");
+Profile.create!(user_id: 4, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Victor");
+Profile.create!(user_id: 5, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Tobey");
+Profile.create!(user_id: 5, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Andrew");
+Profile.create!(user_id: 5, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Tom");

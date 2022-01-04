@@ -28,7 +28,7 @@ class Login extends React.Component {
   render() {
     if (this.props.currentUser) {
       return (
-        <Redirect to = "/browse" />
+        <Redirect to="/browse" />
       )
     } else {
       return (

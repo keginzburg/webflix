@@ -1,4 +1,4 @@
-import { getUserProfiles } from "../util/profile_api_utils";
+import { getUserProfiles, postUserProfile } from "../util/profile_api_utils";
 
 export const RECEIVE_CURRENT_USER_PROFILES = 'RECEIVE_CURRENT_USER_PROFILES';
 export const receiveCurrentUserProfiles = (profiles) => {
@@ -7,9 +7,22 @@ return {
   profiles
 }}
 
-export const fetchUserProfiles = (userId) => dispatch => {
+export const fetchUserProfiles = userId => dispatch => {
   
   return getUserProfiles(userId)
     .then(profiles => dispatch(receiveCurrentUserProfiles(profiles)));
 }
 
+export const RECEIVE_NEW_PROFILE = 'RECEIVE_NEW_PROFILE';
+export const receiveNewProfile = (profile) => {
+  return {
+  type: RECEIVE_NEW_PROFILE,
+  profile
+  }
+}
+
+export const createNewUserProfile = newProfile => dispatch => {
+  
+  return postUserProfile(newProfile)
+    .then(profile => dispatch(receiveNewProfile(profile)))
+}

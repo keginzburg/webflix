@@ -1,7 +1,7 @@
 import React from "react";
 import ProfilesIndexItem from "./profiles_index_item";
 
-class ProfilesIndex extends React.Component {
+class ManageProfilesIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,19 +25,19 @@ class ProfilesIndex extends React.Component {
 
   addProfile(e) {
     e.preventDefault();
-    this.setState({ add: true});
+    this.setState({ add: true });
   }
 
   continueAdd(e) {
-    
+
     e.preventDefault();
     let newProfile = {}
     newProfile["name"] = this.state.name;
     newProfile["avatar"] = this.state.avatar;
     newProfile["user_id"] = this.props.currentUser;
-    
+
     this.props.createNewUserProfile(newProfile);
-    
+
     this.setState({ add: false });
   }
 
@@ -50,11 +50,13 @@ class ProfilesIndex extends React.Component {
   render() {
     if (!this.state.add) {
       return (
-        <ul className="profiles-index-list">
+        <ul className="manage-profiles-index-list">
           {this.props.profiles.map(profile => {
             return (
-              <li className="profile-index-list-item" key={profile.id}>
-                <ProfilesIndexItem profile={profile} />
+              <li className="manage-profile-index-list-item" key={profile.id}>
+                <div className="manage-profile-index-item-container">
+                  <ProfilesIndexItem profile={profile} />
+                </div>
               </li>
             )
           })}
@@ -68,16 +70,16 @@ class ProfilesIndex extends React.Component {
       )
     } else if (this.state.add) {
       return (
-        <div className="add-profile-modal">
-          <div className="add-profile-headings-container">
+        <div>
+          <div>
             <h2>Add Profile</h2>
             <h3>Add a profile for another person watching Netflix.</h3>
           </div>
-          <div className="add-profiles-main-container">
-            <img width="115px" height="115px" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="default image" />
-            <input type="text" placeholder="Name" value={this.state.name} onChange={this.updateName}/>
+          <div>
+            <img src="" alt="default image" />
+            <input type="text" placeholder="Name" value={this.state.name} onChange={this.updateName} />
           </div>
-          <div className="add-profiles-button-container">
+          <div>
             <button onClick={this.continueAdd}>Continue</button>
             <button onClick={this.cancelAdd}>Cancel</button>
           </div>
@@ -87,4 +89,4 @@ class ProfilesIndex extends React.Component {
   }
 }
 
-export default ProfilesIndex;
+export default ManageProfilesIndex;
