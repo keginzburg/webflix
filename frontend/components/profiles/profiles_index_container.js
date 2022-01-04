@@ -4,7 +4,7 @@ import { createNewUserProfile } from "../../actions/profile_actions";
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.id,
-  profiles: state.entities.profiles,
+  profiles: Object.values(state.entities.profiles),
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -1,4 +1,4 @@
-import { getUserProfiles, postUserProfile, patchUserProfile } from "../util/profile_api_utils";
+import { getUserProfiles, postUserProfile, patchUserProfile, deleteUserProfile } from "../util/profile_api_utils";
 
 export const RECEIVE_CURRENT_USER_PROFILES = 'RECEIVE_CURRENT_USER_PROFILES';
 export const receiveCurrentUserProfiles = (profiles) => {
@@ -30,7 +30,7 @@ export const createNewUserProfile = newProfile => dispatch => {
 
 export const UPDATE_PROFILE = 'UPDATE_PROFILE';
 export const updateProfile = (profile) => {
-  debugger
+  
   return {
     type: UPDATE_PROFILE,
     profile
@@ -38,7 +38,23 @@ export const updateProfile = (profile) => {
 }
 
 export const updateUserProfile = updatedProfile => dispatch => {
-  debugger
-  return patchUserProfile(updateProfile)
-    .then(profile => dispatch(receiveNewProfile(profile)))
+  
+  return patchUserProfile(updatedProfile)
+    .then(profile => dispatch(updateProfile(profile)));
+}
+
+export const DELETE_PROFILE = 'DELETE_PROFILE';
+export const deleteProfile = (profile) => {
+
+  return {
+    type: DELETE_PROFILE,
+    profile
+  }
+}
+
+
+export const destroyUserProfile = profileId => dispatch => {
+
+  return deleteUserProfile(profileId)
+    .then((profile) => dispatch(deleteProfile(profile)))
 }

@@ -17,10 +17,19 @@ export const postUserProfile = (profile) => {
 
 
 export const patchUserProfile = (profile) => {
-
+  
   return $.ajax({
     method: 'PATCH',
     url: `/api/profiles/${profile.id}`,
     data: { profile },
+  })
+}
+
+
+export const deleteUserProfile = (profileId) => {
+
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/profiles/${profileId}`,
   })
 }

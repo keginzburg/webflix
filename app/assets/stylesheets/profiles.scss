@@ -29,6 +29,7 @@
           color: gray;
           margin: 0 16px 0;
 
+
           img {
             box-sizing: border-box;
             border-radius: 4px;
@@ -53,6 +54,37 @@
 
           }
         }
+
+        .profile-index-add-profile {
+          
+          .add-profile-button {
+            margin: 0 16px 0;
+            padding: 32px;
+            border-radius: 4px;
+          }
+
+          p {
+             margin: 10px 0;
+            font-size: 18px;
+            color: gray;
+          }
+
+        }
+
+        .profile-index-add-profile:hover {
+        
+          color: white;
+          cursor: pointer;
+
+          .add-profile-button {
+            background-color: white;
+          }
+
+          p {
+            color: white;
+          }
+        }
+
       }
 
       .manage-profiles-container {
@@ -230,11 +262,28 @@
         .manage-profile-index-list-item {
           color: gray;
           margin: 0 16px 0;
+          position: relative;
 
-          img {
+          
+
+          .icon {
+            z-index: 2;
             box-sizing: border-box;
             border-radius: 4px;
             outline: 2px solid transparent;
+            filter: brightness(60%)
+
+          }
+
+          .pencil-image {
+            z-index: 3;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%);
+            transform: translateY(-50%);
           }
 
           p {
@@ -249,6 +298,7 @@
             box-sizing: border-box;
             outline: 2px solid white;
             cursor: pointer;
+            filter: brightness(60%)
           }
 
           p {
@@ -256,6 +306,37 @@
 
           }
         }
+
+        .manage-profile-index-add-profile {
+
+          .manage-add-profile-button {
+            margin: 0 16px 0;
+            padding: 32px;
+            border-radius: 4px;
+          }
+
+          p {
+            margin: 10px 0;
+            font-size: 18px;
+            color: gray;
+          }
+
+        }
+
+        .manage-profile-index-add-profile:hover {
+        
+          color: white;
+          cursor: pointer;
+
+          .manage-add-profile-button {
+            background-color: white;
+          }
+
+          p {
+            color: white;
+          }
+        }
+
       }
 
       .manage-profiles-container {

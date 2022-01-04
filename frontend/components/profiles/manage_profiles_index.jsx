@@ -5,51 +5,51 @@ class ManageProfilesIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      add: false,
+      update: false,
       name: "",
       avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png",
     }
     this.updateName = this.updateName.bind(this);
-    this.addProfile = this.addProfile.bind(this);
-    this.continueAdd = this.continueAdd.bind(this);
-    this.cancelAdd = this.cancelAdd.bind(this);
+    this.saveProfile = this.saveProfile.bind(this);
+    this.cancelEdit = this.cancelEdit.bind(this);
+    this.deleteProfile = this.deleteProfile.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchUserProfiles(this.props.currentUser);
   }
 
+  // componentDidUpdate() {
+  //   this.props.fetchUserProfiles(this.props.currentUser);
+  // }
+
+
   updateName(e) {
     this.setState({ name: e.currentTarget.value });
   }
 
-  addProfile(e) {
-    e.preventDefault();
-    this.setState({ add: true });
+  saveProfile(e) {
+    let updatedProfile = {};
+    updatedProfile["id"] = this.props.editProfile;
+    updatedProfile["name"] = this.state.name;
+    updatedProfile["avatar"] = this.state.avatar;
+    updatedProfile["user_id"] = this.props.currentUser;
+    this.props.updateUserProfile(updatedProfile);
+    this.props.discardEditModal();
   }
 
-  continueAdd(e) {
-
-    e.preventDefault();
-    let newProfile = {}
-    newProfile["name"] = this.state.name;
-    newProfile["avatar"] = this.state.avatar;
-    newProfile["user_id"] = this.props.currentUser;
-
-    this.props.createNewUserProfile(newProfile);
-
-    this.setState({ add: false });
+  cancelEdit(e) {
+    this.props.discardEditModal();
   }
 
-  cancelAdd(e) {
-    e.preventDefault();
-    this.setState({ add: false });
-    this.setState({ name: "" });
+  deleteProfile(e) {
+    this.props.destroyUserProfile(this.props.editProfile);
+    this.props.discardEditModal();
   }
 
   render() {
     if (this.props.modal === 'editProfile') {
-      debugger
+      
       return (
         <div className="edit-profile-modal">
           <div className="edit-profile-modal-container">
@@ -59,13 +59,13 @@ class ManageProfilesIndex extends React.Component {
               </h2>
             </div>
             <div className="edit-profile-main-container">
-              <img src="" alt="" />
-              <input type="text" />
+              <img src={this.state.avatar} alt="avatar icon" />
+              <input type="text" value={this.state.name} placeholder="Name" onChange={this.updateName}/>
             </div>
             <div className="edit-profile-button-container">
-              <button>Save</button>
-              <button>Cancel</button>
-              <button>Delete Profile</button>
+              <button onClick={this.saveProfile}>Save</button>
+              <button onClick={this.cancelEdit} >Cancel</button>
+              <button onClick={this.deleteProfile} >Delete Profile</button>
             </div>
           </div>
         </div>
@@ -82,9 +82,9 @@ class ManageProfilesIndex extends React.Component {
               </li>
             )
           })}
-          <li className="manage-profile-index-list-item">
+          <li className="manage-profile-index-add-profile">
             <div onClick={this.addProfile}>
-              <img width="144px" height="144px" src="https://image.pngaaa.com/892/2528892-middle.png" alt="add profile icon" />
+              <img className="manage-add-profile-button" width="80px" height="80px" src={window.addProfileImage} alt="add profile icon" />
               <p>Add Profile</p>
             </div>
           </li>

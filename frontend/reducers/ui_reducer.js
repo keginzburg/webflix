@@ -10,7 +10,7 @@ const uiReducer = (state = _nullUi, action) => {
   let nextState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_EDIT_MODAL:
-      debugger
+      
       nextState["modal"] = "editProfile";
       return nextState;
     case DISCARD_EDIT_MODAL:
