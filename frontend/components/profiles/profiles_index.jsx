@@ -69,17 +69,21 @@ class ProfilesIndex extends React.Component {
     } else if (this.state.add) {
       return (
         <div className="add-profile-modal">
-          <div className="add-profile-headings-container">
-            <h2>Add Profile</h2>
-            <h3>Add a profile for another person watching Netflix.</h3>
-          </div>
-          <div className="add-profiles-main-container">
-            <img width="115px" height="115px" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="default image" />
-            <input type="text" placeholder="Name" value={this.state.name} onChange={this.updateName}/>
-          </div>
-          <div className="add-profiles-button-container">
-            <button onClick={this.continueAdd}>Continue</button>
-            <button onClick={this.cancelAdd}>Cancel</button>
+          <div className="add-profile-modal-container">
+            <div className="add-profile-headings-container">
+              <h2>Add Profile</h2>
+              <h3>Add a profile for another person watching Netflix.</h3>
+            </div>
+            <div className="add-profiles-main-container">
+              
+                <img width="115px" height="115px" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="default image" />
+                <input type="text" placeholder="Name" value={this.state.name} onChange={this.updateName} />
+            
+            </div>
+            <div className="add-profiles-button-container">
+              <button className="profile-continue" onClick={this.continueAdd}>Continue</button>
+              <button className="profile-cancel" onClick={this.cancelAdd}>Cancel</button>
+            </div>
           </div>
         </div>
       )

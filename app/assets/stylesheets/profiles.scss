@@ -44,21 +44,108 @@
         flex-direction: column;
         align-items: center;
 
-        .add-profile-headings-container {
-          text-align: left;
-        }
-
-        .add-profiles-main-container {
-          border-top: 1px solid #333;
-          border-bottom: 1px solid #333;
-
-          img {
-            border-radius: 3px;
-          }
-        }
-
-        .add-profiles-button-container {
+        .add-profile-modal-container {
+          margin-top: 7%;
           display: flex;
+          flex-direction: column;
+          align-items: start;
+          
+          .add-profile-headings-container {
+            text-align: left;
+
+            h2 {
+              margin: 0;
+              font-size: 4vw;
+              letter-spacing: 1px;
+            }
+
+            h3 {
+              margin: 15.5px 0;
+              font-size: 1.3vw;
+              letter-spacing: 1px;
+              color: #666;
+            }
+          }
+
+          .add-profiles-main-container {
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 21.6px 0;
+            display: flex;
+            align-items: center;
+
+            img {
+              border-radius: 3px;
+            }
+
+            input {
+              width: 18em;
+              height: 2em;
+              background: #666;
+              border: 1px solid transparent;
+              margin: 0 0.8em 0 20px;
+              padding: 0.2em 0.6em;
+              color: #fff;
+              font-size: 1.3vw;
+              -webkit-box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              box-sizing: border-box;
+              text-indent: 0.1vw;
+
+        
+              
+            }
+
+            input:focus {
+              outline: none;
+              
+            }
+
+            input::placeholder {
+              margin-top: 20px;
+              color: #fff;
+              font-weight: lighter;
+            }          
+          }
+
+          .add-profiles-button-container {
+
+            .profile-continue {
+              display: inline-block;
+              margin: 2em 0 1em 0;
+              padding: 0.5em 1.5em;
+              background: #fff;
+              color: #000;
+              border: 1px solid #fff;
+              font-size: 1.2vw;
+              font-weight: 700;
+              letter-spacing: 2px;
+              cursor: pointer;
+            }
+
+            .profile-continue:hover {
+              background: #c00;
+              border: 1px solid #c00;
+              color: #fff;
+            }
+
+            .profile-cancel {
+              display: inline-block;
+              margin: 2em 0 1em 20px;
+              padding: 0.5em 1.5em;
+              background: transparent;
+              color: grey;
+              border: 1px solid grey;
+              font-size: 1.2vw;
+              letter-spacing: 2px;
+              cursor: pointer;
+            }
+
+            .profile-cancel:hover {
+              color: #fff;
+              border: 1px solid #fff;
+            }
+          }
         }
       }
     }
