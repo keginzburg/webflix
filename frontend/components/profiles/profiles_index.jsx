@@ -38,7 +38,9 @@ class ProfilesIndex extends React.Component {
     
     this.props.createNewUserProfile(newProfile);
     
-    this.setState({ add: false });
+    setTimeout(()=>{
+      this.setState({ add: false });
+    }, 1000);
   }
 
   cancelAdd(e) {
