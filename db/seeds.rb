@@ -23,3 +23,7 @@ Profile.create!(user_id: 4, avatar: "https://upload.wikimedia.org/wikipedia/comm
 Profile.create!(user_id: 5, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Tobey");
 Profile.create!(user_id: 5, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Andrew");
 Profile.create!(user_id: 5, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Tom");
+
+Video.destroy_all
+
+test = Video.create!(title: "Test Movie", description: "This is a test.", year: 2022, runtime: 1, genre_id: 1);
