@@ -6,6 +6,7 @@ import Browse from "./browse";
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.id,
   currentProfile: state.session.currentProfile,
+  profiles: state.entities.profiles,
 })
 
 const mapDispatchToProps = dispatch => ({

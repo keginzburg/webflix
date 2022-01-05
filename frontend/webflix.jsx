@@ -3,14 +3,18 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
+import { persistStore } from "redux-persist";
+ 
 //Testing
 import { signup, login, logout } from './actions/session_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
   let root = document.getElementById('root');
-
   let store;
+
+
+
   if (window.currentUser) {
     const preloadedState = {
       entities: {
@@ -24,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
+  let persistor = persistStore(store);
+
   //Testing
   window.getState = store.getState;
   window.dispatch = store.dispatch;
@@ -31,6 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = login;
   window.logout = logout;
 
-  ReactDOM.render(<Root store={store} />, root);
+  ReactDOM.render(<Root persistor={persistor} store={store} />, root);
 
 })

@@ -21,8 +21,8 @@ class Browse extends React.Component {
       return (
         <div>
           {
-            (!this.props.currentProfile) ? <div className="browse_page">
-              <BrowseHeader logout={this.props.logout} />
+            (!this.props.currentProfile) ? <div className="browse-page">
+              <BrowseHeader logout={this.props.logout} currentProfile={this.props.currentProfile}/>
               <div className="profiles-modal">
                 <div className="profiles-main-container">
                   <h2>Who's watching?</h2>
@@ -36,9 +36,18 @@ class Browse extends React.Component {
               </div>
             </div>
               :
-              <div className="browse_page">
-                <BrowseHeader logout={this.props.logout} />
-                THIS IS THE BROWSE PAGE!
+              <div className="browse-page">
+                <BrowseHeader logout={this.props.logout} currentProfile={this.props.currentProfile} profiles={this.props.profiles} />
+                <div className="browse-main">
+                  <div className="browse-main-container">
+                    <div className="featured-title-container">
+                      Featured Title Component
+                    </div>
+                    <div className="browse-categories-container">
+                      Categories Index Component
+                    </div>
+                  </div>
+                </div>
               </div>
           }
         </div>
