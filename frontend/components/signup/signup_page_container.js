@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
 import SignUp from './signup_page';
-import { removeNewEmail } from '../../actions/session_actions';
+import { removeNewEmail, clearErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.id,
@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
   processForm: user => dispatch(signup(user)),
   removeNewEmail: () => dispatch(removeNewEmail()),
+  clearErrors: () => dispatch(clearErrors()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

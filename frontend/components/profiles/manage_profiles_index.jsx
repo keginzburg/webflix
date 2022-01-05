@@ -14,6 +14,9 @@ class ManageProfilesIndex extends React.Component {
     this.saveProfile = this.saveProfile.bind(this);
     this.cancelEdit = this.cancelEdit.bind(this);
     this.deleteProfile = this.deleteProfile.bind(this);
+    this.addProfile = this.addProfile.bind(this);
+    this.continueAdd = this.continueAdd.bind(this);
+    this.cancelAdd = this.cancelAdd.bind(this);
   }
 
   componentDidMount() {
@@ -43,6 +46,8 @@ class ManageProfilesIndex extends React.Component {
     updatedProfile["user_id"] = this.props.currentUser;
     this.props.updateUserProfile(updatedProfile);
     this.props.discardEditModal();
+    this.setState({ name: "" });
+    this.setState({ avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" });
   }
 
   cancelEdit(e) {
@@ -52,6 +57,32 @@ class ManageProfilesIndex extends React.Component {
   deleteProfile(e) {
     this.props.destroyUserProfile(this.props.editProfile);
     this.props.discardEditModal();
+  }
+
+  addProfile(e) {
+    e.preventDefault();
+    this.setState({ add: true });
+  }
+
+  continueAdd(e) {
+
+    e.preventDefault();
+    let newProfile = {}
+    newProfile["name"] = this.state.name;
+    newProfile["avatar"] = this.state.avatar;
+    newProfile["user_id"] = this.props.currentUser;
+
+    this.props.createNewUserProfile(newProfile);
+
+    setTimeout(() => {
+      this.setState({ add: false });
+    }, 1000);
+  }
+
+  cancelAdd(e) {
+    e.preventDefault();
+    this.setState({ add: false });
+    this.setState({ name: "" });
   }
 
   render() {
@@ -77,16 +108,22 @@ class ManageProfilesIndex extends React.Component {
             <div className="icon-choices-container">
               <h2>The Classics</h2>
               <div className="icon-choices">
-                <img onClick={() => { this.setState({ avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" }); this.props.discardIconModal(); this.props.receiveEditModal(); }} src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="default icon" />
-                <img onClick={() => { this.setState({ avatar: "https://i.pinimg.com/originals/10/12/c0/1012c06c7e1b0f8f5e60611992785e5a.png" }); this.props.discardIconModal(); this.props.receiveEditModal(); }}  src="https://i.pinimg.com/originals/10/12/c0/1012c06c7e1b0f8f5e60611992785e5a.png" alt="spy icon" />
+                
+                <button onClick={this.updateAvatar} value="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="default icon" /></button>
+
+                <button onClick={this.updateAvatar} value="https://i.pinimg.com/originals/10/12/c0/1012c06c7e1b0f8f5e60611992785e5a.png"><img src="https://i.pinimg.com/originals/10/12/c0/1012c06c7e1b0f8f5e60611992785e5a.png" alt="spy icon" /></button>
 
                 <button onClick={this.updateAvatar} value="https://mir-s3-cdn-cf.behance.net/project_modules/disp/64623a33850498.56ba69ac2a6f7.png"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/64623a33850498.56ba69ac2a6f7.png" alt="penguin icon" /></button>
 
-                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/c7906d33850498.56ba69ac353e1.png" alt="pirate icon" />
-                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/84c20033850498.56ba69ac290ea.png" alt="chicken icon" />
-                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/e70b1333850498.56ba69ac32ae3.png" alt="alien icon" />
-                <img src="https://noirflix.netlify.app/imgs/icon1.png" alt="superhero icon" />
-                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/bb3a8833850498.56ba69ac33f26.png" alt="panda icon" />
+                <button onClick={this.updateAvatar} value="https://mir-s3-cdn-cf.behance.net/project_modules/disp/c7906d33850498.56ba69ac353e1.png"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/c7906d33850498.56ba69ac353e1.png" alt="pirate icon" /></button>
+
+                <button onClick={this.updateAvatar} value="https://mir-s3-cdn-cf.behance.net/project_modules/disp/84c20033850498.56ba69ac290ea.png"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/84c20033850498.56ba69ac290ea.png" alt="chicken icon" /></button>
+
+                <button onClick={this.updateAvatar} value="https://mir-s3-cdn-cf.behance.net/project_modules/disp/e70b1333850498.56ba69ac32ae3.png"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/e70b1333850498.56ba69ac32ae3.png" alt="alien icon" /></button>
+
+                <button onClick={this.updateAvatar} value="https://noirflix.netlify.app/imgs/icon1.png"><img src="https://noirflix.netlify.app/imgs/icon1.png" alt="superhero icon" /></button>
+
+                <button onClick={this.updateAvatar} value="https://mir-s3-cdn-cf.behance.net/project_modules/disp/bb3a8833850498.56ba69ac33f26.png"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/bb3a8833850498.56ba69ac33f26.png" alt="panda icon" /></button>
               </div>
             </div>
           </div>

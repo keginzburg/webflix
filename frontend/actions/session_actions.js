@@ -50,6 +50,11 @@ export const receiveErrors = (errors) => ({
   errors
 })
 
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS,
+})
+
 export const signup = (user) => (dispatch) => {
   return postNewUser(user)
     .then(user => { dispatch(receiveCurrentUser(user)) }, errors => { dispatch(receiveErrors(errors)) })

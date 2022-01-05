@@ -3,6 +3,7 @@ import { Redirect } from 'react-router';
 //import LoginHeader from '../splash/login_header';
 //import LoginHeaderContainer from '../splash/login_header_container';
 import SignUpHeader from './signup_header';
+import { clearErrors } from "../../actions/session_actions";
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -15,8 +16,11 @@ class SignUp extends React.Component {
   }
 
   componentDidMount() {
-    
     this.setState({ email: this.props.newEmail });
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {

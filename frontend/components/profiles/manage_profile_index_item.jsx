@@ -16,7 +16,7 @@ class ManageProfilesIndexItem extends React.Component {
           this.props.receiveEditProfile(this.props.profile.id);
         }}>
           <img className="pencil-image" src={window.editPencilImage} alt="pencil logo" />
-          <img className="icon" width="144px" height="144px" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="profile icon" />
+          <img className="icon" width="144px" height="144px" src={this.props.profile.avatar} />
           <p>{this.props.profile.name}</p>
         </div>
       )
