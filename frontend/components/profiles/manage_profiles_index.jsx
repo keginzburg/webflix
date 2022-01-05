@@ -8,7 +8,10 @@ class ManageProfilesIndex extends React.Component {
       update: false,
       name: "",
       avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png",
+      selectedName: "",
+      selectedAvatar: "",
     }
+    this.childStateHandler = this.childStateHandler.bind(this);
     this.updateName = this.updateName.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.saveProfile = this.saveProfile.bind(this);
@@ -27,6 +30,13 @@ class ManageProfilesIndex extends React.Component {
   //   this.props.fetchUserProfiles(this.props.currentUser);
   // }
 
+  childStateHandler(childName, childAvatar) {
+    this.setState({
+      selectedName: childName,
+      selectedAvatar: childAvatar,
+    })
+  }
+
 
   updateName(e) {
     this.setState({ name: e.currentTarget.value });
@@ -34,6 +44,7 @@ class ManageProfilesIndex extends React.Component {
 
   updateAvatar(e) {
     this.setState({ avatar: e.currentTarget.value });
+    this.setState({ selectedAvatar: e.currentTarget.value });
     this.props.discardIconModal();
     this.props.receiveEditModal();
   }
@@ -102,7 +113,7 @@ class ManageProfilesIndex extends React.Component {
               </div>
               <div className="profile-icon-container">
                 <h4>Current Icon: </h4>
-                <img src={this.state.avatar} alt="current icon" />
+                <img src={this.state.selectedAvatar} alt="current icon" />
               </div>
             </div>
             <div className="icon-choices-container">
@@ -143,8 +154,8 @@ class ManageProfilesIndex extends React.Component {
               <div className="pencil-circle">
               </div>
               <img onClick={() => {this.props.receiveIconModal()} } className="pencil" img src={window.editPencilImage} alt="pencil button" />
-              <img className="icon" src={this.state.avatar} alt="avatar icon" />
-              <input type="text" value={this.state.name} placeholder="Name" onChange={this.updateName}/>
+              <img className="icon" src={this.state.selectedAvatar} alt="avatar icon" />
+              <input type="text" value={this.state.name} placeholder={this.state.selectedName} onChange={this.updateName}/>
             </div>
             <div className="edit-profile-button-container">
               <button className="edit-profile-save" onClick={this.saveProfile}>Save</button>
@@ -161,7 +172,7 @@ class ManageProfilesIndex extends React.Component {
             return (
               <li className="manage-profile-index-list-item" key={profile.id}>
                 <div className="manage-profile-index-item-container">
-                  <ManageProfilesIndexItem profile={profile} updateUserProfile={this.props.updateUserProfile} receiveEditModal={this.props.receiveEditModal} receiveEditProfile = {this.props.receiveEditProfile} />
+                  <ManageProfilesIndexItem profile={profile} updateUserProfile={this.props.updateUserProfile} receiveEditModal={this.props.receiveEditModal} receiveEditProfile = {this.props.receiveEditProfile} childStateHandler={this.childStateHandler}/>
                 </div>
               </li>
             )
