@@ -9,7 +9,7 @@ class ProfilesIndexItem extends React.Component {
   render() {
     return (
       <div className="profile-index-item-container" onClick={() => dispatch(receiveCurrentProfile(this.props.profile.id))}>
-        <img width="144px" height="144px" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="profile icon" />
+        <img width="144px" height="144px" src={this.props.profile.avatar} alt="profile icon" />
         <p>{this.props.profile.name}</p>
       </div>
     )

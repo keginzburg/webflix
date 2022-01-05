@@ -10,6 +10,7 @@ class ManageProfilesIndex extends React.Component {
       avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png",
     }
     this.updateName = this.updateName.bind(this);
+    this.updateAvatar = this.updateAvatar.bind(this);
     this.saveProfile = this.saveProfile.bind(this);
     this.cancelEdit = this.cancelEdit.bind(this);
     this.deleteProfile = this.deleteProfile.bind(this);
@@ -26,6 +27,12 @@ class ManageProfilesIndex extends React.Component {
 
   updateName(e) {
     this.setState({ name: e.currentTarget.value });
+  }
+
+  updateAvatar(e) {
+    this.setState({ avatar: e.currentTarget.value });
+    this.props.discardIconModal();
+    this.props.receiveEditModal();
   }
 
   saveProfile(e) {
@@ -51,25 +58,36 @@ class ManageProfilesIndex extends React.Component {
     if (this.props.modal === 'editProfileIcon') {
       return (
         <div className="icon-modal">
-          <div className="headings-profile-icon-container">
-            <div className="headings-container">
-              <div className="return-button">
-                <img src="" alt="" />
+          <div className="icon-modal-container">
+            <div className="headings-profile-icon-container">
+              <div className="headings-container">
+                <div className="return-button">
+                  <img src="https://img.icons8.com/ios-filled/90/000000/long-arrow-left.png" />
+                </div>
+                <div className="headings">
+                  <h2>Edit Profile</h2>
+                  <h3>Choose a profile icon.</h3>
+                </div>
               </div>
-              <div className="headings">
-                <h2>Edit Profile</h2>
-                <h3>Choose a profile icon.</h3>
+              <div className="profile-icon-container">
+                <h4>Current Icon: </h4>
+                <img src={this.state.avatar} alt="current icon" />
               </div>
             </div>
-            <div className="profile-icon-container">
-              <h4>Kyle</h4>
-              <img src="" alt="" />
-            </div>
-          </div>
-          <div className="icon-choices-container">
-            <h2>The Classics</h2>
-            <div className="icon-choices">
-              1 2 3 4 5 6
+            <div className="icon-choices-container">
+              <h2>The Classics</h2>
+              <div className="icon-choices">
+                <img onClick={() => { this.setState({ avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" }); this.props.discardIconModal(); this.props.receiveEditModal(); }} src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="default icon" />
+                <img onClick={() => { this.setState({ avatar: "https://i.pinimg.com/originals/10/12/c0/1012c06c7e1b0f8f5e60611992785e5a.png" }); this.props.discardIconModal(); this.props.receiveEditModal(); }}  src="https://i.pinimg.com/originals/10/12/c0/1012c06c7e1b0f8f5e60611992785e5a.png" alt="spy icon" />
+
+                <button onClick={this.updateAvatar} value="https://mir-s3-cdn-cf.behance.net/project_modules/disp/64623a33850498.56ba69ac2a6f7.png"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/64623a33850498.56ba69ac2a6f7.png" alt="penguin icon" /></button>
+
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/c7906d33850498.56ba69ac353e1.png" alt="pirate icon" />
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/84c20033850498.56ba69ac290ea.png" alt="chicken icon" />
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/e70b1333850498.56ba69ac32ae3.png" alt="alien icon" />
+                <img src="https://noirflix.netlify.app/imgs/icon1.png" alt="superhero icon" />
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/bb3a8833850498.56ba69ac33f26.png" alt="panda icon" />
+              </div>
             </div>
           </div>
         </div>
