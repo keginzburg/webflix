@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import FeaturedTitle from "./featured_title";
 
 const mapStateToProps = state => {
-  debugger
   return {
     featuredTitle: state.entities.videos[Math.floor(Math.random() * Object.keys(state.entities.videos).length-1)]
   }
