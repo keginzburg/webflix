@@ -1,4 +1,4 @@
-import { RECEIVE_VIDEOS, RECEIVE_VIDEO } from "../actions/video_actions";
+import { RECEIVE_VIDEOS, RECEIVE_VIDEO, CLEAR_VIDEOS } from "../actions/video_actions";
 
 const videoReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -10,6 +10,8 @@ const videoReducer = (state = {}, action) => {
     case RECEIVE_VIDEO:
       nextState[action.video.id] = action.video;
       return nextState;
+    case CLEAR_VIDEOS:
+      return {};
     default:
       return state;
   }

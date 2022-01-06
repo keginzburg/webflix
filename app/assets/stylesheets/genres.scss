@@ -1,0 +1,34 @@
+.genres-index {
+
+  color: white;
+
+
+  .genre {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin: 10px 0 20px;
+    }
+
+    ul {
+      display: flex;
+      margin: 0 0 20px 0;
+
+      li {
+        margin: 0 3px;
+
+        .genre-index-item-container {
+          font-size: 10px;
+          font-weight: bold;
+          border: 1px solid white;
+          padding: 10px 10px;
+
+        }
+      }
+    }
+  }
+}

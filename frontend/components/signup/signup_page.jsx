@@ -16,6 +16,7 @@ class SignUp extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchAllVideos();
     this.setState({ email: this.props.newEmail });
   }
 

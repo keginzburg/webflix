@@ -103,17 +103,21 @@
     background-color: #141414;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
 
     .browse-main-container {
 
       .featured-title-container {
         color: white;
+        margin: 75px 0 0 0;
+        width: 100vw;
+        height: 30vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .browse-categories-container {
-        color: white;
+        margin: 0 60px;
       }
     }
 

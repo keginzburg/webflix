@@ -2,8 +2,9 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import BrowseHeader from "./browse_header";
 import ProfilesIndexContainer from '../profiles/profiles_index_container';
+import GenresIndexContainer from "../genres/genres_index_container";
 import { Link } from "react-router-dom";
-import { fetchUserProfiles } from "../../actions/profile_actions";
+
 
 
 class Browse extends React.Component {
@@ -22,7 +23,7 @@ class Browse extends React.Component {
         <div>
           {
             (!this.props.currentProfile) ? <div className="browse-page">
-              <BrowseHeader logout={this.props.logout} currentProfile={this.props.currentProfile} logoutCurrentUser={this.props.logoutCurrentUser}/>
+              <BrowseHeader logout={this.props.logout} currentProfile={this.props.currentProfile} logoutCurrentUser={this.props.logoutCurrentUser} clearVideos={this.props.clearVideos} />
               <div className="profiles-modal">
                 <div className="profiles-main-container">
                   <h2>Who's watching?</h2>
@@ -41,10 +42,10 @@ class Browse extends React.Component {
                 <div className="browse-main">
                   <div className="browse-main-container">
                     <div className="featured-title-container">
-                      Featured Title Component
+                      Pardon our dust, a featured title component will go here eventually.
                     </div>
                     <div className="browse-categories-container">
-                      Categories Index Component
+                      <GenresIndexContainer />
                     </div>
                   </div>
                 </div>
