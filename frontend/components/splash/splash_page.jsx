@@ -54,11 +54,6 @@ class SplashPage extends React.Component {
         <div className='splash-background'>
           <div className='splash-container'>
             <div className='main-splash-container'>
-<<<<<<< HEAD
-              
-=======
-
->>>>>>> profiles
               <div className='header-tagline-container'>
                 <LoginHeaderContainer />
                 <div className="tagline-signup">
