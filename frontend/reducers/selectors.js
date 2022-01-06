@@ -11,4 +11,9 @@ export const filterHorrorVideos = (state) => {
 export const filterComedyVideos = (state) => {
   let comedyVideos = Object.values(state.entities.videos);
   return comedyVideos.filter(video => video["genre"]["genre"] === "Comedy");
+}
+
+export const filterDramaVideos = (state) => {
+  let dramaVideos = Object.values(state.entities.videos);
+  return dramaVideos.filter(video => video["genre"]["genre"] === "Drama");
 } 

@@ -27,7 +27,7 @@ class BrowseHeader extends React.Component {
         )
       } else {
         return (
-          <div className="browse-header-container">
+          <div className="browse-header-container-main">
             <div className="browse-header-inner">
               <div className='logo-category-links-container'>
                 <img src={window.webflixLogoSmall} border="0" />
@@ -35,8 +35,8 @@ class BrowseHeader extends React.Component {
                   <a href="#">Home</a>
                   <a href="#">Popular</a>
                   <a href="#">My List</a>
-                  <a href="#">Comedy</a>
                   <a href="#">Action</a>
+                  <a href="#">Comedy</a>
                   <a href="#">Horror</a>
                   <a href="#">Drama</a>
                 </div>

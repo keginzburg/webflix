@@ -29,9 +29,33 @@ class GenresIndex extends React.Component {
           </ul>
         </div>
         <div className="genre">
+          <h2>Comedy</h2>
+          <ul>
+            {this.props.comedyVideos.map(video => {
+              return (
+                <li key={video.id} >
+                  <GenresIndexItem video={video} />
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+        <div className="genre">
           <h2>Horror</h2>
           <ul>
             {this.props.horrorVideos.map(video => {
+              return (
+                <li key={video.id} >
+                  <GenresIndexItem video={video} />
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+        <div className="genre">
+          <h2>Drama</h2>
+          <ul>
+            {this.props.dramaVideos.map(video => {
               return (
                 <li key={video.id} >
                   <GenresIndexItem video={video} />

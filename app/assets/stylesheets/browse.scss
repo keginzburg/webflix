@@ -1,3 +1,94 @@
+  .browse-header-container-main {
+    z-index: 3;
+    padding: 8px 30px 0px 35px;
+    // need to remove this background color, only here for profiles modal testing purposes
+    background-color: #141414b2;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+
+            .browse-header-inner {
+      display: flex;
+      justify-content: space-between;
+
+      .logo-category-links-container {
+        display: flex;
+
+        img {
+
+        }
+
+        .links-container {
+          margin: 0 0 5px 30px;
+          display: flex;
+          align-items: center;
+
+          a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px 0 0;
+            font-weight: lighter;
+            font-size: 14px;
+          }
+
+          a:focus {
+            font-weight: bold;
+          }
+        }
+      }
+      
+      .settings-container {
+        display: flex;
+        align-items: center;
+        margin: 0 30px 0 0;
+
+        button {
+          width: fit-content;
+          height: fit-content;
+          margin: 0;
+          padding: 0;
+          background-color: transparent;
+          border: none;
+          
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            position: relative;
+
+            
+          }
+
+          .dropdown-menu {
+            display: none;
+            
+          }
+
+
+          
+        }
+
+        button:hover {
+
+          .dropdown-menu {
+              display: block;
+              position: absolute;
+              width: 150px;
+              height: 250px;
+              right: 50px;
+              z-index: 5;
+              box-sizing: border;
+              border-top: 10px solid transparent;
+              background-color: gray;
+          }
+        }
+
+        
+      }
+    }
+  }
+  
   .browse-header-container {
     z-index: 3;
     padding: 8px 30px 0px 35px;
@@ -90,40 +181,50 @@
   }
 
 .browse-page {
-
+  background-color: #141414;
 
 
   .browse-main {
     z-index: 2;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
     background-color: #141414;
 
     display: flex;
 
     .browse-main-container {
+      overflow: hidden;
 
       .featured-title-container {
+        z-index: 2;
         color: white;
-        margin: 75px 0 0 0;
+        margin: -60px 0 0px 0;
         width: 100vw;
-        height: 30vw;
+        height: 55vw;
         display: flex;
         justify-content: center;
         align-items: center;
       }
 
       .browse-categories-container {
-        margin: 0 60px;
+        z-index: 3;
+        margin: -200px 60px 0;
       }
     }
 
 
   }
 
+  footer {
+    
+    background-color: #141414;
 
+    .links-wrapper {
+      margin: 30px auto;
+    }
+  }
 
 }

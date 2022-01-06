@@ -11,7 +11,7 @@
       font-size: 20px;
       font-weight: bold;
       letter-spacing: 1px;
-      margin: 10px 0 20px;
+      margin: 10px 0 10px;
     }
 
     ul {
@@ -19,13 +19,18 @@
       margin: 0 0 20px 0;
 
       li {
-        margin: 0 3px;
+        margin: 0 5px 0 0;
 
         .genre-index-item-container {
-          font-size: 10px;
+          font-size: 12px;
           font-weight: bold;
           border: 1px solid white;
-          padding: 10px 10px;
+          border-radius: 4px;
+          width: 215px;
+          height: 121px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
         }
       }

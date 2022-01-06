@@ -16,6 +16,9 @@ class GenresIndexItem extends React.Component {
     return (
       <div className="genre-index-item-container">
         {this.props.video.title}
+        <button>
+          
+        </button>
       </div>
     )
   }
