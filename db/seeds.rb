@@ -7,14 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Profile.destroy_all
+
+ActiveRecord::Base.connection.reset_pk_sequence!("users")
+ActiveRecord::Base.connection.reset_pk_sequence!("profiles")
 
 User.create!(email: "keginzburg@gmail.com", password: "password");
 User.create!(email: "farzam@gmail.com", password: "password");
 User.create!(email: "maddie@gmail.com", password: "password");
 User.create!(email: "victor@gmail.com", password: "password");
 User.create!(email: "demouser@gmail.com", password: "demouser");
-
-Profile.destroy_all
 
 Profile.create!(user_id: 1, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Kyle");
 Profile.create!(user_id: 2, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Farzam");
