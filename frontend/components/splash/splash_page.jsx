@@ -26,7 +26,12 @@ class SplashPage extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.receiveNewEmail(this.state.email);
-    this.setState({newUser: true})
+    this.setState({ newUser: true })
+  }
+
+  handleDemo(e) {
+    e.preventDefault();
+    this.props.login({ email: "demouser@gmail.com", password: "demouser" })
   }
 
   handleDemo(e) {
@@ -36,7 +41,7 @@ class SplashPage extends React.Component {
 
   render() {
     if (this.state.newUser) {
-      
+
       return (
         <Redirect to={{
           pathname: '/signup'
@@ -44,12 +49,16 @@ class SplashPage extends React.Component {
         }} />
       )
     } else {
-      
+
       return (
         <div className='splash-background'>
           <div className='splash-container'>
             <div className='main-splash-container'>
+<<<<<<< HEAD
               
+=======
+
+>>>>>>> profiles
               <div className='header-tagline-container'>
                 <LoginHeaderContainer />
                 <div className="tagline-signup">
@@ -61,7 +70,7 @@ class SplashPage extends React.Component {
                       <h4>Ready to watch? Enter your email to create or restart your bloodpact.</h4>
                       <div className="signup-email-div">
                         <div>
-                          <input type="text" value={this.state.email} onChange={this.update('email')} placeholder='Email address'/>
+                          <input type="text" value={this.state.email} onChange={this.update('email')} placeholder='Email address' />
                           {/* <label>Email address</label> */}
                           <button type="submit">Get Started <img width="35px" height="35px" src={window.chevronURL} alt="chevron right" /></button>
                         </div>
@@ -130,7 +139,7 @@ class SplashPage extends React.Component {
           </div>
         </div>
       )
-    } 
+    }
   }
 }
 

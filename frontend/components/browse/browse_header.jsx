@@ -12,14 +12,46 @@ class BrowseHeader extends React.Component {
   }
 
   render() {
-    return (
-      <div className="browse-header-container">
-        <div className="browse-header-inner">
-          <img src="https://fontmeme.com/permalink/220103/f620b2b6fd3201eccfe749a9f645225d.png" alt="webflix-logo-small" border="0" />
-          <button onClick={this.props.logout}>Sign out of Webflix</button>
-        </div>
-      </div>
-    )
+      if (!this.props.currentProfile) {
+        return (
+          <div className="browse-header-container">
+            <div className="browse-header-inner">
+              <img src={window.webflixLogoSmall} border="0" />
+              <div></div>
+            </div>
+          </div>
+        )
+      } else {
+        return (
+          <div className="browse-header-container">
+            <div className="browse-header-inner">
+              <div className='logo-category-links-container'>
+                <img src={window.webflixLogoSmall} border="0" />
+                <div className='links-container'>
+                  <a href="#">Home</a>
+                  <a href="#">Popular</a>
+                  <a href="#">My List</a>
+                  <a href="#">Comedy</a>
+                  <a href="#">Action</a>
+                  <a href="#">Horror</a>
+                  <a href="#">Drama</a>
+                </div>
+              </div>
+              <div className='settings-container'>
+                <div></div>
+                <button onClick={this.props.logout}>
+                  <img src={this.props.profiles[this.props.currentProfile]['avatar']} alt="small profile icon" >
+                    
+                  </img>
+                  <div className='dropdown-menu'>
+                    Hello
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        )
+      }
   }
 }
 

@@ -1,8 +1,11 @@
-import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_NEW_EMAIL, REMOVE_NEW_EMAIL } from "../actions/session_actions";
+import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_NEW_EMAIL, REMOVE_NEW_EMAIL, RECEIVE_CURRENT_PROFILE, LOGOUT_CURRENT_PROFILE, RECEIVE_EDIT_PROFILE, DISCARD_EDIT_PROFILE } from "../actions/session_actions";
+
 
 const _nullSession = {
   id: null,
   newEmail: null,
+  currentProfile: null,
+  editProfile: null,
 }
 
 const sessionReducer = (state = _nullSession, action) => {
@@ -21,6 +24,17 @@ const sessionReducer = (state = _nullSession, action) => {
     case REMOVE_NEW_EMAIL:
       nextState["newEmail"] = null;
       return nextState;
+    case RECEIVE_CURRENT_PROFILE:
+      nextState["currentProfile"] = action.currentProfile;
+      return nextState;
+    case LOGOUT_CURRENT_PROFILE:
+      nextState["currentProfile"] = null;
+      return nextState;
+    case RECEIVE_EDIT_PROFILE:
+      nextState["editProfile"] = action.profileId;
+      return nextState;
+    case DISCARD_EDIT_PROFILE:
+      nextState["editProfile"] = null;
     default:
       return state;
   }
