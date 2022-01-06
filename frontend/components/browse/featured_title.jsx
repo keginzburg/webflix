@@ -43,24 +43,28 @@ class FeaturedTitle extends React.Component {
             </div>
           </div>
           <div className="title-show-container">
-            {/* img goes here as background */}
-            <div className="show-inner-container">
-              <div className="show-exit-button">
-                <button onClick={this.exitShowModal}><img width="30px" height="30px" src={window.showExitButton} alt="exit icon" /></button>
-              </div>
-              <div className="show-buttons">
-                <button className="featured-title-play-button"><img src={window.playButton} alt="play icon" />Play</button>
-                <button className="mylist-button"><img width="30px" height="30px" src={window.mylistButton} alt="my list icon" /></button>
-                <button className="like-button"><img width="30px" height="30px" src={window.likeButton} alt="like icon" /></button>
-                <button className="dislike-button"><img width="30px" height="30px" src={window.dislikeButton} alt="dislike icon" /></button>
-              </div>
-              <div className="show-info">
-                <div className="main-info">
-                  <h3>{this.props.featuredTitle.year} / {this.props.featuredTitle.runtime}m</h3>
-                  <h3>{this.props.featuredTitle.description}</h3>
+            <div className="title-show-modal">
+              <img className="movie-background" src={window.dummyBackground} alt="movie image" />
+              <div className="show-inner-container">
+                <div className="show-exit-button-container">
+                  <div className="show-exit-button">
+                    <button onClick={this.exitShowModal}><img width="15px" height="15px" src={window.showExitButton} alt="exit icon" /></button>
+                  </div>
                 </div>
-                <div className="genre-info">
-                  <h3>Genre: <h4>{this.props.featuredTitle.genre.genre}</h4></h3>
+                <div className="show-buttons">
+                  <button className="title-play-button"><img src={window.playButton} alt="play icon" /><span>Play</span></button>
+                  <button className="mylist-button"><img width="25px" height="25px" src={window.mylistButton} alt="my list icon" /></button>
+                  <button className="like-button"><img width="25px" height="25px" src={window.likeButton} alt="like icon" /></button>
+                  <button className="dislike-button"><img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" /></button>
+                </div>
+                <div className="show-info">
+                  <div className="main-info">
+                    <h3>{this.props.featuredTitle.year} <img src={window.hdIcon} alt="hd icon" /> {this.props.featuredTitle.runtime}  minutes</h3>
+                    <h4>{this.props.featuredTitle.description}</h4>
+                  </div>
+                  <div className="genre-info">
+                    <h4>Genre: <span>{this.props.featuredTitle.genre.genre}</span></h4>
+                  </div>
                 </div>
               </div>
             </div>
