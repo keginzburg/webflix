@@ -6,7 +6,7 @@ import Root from './components/root';
 import { persistStore } from "redux-persist";
  
 //Testing
-import { signup, login, logout } from './actions/session_actions';
+import { fetchAllVideos, fetchVideo } from "./actions/video_actions";
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,9 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
   //Testing
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.signup = signup;
-  window.login = login;
-  window.logout = logout;
+  window.fetchAllVideos = fetchAllVideos;
+  window.fetchVideo = fetchVideo;
 
   ReactDOM.render(<Root persistor={persistor} store={store} />, root);
 

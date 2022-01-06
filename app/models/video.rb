@@ -18,13 +18,17 @@
 class Video < ApplicationRecord
 
   validates :title, :description, :year, :runtime, :genre_id, presence: true
-  # belongs_to :genre,
-  #   primary_key: :id,
-  #   foreign_key: :genre_id,
-  #   class_name: :Genre
+  
+  belongs_to :genre,
+    primary_key: :id,
+    foreign_key: :genre_id,
+    class_name: :Genre
 
   # has_many :likers,
   #   through: :likes,
   #   source: :User
+
+  # association attaches video to video database entry
+  has_one_attached :video_file
 
 end

@@ -22,7 +22,7 @@ class Browse extends React.Component {
         <div>
           {
             (!this.props.currentProfile) ? <div className="browse-page">
-              <BrowseHeader logout={this.props.logout} currentProfile={this.props.currentProfile}/>
+              <BrowseHeader logout={this.props.logout} currentProfile={this.props.currentProfile} logoutCurrentUser={this.props.logoutCurrentUser}/>
               <div className="profiles-modal">
                 <div className="profiles-main-container">
                   <h2>Who's watching?</h2>
