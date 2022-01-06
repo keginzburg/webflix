@@ -17,7 +17,11 @@ class BrowseHeader extends React.Component {
           <div className="browse-header-container">
             <div className="browse-header-inner">
               <img src={window.webflixLogoSmall} border="0" />
-              <div></div>
+              <div>
+                <button onClick={() => { this.props.logout(); this.props.logoutCurrentUser() }}>
+                  Sign Out of Netflix
+                </button>
+              </div>
             </div>
           </div>
         )
