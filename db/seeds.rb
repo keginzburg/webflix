@@ -12,16 +12,16 @@ Profile.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!("users")
 ActiveRecord::Base.connection.reset_pk_sequence!("profiles")
 
-User.create!(email: "keginzburg@gmail.com", password: "password");
-User.create!(email: "farzam@gmail.com", password: "password");
-User.create!(email: "maddie@gmail.com", password: "password");
-User.create!(email: "victor@gmail.com", password: "password");
-User.create!(email: "demouser@gmail.com", password: "demouser");
+user1 = User.create!(email: "keginzburg@gmail.com", password: "password");
+user2 = User.create!(email: "farzam@gmail.com", password: "password");
+user3 = User.create!(email: "maddie@gmail.com", password: "password");
+user4 = User.create!(email: "victor@gmail.com", password: "password");
+user5 = User.create!(email: "demouser@gmail.com", password: "demouser");
 
-Profile.create!(user_id: 1, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Kyle");
-Profile.create!(user_id: 2, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Farzam");
-Profile.create!(user_id: 3, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Maddie");
-Profile.create!(user_id: 4, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Victor");
-Profile.create!(user_id: 5, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Tobey");
-Profile.create!(user_id: 5, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Andrew");
-Profile.create!(user_id: 5, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Tom");
+Profile.create!(user_id: user1.id, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Kyle");
+Profile.create!(user_id: user2.id, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Farzam");
+Profile.create!(user_id: user3.id, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Maddie");
+Profile.create!(user_id: user4.id, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Victor");
+Profile.create!(user_id: user5.id, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Tobey");
+Profile.create!(user_id: user5.id, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Andrew");
+Profile.create!(user_id: user5.id, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Tom");
