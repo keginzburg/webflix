@@ -301,19 +301,29 @@
             border-radius: 6px;
             background-color: #141414;
 
-              .movie-background {
+              .background-gradient {
+                // z-index: 5;
+                // background-image: linear-gradient(to bottom, transparent, #141414);
+                // width: 60vw;
+                // height: 485px;
+                // position: absolute;
+
+                .movie-background {
                 z-index: 4;
                 position: absolute;
                 width: 60vw;
                 height: auto;
                 border-radius: 6px;
-                // filter:opacity()                
+                mask-image: linear-gradient(to bottom, transparent, #141414);
+                              
+              }
               }
 
 
               .show-inner-container {
-                z-index: 5;
+                z-index: 6;
                 position: relative;
+                // background-image: linear-gradient(to bottom, transparent, #141414);
 
                 .show-exit-button-container {
                   display: flex;

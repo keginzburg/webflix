@@ -44,7 +44,10 @@ class FeaturedTitle extends React.Component {
           </div>
           <div className="title-show-container">
             <div className="title-show-modal">
-              <img className="movie-background" src={window.dummyBackground} alt="movie image" />
+              <div className="background-gradient">
+                <img className="movie-background" src={window.dummyBackground} alt="movie image" />
+              </div>
+              {/* <div className="movie-background"></div> */}
               <div className="show-inner-container">
                 <div className="show-exit-button-container">
                   <div className="show-exit-button">
