@@ -62,6 +62,7 @@ class GenresIndexItem extends React.Component {
                     <button onClick={this.exitShowModal}><img width="15px" height="15px" src={window.showExitButton} alt="exit icon" /></button>
                   </div>
                 </div>
+                <h2>{this.props.video.title}</h2>
                 <div className="show-buttons">
                   <button className="title-play-button"><img src={window.playButton} alt="play icon" /><span>Play</span></button>
                   <button className="mylist-button"><img width="25px" height="25px" src={window.mylistButton} alt="my list icon" /></button>

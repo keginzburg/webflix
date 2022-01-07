@@ -17,33 +17,44 @@ ActiveRecord::Base.connection.reset_pk_sequence!("profiles")
 ActiveRecord::Base.connection.reset_pk_sequence!("genres")
 ActiveRecord::Base.connection.reset_pk_sequence!("videos")
 
-User.create!(email: "keginzburg@gmail.com", password: "password")
-User.create!(email: "farzam@gmail.com", password: "password")
-User.create!(email: "maddie@gmail.com", password: "password")
-User.create!(email: "victor@gmail.com", password: "password")
-User.create!(email: "demouser@gmail.com", password: "demouser")
+user1 = User.create!(email: "keginzburg@gmail.com", password: "password")
+user2 = User.create!(email: "farzam@gmail.com", password: "password")
+user3 = User.create!(email: "maddie@gmail.com", password: "password")
+user4 = User.create!(email: "victor@gmail.com", password: "password")
+user5 = User.create!(email: "demouser@gmail.com", password: "demouser")
 
-Profile.create!(user_id: 1, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Kyle")
-Profile.create!(user_id: 2, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Farzam")
-Profile.create!(user_id: 3, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Maddie")
-Profile.create!(user_id: 4, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Victor")
-Profile.create!(user_id: 5, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Tobey")
-Profile.create!(user_id: 5, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Andrew")
-Profile.create!(user_id: 5, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Tom")
+profile1 = Profile.create!(user_id: user1.id, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Kyle")
+profile2 = Profile.create!(user_id: user2.id, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Farzam")
+profile3 = Profile.create!(user_id: user3.id, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Maddie")
+profile4 = Profile.create!(user_id: user4.id, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Victor")
+profile5 = Profile.create!(user_id: user5.id, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Tobey")
+profile6 = Profile.create!(user_id: user5.id, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Andrew")
+profile7 = Profile.create!(user_id: user5.id, avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png", name: "Tom")
 
-Genre.create!(genre: "Action")
-Genre.create!(genre: "Comedy")
-Genre.create!(genre: "Horror")
-Genre.create!(genre: "Drama")
+action = Genre.create!(genre: "Action")
+comedy = Genre.create!(genre: "Comedy")
+horror = Genre.create!(genre: "Horror")
+drama = Genre.create!(genre: "Drama")
 
 
 #Action Seeds
-Video.create!(title: "Spider-Man", description: "When bitten by a genetically modified spider, a nerdy, shy, and awkward high school student gains spider-like abilities that he eventually must use to fight evil as a superhero after tragedy befalls his family.", year: 2002, runtime: 121, genre_id: 1)
-Video.create!(title: "Spider-Man 2", description: "Peter Parker is beset with troubles in his failing personal life as he battles a brilliant scientist named Doctor Otto Octavius.", year: 2004, runtime: 127, genre_id: 1)
-Video.create!(title: "Spider-Man 3", description: "A strange black entity from another world bonds with Peter Parker and causes inner turmoil as he contends with new villains, temptations, and revenge.", year: 2007, runtime: 139, genre_id: 1)
-Video.create!(title: "The Amazing Spider-Man", description: "After Peter Parker is bitten by a genetically altered spider, he gains newfound, spider-like powers and ventures out to save the city from the machinations of a mysterious reptilian foe.", year: 2012, runtime: 136, genre_id: 1)
-Video.create!(title: "The Amazing Spider-Man 2", description: "When New York is put under siege by Oscorp, it is up to Spider-Man to save the city he swore to protect as well as his loved ones.", year: 2014, runtime: 142, genre_id: 1)
-Video.create!(title: "Spider-Man: Homecoming", description: "Peter Parker balances his life as an ordinary high school student in Queens with his superhero alter-ego Spider-Man, and finds himself on the trail of a new menace prowling the skies of New York City.", year: 2017, runtime: 133, genre_id: 1)
+spiderman = Video.create!(title: "Spider-Man", description: "When bitten by a genetically modified spider, a nerdy, shy, and awkward high school student gains spider-like abilities that he eventually must use to fight evil as a superhero after tragedy befalls his family.", year: 2002, runtime: 121, genre_id: action.id)
+spiderman_thumbnail = URI.open('https://webflix-seeds.s3.amazonaws.com/thumbnails/spiderman_thumbnail.jpg')
+spiderman.thumbnail.attach(io: spiderman_thumbnail, filename: 'spiderman_thumbnail.jpg')
+
+
+spiderman2 = Video.create!(title: "Spider-Man 2", description: "Peter Parker is beset with troubles in his failing personal life as he battles a brilliant scientist named Doctor Otto Octavius.", year: 2004, runtime: 127, genre_id: 1)
+
+spiderman3 = Video.create!(title: "Spider-Man 3", description: "A strange black entity from another world bonds with Peter Parker and causes inner turmoil as he contends with new villains, temptations, and revenge.", year: 2007, runtime: 139, genre_id: 1)
+
+amazing_spiderman = Video.create!(title: "The Amazing Spider-Man", description: "After Peter Parker is bitten by a genetically altered spider, he gains newfound, spider-like powers and ventures out to save the city from the machinations of a mysterious reptilian foe.", year: 2012, runtime: 136, genre_id: 1)
+amazing_spiderman_thumbnail = URI.open('https://webflix-seeds.s3.amazonaws.com/thumbnails/amazing_spiderman_thumbnail.jpeg')
+amazing_spiderman.thumbnail.attach(io: amazing_spiderman_thumbnail, filename: 'amazing_spiderman_thumbnail.jpeg')
+
+amazing_spiderman2 = Video.create!(title: "The Amazing Spider-Man 2", description: "When New York is put under siege by Oscorp, it is up to Spider-Man to save the city he swore to protect as well as his loved ones.", year: 2014, runtime: 142, genre_id: 1)
+
+spiderman_homecoming = Video.create!(title: "Spider-Man: Homecoming", description: "Peter Parker balances his life as an ordinary high school student in Queens with his superhero alter-ego Spider-Man, and finds himself on the trail of a new menace prowling the skies of New York City.", year: 2017, runtime: 133, genre_id: 1)
+
 # Video.create!(title: "Spider-Man: Far from Home", description: "Following the events of Avengers: Endgame (2019), Spider-Man must step up to take on new threats in a world that has changed forever.", year: 2019, runtime: 129, genre_id: 1)
 # Video.create!(title: "Spider-Man: No Way Home", description: "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.", year: 2021, runtime: 148, genre_id: 1)
 

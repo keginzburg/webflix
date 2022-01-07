@@ -29,6 +29,7 @@ class Video < ApplicationRecord
   #   source: :User
 
   # association attaches video to video database entry
-  has_one_attached :video_file
+  has_one_attached :thumbnail
+  has_one_attached :file
 
 end
