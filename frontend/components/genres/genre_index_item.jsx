@@ -55,7 +55,7 @@ class GenresIndexItem extends React.Component {
       return (
           <div className="title-show-container">
             <div className="title-show-modal">
-              <img className="movie-background" src={window.dummyBackground} alt="movie image" />
+              <img className="movie-background" src={this.props.video.backgroundUrl} alt="movie image" />
               <div className="background-gradient">
               </div>
               <div className="show-inner-container">

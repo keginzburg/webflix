@@ -30,6 +30,7 @@ class Video < ApplicationRecord
 
   # association attaches video to video database entry
   has_one_attached :thumbnail
+  has_one_attached :background
   has_one_attached :file
 
 end
