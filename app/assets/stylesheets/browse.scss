@@ -213,18 +213,43 @@
         .featured-title-inner-container {
           margin: 0 0 0 60px;
 
-          div {
-          margin: 0 0 0 0;
+
+          .featured-title-info-buttons {
+          margin: -100px 0 0 0;
+          position: absolute;
+          z-index: 2;
+
+          //margin: 0 0 0 0;
+          
+
+        
+
+          h2 {
+            z-index: 3;
+            font-size: 45px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            width: 500px;
+            height: fit-content;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
+            margin: 0 0 15px 0;
+          }
 
           h3 {
+            // position: absolute;
+            z-index: 3;
             font-size: 20px;
             font-weight: lighter;
             letter-spacing: 1px;
             width: 500px;
             height: fit-content;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
           }
 
           .featured-title-buttons {
+            // position: absolute;
+            
+            z-index: 3;
             display: flex;
             justify-content: start;
             margin: 15px 0 0 0;
@@ -280,6 +305,23 @@
           }
           }
 
+          .featured-background-gradient {
+                z-index: 1;
+                background-image: linear-gradient(transparent,#14141477, #141414f3, #141414);
+                width: 98.95vw;
+                margin: 0 0 0 -60px;
+                height: 400px;
+                position: absolute;
+              }
+
+          .featured-title-background {
+            z-index: 0;
+            position: absolute;
+            top: 0;
+            width: 98.95vw;
+            margin: 0 0 0 -60px;
+          }
+
           .title-show-container {
             z-index: 3;
             background-color: rgba(0, 0, 0, 0.534);
@@ -302,11 +344,12 @@
             background-color: #141414;
 
               .background-gradient {
-                // z-index: 5;
-                // background-image: linear-gradient(transparent, #141414);
-                // width: 60vw;
-                // height: 485px;
-                // position: absolute;
+                z-index: 5;
+                background-image: linear-gradient(transparent, #141414);
+                width: 60vw;
+                height: 485px;
+                position: absolute;
+              }
 
                 .movie-background {
                 z-index: 4;
@@ -334,7 +377,7 @@
               //   // mask-image: linear-gradient(to bottom, transparent, #141414);
                               
               // }
-              }
+              
 
 
               .show-inner-container {

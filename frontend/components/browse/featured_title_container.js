@@ -3,7 +3,7 @@ import FeaturedTitle from "./featured_title";
 
 const mapStateToProps = state => {
   return {
-    featuredTitle: state.entities.videos[Math.floor(Math.random() * Object.keys(state.entities.videos).length-1)]
+    featuredTitle: state.entities.videos[Math.ceil(Math.random() * Object.keys(state.entities.videos).length)]
   }
 }
 

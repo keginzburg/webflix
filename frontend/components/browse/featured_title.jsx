@@ -35,17 +35,21 @@ class FeaturedTitle extends React.Component {
       return (
         <div className="featured-title-inner-container">
           {/* image goes here as background */}
-          <div>
+          <div className="featured-title-info-buttons">
+            <h2>{this.props.featuredTitle.title}</h2>
+
             <h3>{this.props.featuredTitle.description}</h3>
             <div className="featured-title-buttons">
               <button className="featured-title-play-button"><img src={window.playButton} alt="play icon" />Play</button>
               <button className="featured-title-info-button"><img width="30px" height="30px" src={window.infoButton} alt="info icon" />More Info</button>
             </div>
           </div>
+          <div className="featured-background-gradient"></div>
+          <img className="featured-title-background" src={window.dummyBackground} alt="featured movie image" />
           <div className="title-show-container">
             <div className="title-show-modal">
+              <img className="movie-background" src={window.dummyBackground} alt="movie image" />
               <div className="background-gradient">
-                <img className="movie-background" src={window.dummyBackground} alt="movie image" />
               </div>
               {/* <div className="movie-background"></div> */}
               <div className="show-inner-container">
@@ -80,13 +84,16 @@ class FeaturedTitle extends React.Component {
       
       return (
         <div className="featured-title-inner-container">
-          <div>
+          <div className="featured-title-info-buttons">
+            <h2>{this.props.featuredTitle.title}</h2>
             <h3>{this.props.featuredTitle.description}</h3>
             <div className="featured-title-buttons">
               <button className="featured-title-play-button"><img src={window.playButton} alt="play icon" />Play</button>
               <button className="featured-title-info-button" onClick={this.openShowModal}><img width="30px" height="30px" src={window.infoButton} alt="info icon" />More Info</button>
             </div>
           </div>
+          <div className="featured-background-gradient"></div>
+          <img className="featured-title-background" src={window.dummyBackground} alt="featured movie image" />
         </div>
       )
     }

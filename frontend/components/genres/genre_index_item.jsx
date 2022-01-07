@@ -56,6 +56,8 @@ class GenresIndexItem extends React.Component {
           <div className="title-show-container">
             <div className="title-show-modal">
               <img className="movie-background" src={window.dummyBackground} alt="movie image" />
+              <div className="background-gradient">
+              </div>
               <div className="show-inner-container">
                 <div className="show-exit-button-container">
                   <div className="show-exit-button">

@@ -8,6 +8,7 @@
     flex-direction: column;
 
     h2 {
+      z-index: 2;
       font-size: 20px;
       font-weight: bold;
       letter-spacing: 1px;
@@ -34,6 +35,7 @@
           position: relative;
 
           .genre-index-item-thumbnail {
+            z-index: 2;
             img {
               width: 215px;
               height: 121px;
@@ -211,6 +213,15 @@
             height: fit-content;
             border-radius: 6px;
             background-color: #141414;
+
+              .background-gradient {
+                z-index: 5;
+                background-image: linear-gradient(transparent, #141414);
+                width: 60vw;
+                height: 485px;
+                position: absolute;
+
+              }
 
               .movie-background {
                 z-index: 4;
