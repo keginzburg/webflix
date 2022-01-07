@@ -43,7 +43,7 @@ class BrowseHeader extends React.Component {
               </div>
               <div className='settings-container'>
                 <div></div>
-                <button onClick={this.props.logout}>
+                <button onClick={() => { this.props.logout(); this.props.logoutCurrentUser(); this.props.clearVideos();}}>
                   <img src={this.props.profiles[this.props.currentProfile]['avatar']} alt="small profile icon" >
                     
                   </img>

@@ -39,7 +39,7 @@ class Browse extends React.Component {
             </div>
               :
               <div className="browse-page">
-                <BrowseHeader logout={this.props.logout} currentProfile={this.props.currentProfile} profiles={this.props.profiles} />
+                <BrowseHeader logout={this.props.logout} currentProfile={this.props.currentProfile} profiles={this.props.profiles} logoutCurrentUser={this.props.logoutCurrentUser} clearVideos={this.props.clearVideos} />
                 <div className="browse-main">
                   <div className="browse-main-container">
                     <div className="featured-title-container">
