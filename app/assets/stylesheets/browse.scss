@@ -303,7 +303,7 @@
 
               .background-gradient {
                 // z-index: 5;
-                // background-image: linear-gradient(to bottom, transparent, #141414);
+                // background-image: linear-gradient(transparent, #141414);
                 // width: 60vw;
                 // height: 485px;
                 // position: absolute;
@@ -314,9 +314,26 @@
                 width: 60vw;
                 height: auto;
                 border-radius: 6px;
-                mask-image: linear-gradient(to bottom, transparent, #141414);
+                //mask-image: linear-gradient(to bottom, transparent, #141414);
                               
               }
+
+              // .background-gradient {
+              //   z-index: 5;
+              //   background-image: linear-gradient(transparent, #141414);
+              //   width: 60vw;
+              //   height: 485px;
+              //   position: absolute;
+
+              //   .movie-background {
+              //   z-index: 4;
+              //   position: absolute;
+              //   width: 60vw;
+              //   height: auto;
+              //   border-radius: 6px;
+              //   // mask-image: linear-gradient(to bottom, transparent, #141414);
+                              
+              // }
               }
 
 
