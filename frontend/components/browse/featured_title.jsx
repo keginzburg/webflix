@@ -45,10 +45,10 @@ class FeaturedTitle extends React.Component {
             </div>
           </div>
           <div className="featured-background-gradient"></div>
-          <img className="featured-title-background" src={window.dummyBackground} alt="featured movie image" />
+          <img className="featured-title-background" src={this.props.featuredTitle.backgroundUrl} alt="featured movie image" />
           <div className="title-show-container">
             <div className="title-show-modal">
-              <img className="movie-background" src={window.dummyBackground} alt="movie image" />
+              <img className="movie-background" src={this.props.featuredTitle.backgroundUrl} alt="movie image" />
               <div className="background-gradient">
               </div>
               {/* <div className="movie-background"></div> */}
@@ -93,7 +93,7 @@ class FeaturedTitle extends React.Component {
             </div>
           </div>
           <div className="featured-background-gradient"></div>
-          <img className="featured-title-background" src={window.dummyBackground} alt="featured movie image" />
+          <img className="featured-title-background" src={this.props.featuredTitle.backgroundUrl} alt="featured movie image" />
         </div>
       )
     }
