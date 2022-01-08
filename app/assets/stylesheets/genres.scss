@@ -1,3 +1,27 @@
+.video-container {
+  z-index: 998;
+}
+
+
+.video-exit-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    border: 1px solid white;
+    color: white;
+}
+
+.video {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left: 0;
+  z-index: 1000;
+
+}
+
 .genres-index {
 
   color: white;

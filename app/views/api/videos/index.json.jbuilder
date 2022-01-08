@@ -5,6 +5,7 @@
     json.extract! video, :id, :title, :description, :year, :runtime, :genre
     json.thumbnailUrl video.thumbnail.attached? ? url_for(video.thumbnail) : ""
     json.backgroundUrl video.background.attached? ? url_for(video.background) : ""
+    json.trailerUrl video.trailer.attached? ? url_for(video.trailer) : ""
 
   end
 

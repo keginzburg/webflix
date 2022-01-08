@@ -1,4 +1,6 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+import ShowTitle from "../show/show_title";
 
 class GenresIndexItem extends React.Component {
   constructor(props) {
@@ -9,6 +11,7 @@ class GenresIndexItem extends React.Component {
     }
     this.exitShowModal = this.exitShowModal.bind(this);
     this.openShowModal = this.openShowModal.bind(this);
+    this.openPlayModal = this.openPlayModal.bind(this);
   }
 
   componentDidMount() {
@@ -23,8 +26,17 @@ class GenresIndexItem extends React.Component {
     this.setState({ modal: true })
   }
 
+  openPlayModal(e) {
+    this.setState({ play: true })
+  }
+
   render() {
-    if (!this.state.modal) {
+    if (this.state.play) {
+      debugger
+      return (
+        <Redirect to={`/watch/${this.props.video.id}`} />
+      )
+    } else if (!this.state.modal) {
     return (
       <div className="genre-index-item-container">
         <div className="genre-index-item-thumbnail">
@@ -33,7 +45,7 @@ class GenresIndexItem extends React.Component {
         <div className="genre-index-item-modal">
           <div className="genre-index-item-modal-buttons">
             <div className="main-buttons">
-              <button className="title-play-button"><img width="25px" height="25px" src={window.playButton} alt="play icon" /></button>
+              <button className="title-play-button" onClick={this.openPlayModal} ><img width="25px" height="25px" src={window.playButton} alt="play icon" /></button>
               <button className="mylist-button"><img width="25px" height="25px" src={window.mylistButton} alt="my list icon" /></button>
               <button className="like-button"><img width="25px" height="25px" src={window.likeButton} alt="like icon" /></button>
               <button className="dislike-button"><img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" /></button>
