@@ -42,7 +42,6 @@ class SplashPage extends React.Component {
       return (
         <Redirect to={{
           pathname: '/signup'
-          // state: { newEmail: this.state.email },
         }} />
       )
     } else {

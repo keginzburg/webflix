@@ -19,8 +19,8 @@ class BrowseHeader extends React.Component {
             <div className="browse-header-inner">
               <img src={window.webflixLogoSmall} border="0" />
               <div>
-                <button onClick={() => { this.props.logout(); this.props.logoutCurrentUser(); this.props.clearVideos(); }}>
-                  Sign Out of Netflix
+                <button className="profile-header-signout" onClick={() => { this.props.logout(); this.props.logoutCurrentUser(); this.props.clearVideos(); }}>
+                  Sign Out of Webflix
                 </button>
               </div>
             </div>

@@ -8,6 +8,10 @@
     display: flex;
     justify-content: space-between;
 
+    .root-logo {
+      cursor: pointer;
+    }
+
     .signup-login-link {
       background-color: #fff;
       color: black;
