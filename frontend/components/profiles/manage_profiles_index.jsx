@@ -17,6 +17,7 @@ class ManageProfilesIndex extends React.Component {
     this.addProfile = this.addProfile.bind(this);
     this.continueAdd = this.continueAdd.bind(this);
     this.cancelAdd = this.cancelAdd.bind(this);
+    this.addChildToState = this.addChildToState.bind(this);
   }
 
   componentDidMount() {
@@ -85,6 +86,11 @@ class ManageProfilesIndex extends React.Component {
     this.setState({ name: "" });
   }
 
+  addChildToState(name, avatar) {
+    this.setState({ name: name });
+    this.setState({ avatar: avatar });
+  }
+
   render() {
     if (this.props.modal === 'editProfileIcon') {
       return (
@@ -129,7 +135,6 @@ class ManageProfilesIndex extends React.Component {
           </div>
         </div>
       )
-    
     } else if (this.props.modal === 'editProfile') {
       return (
         <div className="edit-profile-modal">
@@ -161,7 +166,7 @@ class ManageProfilesIndex extends React.Component {
             return (
               <li className="manage-profile-index-list-item" key={profile.id}>
                 <div className="manage-profile-index-item-container">
-                  <ManageProfilesIndexItem profile={profile} updateUserProfile={this.props.updateUserProfile} receiveEditModal={this.props.receiveEditModal} receiveEditProfile = {this.props.receiveEditProfile} />
+                  <ManageProfilesIndexItem profile={profile} updateUserProfile={this.props.updateUserProfile} receiveEditModal={this.props.receiveEditModal} receiveEditProfile = {this.props.receiveEditProfile} addChildToState={this.addChildToState}/>
                 </div>
               </li>
             )
