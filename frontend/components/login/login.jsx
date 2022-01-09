@@ -1,8 +1,7 @@
 import React from "react";
-import LoginHeaderContainer from '../splash/login_header_container';
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
-import { clearErrors } from "../../actions/session_actions";
+import LoginHeaderContainer from '../splash/login_header_container';
 
 class Login extends React.Component {
   constructor(props) {
@@ -12,6 +11,8 @@ class Login extends React.Component {
       password: "",
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.props.clearErrors();
   }
 
   componentDidMount() {
