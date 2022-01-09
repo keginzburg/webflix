@@ -27,12 +27,12 @@ class GenresIndexItem extends React.Component {
   }
 
   openPlayModal(e) {
+    //this.props.location = `/browse/${this.props.video.id}`;
     this.setState({ play: true })
   }
 
   render() {
     if (this.state.play) {
-      debugger
       return (
         <Redirect to={`/watch/${this.props.video.id}`} />
       )
@@ -78,7 +78,7 @@ class GenresIndexItem extends React.Component {
                 </div>
                 <h2>{this.props.video.title}</h2>
                 <div className="show-buttons">
-                  <button className="title-play-button"><img src={window.playButton} alt="play icon" /><span>Play</span></button>
+                  <button className="title-play-button" onClick={this.openPlayModal}><img src={window.playButton} alt="play icon" /><span>Play</span></button>
                   <button className="mylist-button"><img width="25px" height="25px" src={window.mylistButton} alt="my list icon" /></button>
                   <button className="like-button"><img width="25px" height="25px" src={window.likeButton} alt="like icon" /></button>
                   <button className="dislike-button"><img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" /></button>

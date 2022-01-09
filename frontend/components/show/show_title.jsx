@@ -1,29 +1,37 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 class ShowTitle extends React.Component {
   constructor(props) {
     super(props);
-    this.state({
+    this.state = {
 
-    });
+    };
     this.exitVideo = this.exitVideo.bind(this);
+    this.showButton = this.showButton.bind(this);
   }
 
   componentDidMount() {
-    debugger
+    
   }
 
   exitVideo(e) {
-    this.props.history.goBack();
+    this.props.history.push("/browse");
+  }
+
+  showButton(e) {
+    let backButton = document.getElementById('video-back-button')
+    backButton.classList.add("show");
+    clearTimeout(timeout);
+    let timeout = setTimeout(() => { backButton.classList.remove("show") }, 5000);
   }
 
   render() {
-    debugger
     return (
-      <div className="video_container">
-        <button className="video-exit-button" onClick={this.exitVideo}>EXIT</button>
-        <video className="video" src={this.props.video.trailerUrl} autoplay controls type="video/mp4">
+      <div className="video_container" >
+        <button id="video-back-button" className="video-exit-button" onClick={this.exitVideo}><img src={window.videoBackButton} alt="back arrow icon" /></button>
+        <video className="video" src={this.props.video.trailerUrl} autoPlay controls onEnded={this.exitVideo} type="video/mp4" onMouseMove={this.showButton}>
         </video>
       </div>
     )
@@ -32,13 +40,7 @@ class ShowTitle extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    
+    video: state.entities.videos[ownProps.match.params.videoId]
   }
 }
 

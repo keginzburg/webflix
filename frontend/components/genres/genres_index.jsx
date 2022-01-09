@@ -1,5 +1,6 @@
 import React from "react";
 import GenresIndexItem from "./genre_index_item";
+import GenresIndexItemContainer from "./genre_index_item_container";
 
 class GenresIndex extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class GenresIndex extends React.Component {
             {this.props.actionVideos.map(video => {
               return (
                 <li key={video.id} >
-                  <GenresIndexItem video={video} />
+                  <GenresIndexItemContainer video={video} />
                 </li>
               )
             })}
@@ -34,7 +35,7 @@ class GenresIndex extends React.Component {
             {this.props.comedyVideos.map(video => {
               return (
                 <li key={video.id} >
-                  <GenresIndexItem video={video} />
+                  <GenresIndexItemContainer video={video} />
                 </li>
               )
             })}
@@ -46,7 +47,7 @@ class GenresIndex extends React.Component {
             {this.props.horrorVideos.map(video => {
               return (
                 <li key={video.id} >
-                  <GenresIndexItem video={video} />
+                  <GenresIndexItemContainer video={video} />
                 </li>
               )
             })}
@@ -58,7 +59,7 @@ class GenresIndex extends React.Component {
             {this.props.dramaVideos.map(video => {
               return (
                 <li key={video.id} >
-                  <GenresIndexItem video={video} />
+                  <GenresIndexItemContainer video={video} />
                 </li>
               )
             })}

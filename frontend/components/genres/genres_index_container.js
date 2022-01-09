@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import GenresIndex from "./genres_index";
 import * as Selectors from "../../reducers/selectors";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     actionVideos: Selectors.filterActionVideos(state),
     horrorVideos: Selectors.filterHorrorVideos(state),

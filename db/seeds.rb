@@ -44,8 +44,8 @@ spiderman = Video.create!(title: "Spider-Man", description: "When bitten by a ge
 # spiderman.thumbnail.attach(io: spiderman_thumbnail, filename: 'spiderman_thumbnail.jpg')
 # spiderman_background = URI.open('https://webflix-seeds.s3.amazonaws.com/backgrounds/spiderman_background.jpg')
 # spiderman.background.attach(io: spiderman_background, filename: 'spiderman_background.jpg')
-spiderman_trailer = URI.open('https://webflix-seeds.s3.amazonaws.com/trailers/spiderman_trailer.mp4')
-spiderman.trailer.attach(io: spiderman_trailer, filename: 'spiderman_trailer.mp4')
+# spiderman_trailer = URI.open('https://webflix-seeds.s3.amazonaws.com/trailers/spiderman_trailer.mp4')
+# spiderman.trailer.attach(io: spiderman_trailer, filename: 'spiderman_trailer.mp4')
 
 # Spider-Man 2
 spiderman2 = Video.create!(title: "Spider-Man 2", description: "Peter Parker is beset with troubles in his failing personal life as he battles a brilliant scientist named Doctor Otto Octavius.", year: 2004, runtime: 127, genre_id: 1)

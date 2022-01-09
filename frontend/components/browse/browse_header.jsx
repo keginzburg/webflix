@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class BrowseHeader extends React.Component {
   constructor(props) {
@@ -43,12 +44,14 @@ class BrowseHeader extends React.Component {
               </div>
               <div className='settings-container'>
                 <div></div>
-                <button onClick={() => { this.props.logout(); this.props.logoutCurrentUser(); this.props.clearVideos();}}>
+                <button >
                   <img src={this.props.profiles[this.props.currentProfile]['avatar']} alt="small profile icon" >
                     
                   </img>
                   <div className='dropdown-menu'>
-                    Hello
+                    <p>Hello, {this.props.profiles[this.props.currentProfile].name}</p>
+                    <Link to="/ManageProfiles" onClick={this.props.logoutCurrentProfile}>Manage Profiles</Link>
+                    <button onClick={() => { this.props.logout(); this.props.logoutCurrentUser(); this.props.clearVideos(); }}>Sign Out of Webflix</button>
                   </div>
                 </button>
               </div>

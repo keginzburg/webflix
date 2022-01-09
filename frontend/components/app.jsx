@@ -1,5 +1,5 @@
 import React from "react";
-import { AuthRoute } from "../util/route_util";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 import SplashPageContainer from "./splash/splash_page_container";
 import SignUpContainer from "./signup/signup_page_container";
@@ -15,9 +15,9 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={LoginContainer}/>
       <AuthRoute path="/signup" component={SignUpContainer} />
-      <Route path="/ManageProfiles" component={ManageProfiles} />
-      <Route path="/watch/:videoId" component={ShowTitleContainer} />
-      <Route path="/browse" component={BrowseContainer} />
+      <ProtectedRoute path="/ManageProfiles" component={ManageProfiles} />
+      <ProtectedRoute path="/watch/:videoId" component={ShowTitleContainer} />
+      <ProtectedRoute path="/browse" component={BrowseContainer} />
       <AuthRoute path="/" component={SplashPageContainer} />
     </Switch>
   </div>

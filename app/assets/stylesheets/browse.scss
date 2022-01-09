@@ -72,15 +72,48 @@
         button:hover {
 
           .dropdown-menu {
-              display: block;
+              display: flex;
+              align-items: start;
+              flex-direction: column;
               position: absolute;
-              width: 150px;
-              height: 250px;
-              right: 50px;
+              right: 56px;
+              width: fit-content;
+              height: fit-content;
               z-index: 5;
-              box-sizing: border;
-              border-top: 10px solid transparent;
-              background-color: gray;
+              padding: 5px 0 5px 0;
+              box-sizing: margin;
+              border: 2px solid #141414;
+              background-color: black;
+              color: white;
+              font-weight: lighter;
+              font-size: 12px;
+              letter-spacing: 1px;
+
+              p {
+                padding: 10px 40px 10px 10px;
+              }
+
+              a {
+                padding: 0 40px 10px 10px;
+                text-decoration: none;
+                color: white;
+              }
+
+              a:hover {
+                text-decoration: underline;
+              }
+
+              button {
+                border-top: 1px solid gray;
+                padding: 10px 40px 10px 10px;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+              }
+
+              button:hover {
+                text-decoration: underline;
+              }
           }
         }
 
