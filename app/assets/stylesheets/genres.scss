@@ -41,6 +41,7 @@
   top:0;
   left: 0;
   z-index: 1000;
+  background-color: black;
 
 }
 
@@ -101,7 +102,7 @@
           
           .genre-index-item-thumbnail {
             display:block;
-            z-index: 4;
+            z-index: 3;
             position: absolute;
             bottom: 60px;
             width: 302.5px;
@@ -122,7 +123,7 @@
 
           .genre-index-item-modal {
             display: block;
-            z-index: 4;
+            z-index: 3;
             position: absolute;
             top: 60px;
             width: 302.5px;
@@ -240,7 +241,7 @@
 }
 
           .title-show-container {
-            z-index: 3;
+            z-index: 4;
             background-color: rgba(0, 0, 0, 0.534);
             position: fixed;
             top: 0;
@@ -251,7 +252,7 @@
             justify-content: center;
 
             .title-show-modal {
-            z-index: 4;
+            z-index: 5;
             position: absolute;
             top: 50px;
             left: 20%;
@@ -261,7 +262,7 @@
             background-color: #141414;
 
               .background-gradient {
-                z-index: 5;
+                z-index: 6;
                 background-image: linear-gradient(transparent, #141414);
                 width: 60vw;
                 height: 486px;
@@ -270,7 +271,7 @@
               }
 
               .movie-background {
-                z-index: 4;
+                z-index: 5;
                 position: absolute;
                 width: 60vw;
                 height: auto;
@@ -280,7 +281,7 @@
 
 
               .show-inner-container {
-                z-index: 5;
+                z-index: 6;
                 position: relative;
 
                 .show-exit-button-container {

@@ -1,6 +1,5 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import ShowTitle from "../show/show_title";
 
 class GenresIndexItem extends React.Component {
   constructor(props) {
@@ -14,10 +13,6 @@ class GenresIndexItem extends React.Component {
     this.openPlayModal = this.openPlayModal.bind(this);
   }
 
-  componentDidMount() {
-    
-  }
-
   exitShowModal(e) {
     this.setState({ modal: false });
   }
@@ -27,7 +22,6 @@ class GenresIndexItem extends React.Component {
   }
 
   openPlayModal(e) {
-    //this.props.location = `/browse/${this.props.video.id}`;
     this.setState({ play: true })
   }
 
@@ -65,6 +59,7 @@ class GenresIndexItem extends React.Component {
     )
     } else if (this.state.modal) {
       return (
+      <div className="genre-index-item-container">
           <div className="title-show-container">
             <div className="title-show-modal">
               <img className="movie-background" src={this.props.video.backgroundUrl} alt="movie image" />
@@ -95,7 +90,29 @@ class GenresIndexItem extends React.Component {
               </div>
             </div>
           </div>
-
+        <div className="genre-index-item-thumbnail">
+          <img src={this.props.video.thumbnailUrl} alt="movie thumbnail" />
+        </div>
+        <div className="genre-index-item-modal">
+          <div className="genre-index-item-modal-buttons">
+            <div className="main-buttons">
+              <button className="title-play-button" onClick={this.openPlayModal} ><img width="25px" height="25px" src={window.playButton} alt="play icon" /></button>
+              <button className="mylist-button"><img width="25px" height="25px" src={window.mylistButton} alt="my list icon" /></button>
+              <button className="like-button"><img width="25px" height="25px" src={window.likeButton} alt="like icon" /></button>
+              <button className="dislike-button"><img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" /></button>
+            </div>
+            <div className="show-button-div">
+              <button className="show-button" onClick={this.openShowModal} ><img width="25px" height="25px" src={window.chevronDown} alt="show icon" /></button>
+            </div>
+          </div>
+          <div className="genre-index-item-modal-info">
+            <h3>{this.props.video.year} <img src={window.hdIcon} alt="hd icon" /> {this.props.video.runtime} minutes</h3>
+          </div>
+          <div className="genre-index-item-modal-genre">
+            <h3>{this.props.video.genre.genre}</h3>
+          </div>
+        </div>
+      </div>
       )
     }
   }
