@@ -67,12 +67,12 @@ class SignUp extends React.Component {
                         {/* <label>Email</label> */}
                         {(this.props.errors.length > 0) ?
                         <div>
-                          <input className="input-error" type="password" value={this.state.password} onChange={this.update('password')} />
+                          <input className="input-error" type="password" value={this.state.password} onChange={this.update('password')} placeholder='Password'/>
                           <p>Password is required!</p>
                         </div>
                          : 
                          <div>
-                            <input type="password" value={this.state.password} onChange={this.update('password')} />
+                            <input type="password" value={this.state.password} onChange={this.update('password')} placeholder='Password'/>
                          </div> }
                         {/* <label>Add a password</label> */}
                         <button type="submit">Start Membership</button>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class SignUpHeader extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class SignUpHeader extends React.Component {
   }
 
   handleLogoClick(e) {
-    <Redirect to="/" />
+    this.props.history.push("/");
   }
 
   render() {
@@ -29,4 +29,4 @@ class SignUpHeader extends React.Component {
   }
 }
 
-export default SignUpHeader;
+export default withRouter(SignUpHeader);
