@@ -36,9 +36,9 @@ class GenresIndexItem extends React.Component {
   }
 
   deleteVideoFromMylist(e) {
-    debugger
+    
     let mylist = this.props.mylistsArr.find(mylist => mylist['video_id'] === this.props.video.id);
-    debugger
+    
     this.props.destroyMylistedVideo(mylist.id)
   }
 
@@ -111,9 +111,11 @@ class GenresIndexItem extends React.Component {
                     <img src={window.playButton} alt="play icon" />
                     <span>Play</span>
                   </button>
-                  <button className="mylist-button" >
+                  {this.props.mylistedVideos.some(id => id === this.props.video.id) ? <button className="mylist-button" onClick={this.deleteVideoFromMylist} >
+                    <img width="25px" height="25px" src={window.checkmarkButton} alt="my list icon" />
+                  </button> : <button className="mylist-button" onClick={this.addVideoToMylist} >
                     <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
-                  </button>
+                  </button>}
                   <button className="like-button">
                     <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
                   </button>
@@ -143,9 +145,11 @@ class GenresIndexItem extends React.Component {
               <button className="title-play-button" onClick={this.openPlayModal} >
                 <img width="25px" height="25px" src={window.playButton} alt="play icon" />
               </button>
-              <button className="mylist-button"  >
-                <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
-              </button>
+                {this.props.mylistedVideos.some(id => id === this.props.video.id) ? <button className="mylist-button" onClick={this.deleteVideoFromMylist} >
+                  <img width="25px" height="25px" src={window.checkmarkButton} alt="my list icon" />
+                </button> : <button className="mylist-button" onClick={this.addVideoToMylist} >
+                  <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
+                </button>}
               <button className="like-button">
                 <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
               </button>

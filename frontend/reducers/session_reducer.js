@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_NEW_EMAIL, REMOVE_NEW_EMAIL, RECEIVE_CURRENT_PROFILE, LOGOUT_CURRENT_PROFILE, RECEIVE_EDIT_PROFILE, DISCARD_EDIT_PROFILE } from "../actions/session_actions";
+import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_NEW_EMAIL, REMOVE_NEW_EMAIL, RECEIVE_CURRENT_PROFILE, LOGOUT_CURRENT_PROFILE, RECEIVE_EDIT_PROFILE, DISCARD_EDIT_PROFILE, RECEIVE_FEATURED_TITLE } from "../actions/session_actions";
 
 
 const _nullSession = {
@@ -6,6 +6,7 @@ const _nullSession = {
   newEmail: null,
   currentProfile: null,
   editProfile: null,
+  featuredTitle: null,
 }
 
 const sessionReducer = (state = _nullSession, action) => {
@@ -35,6 +36,10 @@ const sessionReducer = (state = _nullSession, action) => {
       return nextState;
     case DISCARD_EDIT_PROFILE:
       nextState["editProfile"] = null;
+    case RECEIVE_FEATURED_TITLE:
+      debugger
+      nextState["featuredTitle"] = action.featuredTitle;
+      return nextState;
     default:
       return state;
   }

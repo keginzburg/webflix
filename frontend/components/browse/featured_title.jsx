@@ -11,6 +11,8 @@ class FeaturedTitle extends React.Component {
     this.exitShowModal = this.exitShowModal.bind(this);
     this.openShowModal = this.openShowModal.bind(this);
     this.openPlayModal = this.openPlayModal.bind(this);
+    this.addVideoToMylist = this.addVideoToMylist.bind(this);
+    this.deleteVideoFromMylist = this.deleteVideoFromMylist.bind(this);
   }
 
   componentDidMount() {
@@ -28,6 +30,19 @@ class FeaturedTitle extends React.Component {
   openPlayModal(e) {
     //this.props.location = `/browse/${this.props.video.id}`;
     this.setState({ play: true })
+  }
+
+  addVideoToMylist(e) {
+    debugger
+    this.props.createMylistedVideo({ profile_id: this.props.currentProfile, video_id: this.props.featuredTitle.id })
+    debugger
+  }
+
+  deleteVideoFromMylist(e) {
+
+    let mylist = this.props.mylistsArr.find(mylist => mylist['video_id'] === this.props.featuredTitle.id);
+
+    this.props.destroyMylistedVideo(mylist.id)
   }
 
   render() {
@@ -66,7 +81,11 @@ class FeaturedTitle extends React.Component {
                 <h2>{this.props.featuredTitle.title}</h2>
                 <div className="show-buttons">
                   <button className="title-play-button" onClick={this.openPlayModal}><img src={window.playButton} alt="play icon" /><span>Play</span></button>
-                  <button className="mylist-button"><img width="25px" height="25px" src={window.mylistButton} alt="my list icon" /></button>
+                  {this.props.mylistedVideos.some(id => id === this.props.featuredTitle.id) ? <button className="mylist-button" onClick={this.deleteVideoFromMylist} >
+                    <img width="25px" height="25px" src={window.checkmarkButton} alt="my list icon" />
+                  </button> : <button className="mylist-button" onClick={this.addVideoToMylist} >
+                    <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
+                  </button>}
                   <button className="like-button"><img width="25px" height="25px" src={window.likeButton} alt="like icon" /></button>
                   <button className="dislike-button"><img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" /></button>
                 </div>
