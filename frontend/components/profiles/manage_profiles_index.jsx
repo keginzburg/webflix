@@ -177,11 +177,7 @@ class ManageProfilesIndex extends React.Component {
             return (
               <li className="manage-profile-index-list-item" key={profile.id}>
                 <div className="manage-profile-index-item-container">
-<<<<<<< HEAD
-                  <ManageProfilesIndexItem profile={profile} updateUserProfile={this.props.updateUserProfile} receiveEditModal={this.props.receiveEditModal} receiveEditProfile = {this.props.receiveEditProfile} childStateHandler={this.childStateHandler}/>
-=======
                   <ManageProfilesIndexItem profile={profile} updateUserProfile={this.props.updateUserProfile} receiveEditModal={this.props.receiveEditModal} receiveEditProfile = {this.props.receiveEditProfile} addChildToState={this.addChildToState}/>
->>>>>>> videos
                 </div>
               </li>
             )
