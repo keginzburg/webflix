@@ -32,6 +32,7 @@ class SplashPage extends React.Component {
 
   handleDemo(e) {
     e.preventDefault();
+    
     this.props.fetchAllVideos();
     this.props.login({ email: "demouser@gmail.com", password: "demouser" })
   }
