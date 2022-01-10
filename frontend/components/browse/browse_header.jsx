@@ -44,7 +44,7 @@ class BrowseHeader extends React.Component {
               </div>
               <div className='settings-container'>
                 <div></div>
-                <button >
+                <div className='settings'>
                   <img src={this.props.profiles[this.props.currentProfile]['avatar']} alt="small profile icon" >
                     
                   </img>
@@ -53,7 +53,7 @@ class BrowseHeader extends React.Component {
                     <Link to="/ManageProfiles" onClick={this.props.logoutCurrentProfile}>Manage Profiles</Link>
                     <button onClick={() => { this.props.logout(); this.props.logoutCurrentUser(); this.props.clearVideos(); }}>Sign Out of Webflix</button>
                   </div>
-                </button>
+                </div>
               </div>
             </div>
           </div>

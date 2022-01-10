@@ -1,17 +1,15 @@
 import React from "react";
+import { receiveShowModal } from "../../actions/ui_actions";
 import GenresIndexItem from "./genre_index_item";
 import GenresIndexItemContainer from "./genre_index_item_container";
 
 class GenresIndex extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-
-    }
+    this.state = {};
   }
 
   componentDidMount() {
-
   }
 
   render() {
@@ -23,7 +21,7 @@ class GenresIndex extends React.Component {
             {this.props.actionVideos.map(video => {
               return (
                 <li key={video.id} >
-                  <GenresIndexItemContainer video={video} />
+                  <GenresIndexItemContainer video={video} modal={this.props.modal} receiveShowModal={this.props.receiveShowModal} discardShowModal={this.props.discardShowModal} play={this.props.play} receiveWatch={this.props.receiveWatch} discardWatch={this.props.discardWatch} />
                 </li>
               )
             })}
@@ -35,7 +33,7 @@ class GenresIndex extends React.Component {
             {this.props.comedyVideos.map(video => {
               return (
                 <li key={video.id} >
-                  <GenresIndexItemContainer video={video} />
+                  <GenresIndexItemContainer video={video} modal={this.props.modal} receiveShowModal={this.props.receiveShowModal} discardShowModal={this.props.discardShowModal} play={this.props.play} receiveWatch={this.props.receiveWatch} discardWatch={this.props.discardWatch}  />
                 </li>
               )
             })}
@@ -47,7 +45,7 @@ class GenresIndex extends React.Component {
             {this.props.horrorVideos.map(video => {
               return (
                 <li key={video.id} >
-                  <GenresIndexItemContainer video={video} />
+                  <GenresIndexItemContainer video={video} modal={this.props.modal} receiveShowModal={this.props.receiveShowModal} discardShowModal={this.props.discardShowModal} play={this.props.play} receiveWatch={this.props.receiveWatch} discardWatch={this.props.discardWatch} />
                 </li>
               )
             })}
@@ -59,7 +57,7 @@ class GenresIndex extends React.Component {
             {this.props.dramaVideos.map(video => {
               return (
                 <li key={video.id} >
-                  <GenresIndexItemContainer video={video} />
+                  <GenresIndexItemContainer video={video} modal={this.props.modal} receiveShowModal={this.props.receiveShowModal} discardShowModal={this.props.discardShowModal} play={this.props.play} receiveWatch={this.props.receiveWatch} discardWatch={this.props.discardWatch} />
                 </li>
               )
             })}

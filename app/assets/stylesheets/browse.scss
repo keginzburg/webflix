@@ -43,7 +43,7 @@
         align-items: center;
         margin: 0 30px 0 0;
 
-        button {
+        .settings {
           width: fit-content;
           height: fit-content;
           margin: 0;
@@ -69,7 +69,7 @@
           
         }
 
-        button:hover {
+        .settings:hover {
 
           .dropdown-menu {
               display: flex;
@@ -104,11 +104,14 @@
               }
 
               button {
+                border: none;
                 border-top: 1px solid gray;
                 padding: 10px 40px 10px 10px;
                 color: white;
                 font-weight: bold;
                 cursor: pointer;
+                background-color: black;
+                
               }
 
               button:hover {
@@ -183,7 +186,7 @@
         align-items: center;
         margin: 0 30px 0 0;
 
-        button {
+        .settings {
           width: fit-content;
           height: fit-content;
           margin: 0;
@@ -209,19 +212,19 @@
           
         }
 
-        button:hover {
+        .settings:hover {
 
-          .dropdown-menu {
-              display: block;
-              position: absolute;
-              width: 150px;
-              height: 250px;
-              right: 50px;
-              z-index: 5;
-              box-sizing: border;
-              border-top: 10px solid transparent;
-              background-color: gray;
-          }
+          // .dropdown-menu {
+          //     display: block;
+          //     position: absolute;
+          //     width: 150px;
+          //     height: 250px;
+          //     right: 50px;
+          //     z-index: 5;
+          //     // box-sizing: border;
+          //     // border-top: 10px solid transparent;
+          //     background-color: black;
+          // }
         }
 
         

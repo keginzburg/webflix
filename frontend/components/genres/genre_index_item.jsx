@@ -15,14 +15,17 @@ class GenresIndexItem extends React.Component {
 
   exitShowModal(e) {
     this.setState({ modal: false });
+    // this.props.discardShowModal();
   }
 
   openShowModal(e) {
     this.setState({ modal: true })
+    // this.props.receiveShowModal();
   }
 
   openPlayModal(e) {
     this.setState({ play: true })
+    // this.props.receiveWatch();
   }
 
   render() {
@@ -32,6 +35,7 @@ class GenresIndexItem extends React.Component {
       )
     } else if (!this.state.modal) {
     return (
+      //Genre Index Item Thumbnail
       <div className="genre-index-item-container">
         <div className="genre-index-item-thumbnail">
           <img src={this.props.video.thumbnailUrl} alt="movie thumbnail" />
@@ -39,13 +43,23 @@ class GenresIndexItem extends React.Component {
         <div className="genre-index-item-modal">
           <div className="genre-index-item-modal-buttons">
             <div className="main-buttons">
-              <button className="title-play-button" onClick={this.openPlayModal} ><img width="25px" height="25px" src={window.playButton} alt="play icon" /></button>
-              <button className="mylist-button"><img width="25px" height="25px" src={window.mylistButton} alt="my list icon" /></button>
-              <button className="like-button"><img width="25px" height="25px" src={window.likeButton} alt="like icon" /></button>
-              <button className="dislike-button"><img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" /></button>
+              <button className="title-play-button" onClick={this.openPlayModal} >
+                <img width="25px" height="25px" src={window.playButton} alt="play icon" />
+              </button>
+              <button className="mylist-button">
+                <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
+              </button>
+              <button className="like-button">
+                <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
+              </button>
+              <button className="dislike-button">
+                <img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" />
+              </button>
             </div>
             <div className="show-button-div">
-              <button className="show-button" onClick={this.openShowModal} ><img width="25px" height="25px" src={window.chevronDown} alt="show icon" /></button>
+              <button className="show-button" onClick={this.openShowModal} >
+                <img width="25px" height="25px" src={window.chevronDown} alt="show icon" />
+              </button>
             </div>
           </div>
           <div className="genre-index-item-modal-info">
@@ -59,24 +73,35 @@ class GenresIndexItem extends React.Component {
     )
     } else if (this.state.modal) {
       return (
+      //Genre Index Item Thumbnail
       <div className="genre-index-item-container">
           <div className="title-show-container">
             <div className="title-show-modal">
               <img className="movie-background" src={this.props.video.backgroundUrl} alt="movie image" />
-              <div className="background-gradient">
-              </div>
+              <div className="background-gradient"></div>
               <div className="show-inner-container">
                 <div className="show-exit-button-container">
                   <div className="show-exit-button">
-                    <button onClick={this.exitShowModal}><img width="15px" height="15px" src={window.showExitButton} alt="exit icon" /></button>
+                    <button onClick={this.exitShowModal}>
+                      <img width="15px" height="15px" src={window.showExitButton} alt="exit icon" />
+                    </button>
                   </div>
                 </div>
                 <h2>{this.props.video.title}</h2>
                 <div className="show-buttons">
-                  <button className="title-play-button" onClick={this.openPlayModal}><img src={window.playButton} alt="play icon" /><span>Play</span></button>
-                  <button className="mylist-button"><img width="25px" height="25px" src={window.mylistButton} alt="my list icon" /></button>
-                  <button className="like-button"><img width="25px" height="25px" src={window.likeButton} alt="like icon" /></button>
-                  <button className="dislike-button"><img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" /></button>
+                  <button className="title-play-button" onClick={this.openPlayModal}>
+                    <img src={window.playButton} alt="play icon" />
+                    <span>Play</span>
+                  </button>
+                  <button className="mylist-button">
+                    <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
+                  </button>
+                  <button className="like-button">
+                    <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
+                  </button>
+                  <button className="dislike-button">
+                    <img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" />
+                  </button>
                 </div>
                 <div className="show-info">
                   <div className="main-info">
@@ -93,16 +118,27 @@ class GenresIndexItem extends React.Component {
         <div className="genre-index-item-thumbnail">
           <img src={this.props.video.thumbnailUrl} alt="movie thumbnail" />
         </div>
+        {/* Genre Index Item Show Modal */}
         <div className="genre-index-item-modal">
           <div className="genre-index-item-modal-buttons">
             <div className="main-buttons">
-              <button className="title-play-button" onClick={this.openPlayModal} ><img width="25px" height="25px" src={window.playButton} alt="play icon" /></button>
-              <button className="mylist-button"><img width="25px" height="25px" src={window.mylistButton} alt="my list icon" /></button>
-              <button className="like-button"><img width="25px" height="25px" src={window.likeButton} alt="like icon" /></button>
-              <button className="dislike-button"><img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" /></button>
+              <button className="title-play-button" onClick={this.openPlayModal} >
+                <img width="25px" height="25px" src={window.playButton} alt="play icon" />
+              </button>
+              <button className="mylist-button">
+                <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
+              </button>
+              <button className="like-button">
+                <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
+              </button>
+              <button className="dislike-button">
+                <img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" />
+              </button>
             </div>
             <div className="show-button-div">
-              <button className="show-button" onClick={this.openShowModal} ><img width="25px" height="25px" src={window.chevronDown} alt="show icon" /></button>
+              <button className="show-button" onClick={this.openShowModal} >
+                <img width="25px" height="25px" src={window.chevronDown} alt="show icon" />
+              </button>
             </div>
           </div>
           <div className="genre-index-item-modal-info">
@@ -119,3 +155,5 @@ class GenresIndexItem extends React.Component {
 }
 
 export default GenresIndexItem
+
+//Potential refactoring needed in changing modal andplay from internal state to redux state.

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+//import { discardWatch } from '../../actions/ui_actions';
 
 class ShowTitle extends React.Component {
   constructor(props) {
@@ -17,6 +17,7 @@ class ShowTitle extends React.Component {
   }
 
   exitVideo(e) {
+    // this.props.discardWatch();
     this.props.history.push("/browse");
   }
 
@@ -30,7 +31,9 @@ class ShowTitle extends React.Component {
   render() {
     return (
       <div className="video_container" >
-        <button id="video-back-button" className="video-exit-button" onClick={this.exitVideo}><img src={window.videoBackButton} alt="back arrow icon" /></button>
+        <button id="video-back-button" className="video-exit-button" onClick={this.exitVideo}>
+          <img src={window.videoBackButton} alt="back arrow icon" />
+        </button>
         <video className="video" src={this.props.video.trailerUrl} autoPlay controls onEnded={this.exitVideo} type="video/mp4" onMouseMove={this.showButton}>
         </video>
       </div>
@@ -44,4 +47,12 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps, null)(ShowTitle);
+const mapDispatchToProps = dispatch => {
+  return {
+    //discardWatch: () => dispatch(discardWatch()),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShowTitle);
+
+//Potential refactoring needed in regard to exiting/finishing video bringing back to still mounted Browse/Genre Index Item components.
