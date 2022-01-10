@@ -1,12 +1,16 @@
 import React from "react";
-import { receiveShowModal } from "../../actions/ui_actions";
+// import { receiveShowModal } from "../../actions/ui_actions";
+import Slider from 'react-slick';
 import GenresIndexItem from "./genre_index_item";
 import GenresIndexItemContainer from "./genre_index_item_container";
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
 
 class GenresIndex extends React.Component {
   constructor(props) {
     super(props)
     this.state = {};
+
   }
 
   componentDidMount() {
@@ -20,7 +24,7 @@ class GenresIndex extends React.Component {
       <div className="genres-index">
         {this.props.mylistVideos.length === 0 ? <div></div> : <div className="genre">
           <h2>My List</h2>
-          <ul>
+            <ul className="mylist-box">
             {this.props.mylistVideos.map( (video, idx) => {
               return (
                 <li key={idx} >
@@ -28,7 +32,7 @@ class GenresIndex extends React.Component {
                 </li>
               )
             })}
-          </ul>
+            </ul>
         </div>}
         <div className="genre">
           <h2>Action</h2>
