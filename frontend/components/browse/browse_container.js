@@ -1,10 +1,8 @@
 import { connect } from "react-redux";
-import { logout } from "../../actions/session_actions";
+import { logout, logoutCurrentUser, logoutCurrentProfile } from "../../actions/session_actions";
 import { fetchUserProfiles } from "../../actions/profile_actions";
-import { logoutCurrentUser, logoutCurrentProfile } from "../../actions/session_actions";
-import { fetchAllVideos } from "../../actions/video_actions";
+import { fetchAllVideos, clearVideos } from "../../actions/video_actions";
 import Browse from "./browse";
-import { clearVideos } from "../../actions/video_actions";
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.id,
