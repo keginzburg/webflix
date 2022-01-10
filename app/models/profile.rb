@@ -25,7 +25,7 @@ class Profile < ApplicationRecord
 
   has_many :mylists,
     primary_key: :id,
-    foreign_key: :id,
+    foreign_key: :profile_id,
     class_name: :Mylist,
     dependent: :destroy
 

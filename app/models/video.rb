@@ -26,7 +26,7 @@ class Video < ApplicationRecord
 
   has_many :mylists,
     primary_key: :id,
-    foreign_key: :id,
+    foreign_key: :video_id,
     class_name: :Mylist,
     dependent: :destroy
 

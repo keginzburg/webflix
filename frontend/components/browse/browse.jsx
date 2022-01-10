@@ -18,6 +18,12 @@ class Browse extends React.Component {
   componentDidMount() {
   }
 
+  componentDidUpdate() {
+    // if (this.props.currentProfile) {
+    //   this.props.fetchMylistedVideos(this.props.currentProfile);
+    // }
+  }
+
   render() {
     if (this.props.currentUser) {
       return (

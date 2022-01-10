@@ -6,7 +6,7 @@ import Root from './components/root';
 import { persistStore } from "redux-persist";
  
 //Testing
-import { fetchAllVideos, fetchVideo } from "./actions/video_actions";
+import { createMylistedVideo } from './actions/mylist_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,8 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //Testing
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchAllVideos = fetchAllVideos;
-  window.fetchVideo = fetchVideo;
+  window.createMylistedVideo = createMylistedVideo;
 
   ReactDOM.render(<Root persistor={persistor} store={store} />, root);
 

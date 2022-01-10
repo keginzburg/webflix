@@ -11,11 +11,13 @@ User.destroy_all
 Profile.destroy_all
 Genre.destroy_all
 Video.destroy_all
+Mylist.destroy_all
 
 ActiveRecord::Base.connection.reset_pk_sequence!("users")
 ActiveRecord::Base.connection.reset_pk_sequence!("profiles")
 ActiveRecord::Base.connection.reset_pk_sequence!("genres")
 ActiveRecord::Base.connection.reset_pk_sequence!("videos")
+ActiveRecord::Base.connection.reset_pk_sequence!("mylists")
 
 user1 = User.create!(email: "keginzburg@gmail.com", password: "password")
 user2 = User.create!(email: "farzam@gmail.com", password: "password")
@@ -288,4 +290,16 @@ moonlight = Video.create!(title: "Moonlight", description: "A young African-Amer
 # moonlight_trailer = URI.open('https://webflix-seeds.s3.amazonaws.com/trailers/moonlight_trailer.mp4')
 # moonlight.trailer.attach(io: moonlight_trailer, filename: 'moonlight_trailer.mp4')
 
+# Mylist Seeds
 
+# Tobey Mylists
+mylist1 = Mylist.create!(profile_id: profile5.id, video_id: boyhood.id)
+mylist2 = Mylist.create!(profile_id: profile5.id, video_id: spiderman2.id)
+mylist3 = Mylist.create!(profile_id: profile5.id, video_id: shining.id)
+mylist4 = Mylist.create!(profile_id: profile5.id, video_id: hereditary.id)
+mylist5 = Mylist.create!(profile_id: profile5.id, video_id: social_network.id)
+mylist6 = Mylist.create!(profile_id: profile5.id, video_id: scott_pilgrim.id)
+
+# Andrew Mylists
+mylist7 = Mylist.create!(profile_id: profile6.id, video_id: scream.id)
+mylist8 = Mylist.create!(profile_id: profile6.id, video_id: napoleon_dynamite.id)

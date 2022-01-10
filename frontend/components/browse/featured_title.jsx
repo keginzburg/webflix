@@ -86,7 +86,7 @@ class FeaturedTitle extends React.Component {
 
       )
     } else {
-      
+      // careful here
       return (
         <div className="featured-title-inner-container">
           <div className="featured-title-info-buttons">

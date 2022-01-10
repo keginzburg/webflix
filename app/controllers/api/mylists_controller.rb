@@ -1,15 +1,22 @@
 class Api::MylistsController < ApplicationController
 
   def index
-    @mylists = Mylist.all
+    
+    @mylists = []
+    current_user.profiles.each do |profile|
+      @mylists += profile.mylists
+    end
+    
     render :index
   end
 
   def create
     @mylist = Mylist.new(mylist_params)
     if @mylist.save
+      
       render :create
     else
+      
       render json: @mylist.errors.full_messages
     end
   end

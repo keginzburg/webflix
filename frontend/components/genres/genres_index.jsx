@@ -13,8 +13,23 @@ class GenresIndex extends React.Component {
   }
 
   render() {
+      
     return (
+      // careful here, need to refactor this code so errors are not hit
+      
       <div className="genres-index">
+        {this.props.mylistVideos.length === 0 ? <div></div> : <div className="genre">
+          <h2>My List</h2>
+          <ul>
+            {this.props.mylistVideos.map( (video, idx) => {
+              return (
+                <li key={idx} >
+                  <GenresIndexItemContainer video={video} modal={this.props.modal} receiveShowModal={this.props.receiveShowModal} discardShowModal={this.props.discardShowModal} play={this.props.play} receiveWatch={this.props.receiveWatch} discardWatch={this.props.discardWatch} />
+                </li>
+              )
+            })}
+          </ul>
+        </div>}
         <div className="genre">
           <h2>Action</h2>
           <ul>
