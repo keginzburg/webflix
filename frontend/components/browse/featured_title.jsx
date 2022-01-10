@@ -33,9 +33,8 @@ class FeaturedTitle extends React.Component {
   }
 
   addVideoToMylist(e) {
-    debugger
+    
     this.props.createMylistedVideo({ profile_id: this.props.currentProfile, video_id: this.props.featuredTitle.id })
-    debugger
   }
 
   deleteVideoFromMylist(e) {
@@ -106,6 +105,7 @@ class FeaturedTitle extends React.Component {
       )
     } else {
       // careful here
+      
       return (
         <div className="featured-title-inner-container">
           <div className="featured-title-info-buttons">

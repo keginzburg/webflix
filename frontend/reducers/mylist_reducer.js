@@ -1,4 +1,5 @@
 import { RECEIVE_MYLISTED_VIDEOS, RECEIVE_MYLISTED_VIDEO, DISCARD_MYLISTED_VIDEO } from "../actions/mylist_actions";
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 const mylistReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -15,6 +16,9 @@ const mylistReducer = (state = {}, action) => {
     case DISCARD_MYLISTED_VIDEO:
 
       delete nextState[action.mylist.id];
+      return nextState;
+    case LOGOUT_CURRENT_USER:
+      nextState = Object.assign({}, {});
       return nextState;
     default:
       return state;

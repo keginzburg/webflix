@@ -1,4 +1,3 @@
-import FeaturedTitle from '../components/browse/featured_title';
 import { postNewUser, postUser, deleteUser } from '../util/session_api_util';
 
 export const RECEIVE_NEW_EMAIL = 'RECEIVE_NEW_EMAIL';
@@ -73,7 +72,7 @@ export const logout = () => (dispatch) => {
 
 export const RECEIVE_FEATURED_TITLE = 'RECEIVE_FEATURED_TITLE';
 export const receiveFeaturedTitle = (featuredTitle) => {
-  debugger
+  
   return {
     type: RECEIVE_FEATURED_TITLE,
     featuredTitle

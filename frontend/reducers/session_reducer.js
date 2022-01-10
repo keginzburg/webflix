@@ -37,7 +37,7 @@ const sessionReducer = (state = _nullSession, action) => {
     case DISCARD_EDIT_PROFILE:
       nextState["editProfile"] = null;
     case RECEIVE_FEATURED_TITLE:
-      debugger
+      
       nextState["featuredTitle"] = action.featuredTitle;
       return nextState;
     default:
