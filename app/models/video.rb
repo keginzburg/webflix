@@ -24,6 +24,16 @@ class Video < ApplicationRecord
     foreign_key: :genre_id,
     class_name: :Genre
 
+  has_many :mylists,
+    primary_key: :id,
+    foreign_key: :id,
+    class_name: :Mylist,
+    dependent: :destroy
+
+  has_many :mylist_profiles,
+    through: :mylists,
+    source: :profile
+
   # has_many :likers,
   #   through: :likes,
   #   source: :User
