@@ -1,0 +1,425 @@
+.video-container {
+  z-index: 998;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+
+}
+
+
+.video-exit-button {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 1001;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    img {
+      width: 0px;
+      height: 0px;
+    }
+}
+
+.show {
+  img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    
+  }
+}
+
+.video {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left: 0;
+  z-index: 1000;
+  background-color: black;
+
+}
+
+.genres-index {
+
+  color: white;
+
+
+  .genre {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      z-index: 2;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin: 10px 0 10px;
+    }
+
+    ul {
+      display: flex;
+      margin: 0 0 50px 0;
+
+      li {
+        margin: 0 5px 0 0;
+
+        .genre-index-item-container {
+          font-size: 12px;
+          font-weight: bold;
+          // border: 1px solid white;
+          border-radius: 4px;
+          width: 215px;
+          height: 121px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+
+          .genre-index-item-thumbnail {
+            z-index: 2;
+            img {
+              width: 215px;
+              height: 121px;
+              border-radius: 4px;
+              // transition: 1s;
+            }
+          }
+
+          .genre-index-item-modal {
+            display: none;
+            // transition: 1s; 
+          }
+        }
+
+        .genre-index-item-container:hover {
+          
+          
+          .genre-index-item-thumbnail {
+            display:block;
+            z-index: 3;
+            position: absolute;
+            bottom: 60px;
+            width: 302.5px;
+            height: 170.244px;
+            border-radius: 4px;
+            transition: width 1s, height 1s;
+
+            img {
+              width: 302.5px;
+              height: 170.244px;
+              border-top-left-radius: 4px;
+              border-top-right-radius: 4px;
+              border-bottom-right-radius: 0px;
+              border-bottom-left-radius: 0px;
+              box-shadow: 0 -3px 10px black;
+            }
+          }
+
+          .genre-index-item-modal {
+            display: block;
+            z-index: 3;
+            position: absolute;
+            top: 60px;
+            width: 302.5px;
+            height: 170.244px;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            background-color: #141414;
+            box-shadow: 0 3px 10px black;
+
+            .genre-index-item-modal-buttons {
+                display: flex;
+                justify-content: space-between;
+                margin: 20px 5px 0 5px;
+
+              .main-buttons {
+                
+                
+                
+                  .title-play-button {
+                    border-radius: 100%;
+                    padding: 5px 5px 3px;
+                    border: 2px solid white;
+                    background-color: white;
+                    margin: 0 0 0 8px;
+                    cursor: pointer;
+                  }
+
+                  .mylist-button {
+                    border-radius: 100%;
+                    padding: 5px 5px 3px;
+                    border: 2px solid gray;
+                    background-color: rgba(0, 0, 0, 0.39);
+                    margin: 0 0 0 8px;
+                    cursor: pointer;
+                  }
+                  
+                  .mylist-button:hover {
+                    filter: brightness(150%);
+                  }
+                  
+                  .like-button {
+                    border-radius: 100%;
+                    padding: 4px 5px;
+                    border: 2px solid gray;
+                    background-color: rgba(0, 0, 0, 0.39);
+                    margin: 0 0 0 8px;
+                    cursor: pointer;
+                  }
+                  
+                  .like-button:hover {
+                    filter: brightness(150%);
+                  }
+                  
+                  .dislike-button {
+                    border-radius: 100%;
+                    padding: 4px 5px;
+                    border: 2px solid gray;
+                    background-color: rgba(0, 0, 0, 0.39);
+                    margin: 0 0 0 8px;
+                    cursor: pointer;
+                  }
+
+                  .dislike-button:hover {
+                    filter: brightness(150%);
+                  }
+              }
+
+              .show-button-div {
+                
+                  .show-button {
+                    border-radius: 100%;
+                    padding: 5px 5px 3px;
+                    border: 2px solid gray;
+                    background-color: rgba(0, 0, 0, 0.39);
+                    margin: 0 8px 0 0;
+                    cursor: pointer;
+                  }
+
+                  .show-button:hover {
+                    filter: brightness(150%);
+                  }
+              }
+
+            }
+
+            .genre-index-item-modal-info {
+              margin: 25px 0 0 10px;
+              h3 {
+                font-size: 16px;
+                font-weight: lighter;
+                letter-spacing: 1px;
+              }
+
+              img {
+                width: 25px;
+                height: auto;
+                margin: -7px 0;
+              }
+            }
+
+            .genre-index-item-modal-genre {
+              margin: 25px 0 0 10px;
+
+              h3 {
+                font-size: 16px;
+                font-weight: lighter;
+                letter-spacing: 1px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+          .title-show-container {
+            z-index: 4;
+            background-color: rgba(0, 0, 0, 0.534);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+
+            .title-show-modal {
+            z-index: 5;
+            position: absolute;
+            top: 50px;
+            left: 20%;
+            width: 60vw;
+            height: fit-content;
+            border-radius: 6px;
+            background-color: #141414;
+
+              .background-gradient {
+                z-index: 6;
+                background-image: linear-gradient(transparent, #141414);
+                width: 60vw;
+                height: 486px;
+                position: absolute;
+
+              }
+
+              .movie-background {
+                z-index: 5;
+                position: absolute;
+                width: 60vw;
+                height: auto;
+                border-radius: 6px;
+                // filter:opacity()                
+              }
+
+
+              .show-inner-container {
+                z-index: 6;
+                position: relative;
+
+                .show-exit-button-container {
+                  display: flex;
+                  justify-content: end;
+
+                  .show-exit-button {
+                  margin: 15px 15px 0 0;
+
+                  button {
+                    border: none;
+                    border-radius: 50%;
+                    background-color:#141414;
+                    padding: 9px 10px 7px;
+                    cursor: pointer;
+
+                  }
+                }
+                }
+
+                h2 {
+                  margin: 20vw 0 30px 45px;
+                  font-size: 40px;
+                  font-weight: bold;
+                  letter-spacing: 1px;
+                  width: 500px;
+                }
+
+                .show-buttons {
+                  margin: 0 0 0 45px;
+
+                  .title-play-button {
+                    font-size: 17px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    margin: 0 0 0 0;
+                    padding: 5px 60px 5px 21px;
+                    border-radius: 4px;
+                    border: none;
+                    cursor: pointer;
+                    position: relative;
+
+                    img {
+                      margin-right: 10px;
+                    }
+
+                    span {
+                      position: absolute;
+                      top: 15px;
+                    }
+
+                  }
+
+                  .title-play-button:hover {
+                    filter: brightness(70%);
+                  }
+
+                  .mylist-button {
+                    border-radius: 100%;
+                    padding: 4px 5px;
+                    border: 2px solid gray;
+                    background-color: rgba(0, 0, 0, 0.39);
+                    margin: 0 0 0 8px;
+                    cursor: pointer;
+                  }
+                  
+                  .mylist-button:hover {
+                    filter: brightness(150%);
+                  }
+                  
+                  .like-button {
+                    border-radius: 100%;
+                    padding: 4px 5px;
+                    border: 2px solid gray;
+                    background-color: rgba(0, 0, 0, 0.39);
+                    margin: 0 0 0 8px;
+                    cursor: pointer;
+                  }
+                  
+                  .like-button:hover {
+                    filter: brightness(150%);
+                  }
+                  
+                  .dislike-button {
+                    border-radius: 100%;
+                    padding: 4px 5px;
+                    border: 2px solid gray;
+                    background-color: rgba(0, 0, 0, 0.39);
+                    margin: 0 0 0 8px;
+                    cursor: pointer;
+                  }
+
+                  .dislike-button:hover {
+                    filter: brightness(150%);
+                  }
+                }
+
+                .show-info {
+                  display: flex;
+                  margin: -30px 0 70px 0;
+
+                  .main-info {
+
+                    margin: 70px 0 0 50px;
+                    width: 40vw;
+                      h3 {
+                        font-size: 16px;
+                      }
+
+                      img {
+                        width: 25px;
+                        height: auto;
+                        margin: -7px 0;
+                      }
+
+                      h4 {
+                        margin: 20px 0 0 0;
+                        font-size: 18px;
+                        font-weight: lighter;
+                        letter-spacing: 1px;
+                        line-height: 25px;
+                      }
+                  }
+
+                  .genre-info {
+                    margin: 112px 0 0 40px;
+                    font-size: 14px;
+
+                    h4 {
+                      color: gray;
+
+                      span {
+                        color: white;
+                      }
+                    }
+
+                  }
+                }
+              }
+            }
+          }  

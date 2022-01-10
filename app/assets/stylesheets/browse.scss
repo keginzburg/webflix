@@ -1,14 +1,14 @@
-  .browse-header-container {
+  .browse-header-container-main {
     z-index: 3;
     padding: 8px 30px 0px 35px;
     // need to remove this background color, only here for profiles modal testing purposes
-    background-color: #141414;
+    background-color: #141414b2;
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
 
-    .browse-header-inner {
+      .browse-header-inner {
       display: flex;
       justify-content: space-between;
 
@@ -43,7 +43,7 @@
         align-items: center;
         margin: 0 30px 0 0;
 
-        button {
+        .settings {
           width: fit-content;
           height: fit-content;
           margin: 0;
@@ -69,19 +69,162 @@
           
         }
 
-        button:hover {
+        .settings:hover {
 
           .dropdown-menu {
-              display: block;
+              display: flex;
+              align-items: start;
+              flex-direction: column;
               position: absolute;
-              width: 150px;
-              height: 250px;
-              right: 50px;
+              right: 56px;
+              width: fit-content;
+              height: fit-content;
               z-index: 5;
-              box-sizing: border;
-              border-top: 10px solid transparent;
-              background-color: gray;
+              padding: 5px 0 5px 0;
+              box-sizing: margin;
+              border: 2px solid #141414;
+              background-color: black;
+              color: white;
+              font-weight: lighter;
+              font-size: 12px;
+              letter-spacing: 1px;
+
+              p {
+                padding: 10px 40px 10px 10px;
+              }
+
+              a {
+                padding: 0 40px 10px 10px;
+                text-decoration: none;
+                color: white;
+              }
+
+              a:hover {
+                text-decoration: underline;
+              }
+
+              button {
+                border: none;
+                border-top: 1px solid gray;
+                padding: 10px 40px 10px 10px;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                background-color: black;
+                
+              }
+
+              button:hover {
+                text-decoration: underline;
+              }
           }
+        }
+
+        
+      }
+    }
+  }
+  
+  .browse-header-container {
+    z-index: 3;
+    padding: 8px 30px 0px 35px;
+    // need to remove this background color, only here for profiles modal testing purposes
+    background-color: #141414;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .browse-header-inner {
+      display: flex;
+      justify-content: space-between;
+
+      .profile-header-signout {
+        margin: 15px 0 0 0;
+        border: none;
+        background-color: transparent;
+        color: white;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .profile-header-signout:hover {
+        text-decoration: underline;
+      }
+
+      .logo-category-links-container {
+        display: flex;
+
+        img {
+
+        }
+
+        .links-container {
+          margin: 0 0 5px 30px;
+          display: flex;
+          align-items: center;
+
+          a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px 0 0;
+            font-weight: lighter;
+            font-size: 14px;
+          }
+
+          a:focus {
+            font-weight: bold;
+          }
+        }
+      }
+      
+      .settings-container {
+        display: flex;
+        align-items: center;
+        margin: 0 30px 0 0;
+
+        .settings {
+          width: fit-content;
+          height: fit-content;
+          margin: 0;
+          padding: 0;
+          background-color: transparent;
+          border: none;
+          
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            position: relative;
+
+            
+          }
+
+          .dropdown-menu {
+            display: none;
+            
+          }
+
+
+          
+        }
+
+        .settings:hover {
+
+          // .dropdown-menu {
+          //     display: block;
+          //     position: absolute;
+          //     width: 150px;
+          //     height: 250px;
+          //     right: 50px;
+          //     z-index: 5;
+          //     // box-sizing: border;
+          //     // border-top: 10px solid transparent;
+          //     background-color: black;
+          // }
         }
 
         
@@ -90,36 +233,370 @@
   }
 
 .browse-page {
-
+  background-color: #141414;
 
 
   .browse-main {
     z-index: 2;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
     background-color: #141414;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
 
     .browse-main-container {
+      // overflow: hidden;
+      margin-bottom: 100px;
 
       .featured-title-container {
+        z-index: 2;
         color: white;
+        margin: -60px 0 0px 0;
+        width: 100vw;
+        height: 55vw;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+
+        .featured-title-inner-container {
+          margin: 0 0 0 60px;
+
+
+          .featured-title-info-buttons {
+          margin: -100px 0 0 0;
+          position: absolute;
+          z-index: 2;
+
+          //margin: 0 0 0 0;
+          
+
+        
+
+          h2 {
+            z-index: 3;
+            font-size: 45px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            width: 500px;
+            height: fit-content;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 45%);
+            margin: 0 0 15px 0;
+          }
+
+          h3 {
+            // position: absolute;
+            z-index: 3;
+            font-size: 20px;
+            font-weight: lighter;
+            letter-spacing: 1px;
+            width: 500px;
+            height: fit-content;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 45%);
+          }
+
+          .featured-title-buttons {
+            // position: absolute;
+            
+            z-index: 3;
+            display: flex;
+            justify-content: start;
+            margin: 15px 0 0 0;
+
+            .featured-title-play-button {
+
+              display: flex;
+              align-items: center;
+              font-size: 17px;
+              font-weight: bold;
+              letter-spacing: 1px;
+              padding: 8px 25px 8px 21px;
+              border-radius: 4px;
+              border: none;
+              cursor: pointer;
+
+              img {
+                margin-right: 10px;
+              }
+            }
+
+            .featured-title-play-button:hover {
+              filter: brightness(70%);
+            }
+
+            .featured-title-info-button {
+              margin-left: 10px;
+              background-color: gray;
+              color: white;
+              display: flex;
+              align-items: center;
+              font-size: 17px;
+              font-weight: bold;
+              letter-spacing: 1px;
+              padding: 8px 25px 8px 21px;
+              border-radius: 4px;
+              border: 1px solid gray;
+              cursor: pointer;
+
+              img {
+                margin-right: 10px;
+              }
+            }
+
+            .featured-title-info-button:hover {
+              filter: brightness(70%);
+            }
+
+            .featured-title-info-button:focus {
+              border: 1px solid white;
+            }
+
+          }
+          }
+
+          .featured-background-gradient {
+                z-index: 1;
+                background-image: linear-gradient(transparent,#14141477, #141414f3, #141414);
+                width: 100vw;
+                margin: 0 0 0 -60px;
+                height: 400px;
+                position: absolute;
+              }
+
+          .featured-title-background {
+            z-index: 0;
+            position: absolute;
+            top: 0;
+            width: 100vw;
+            margin: 0 0 0 -60px;
+          }
+
+          .title-show-container {
+            z-index: 3;
+            background-color: rgba(0, 0, 0, 0.534);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+
+            .title-show-modal {
+            z-index: 4;
+            position: absolute;
+            top: 50px;
+            left: 20%;
+            width: 60vw;
+            height: fit-content;
+            border-radius: 6px;
+            background-color: #141414;
+
+              .background-gradient {
+                z-index: 5;
+                background-image: linear-gradient(transparent, #141414);
+                width: 60vw;
+                height: 486px;
+                position: absolute;
+              }
+
+                .movie-background {
+                z-index: 4;
+                position: absolute;
+                width: 60vw;
+                height: auto;
+                border-radius: 6px;
+                //mask-image: linear-gradient(to bottom, transparent, #141414);
+                              
+              }
+
+              // .background-gradient {
+              //   z-index: 5;
+              //   background-image: linear-gradient(transparent, #141414);
+              //   width: 60vw;
+              //   height: 485px;
+              //   position: absolute;
+
+              //   .movie-background {
+              //   z-index: 4;
+              //   position: absolute;
+              //   width: 60vw;
+              //   height: auto;
+              //   border-radius: 6px;
+              //   // mask-image: linear-gradient(to bottom, transparent, #141414);
+                              
+              // }
+              
+
+
+              .show-inner-container {
+                z-index: 6;
+                position: relative;
+                // background-image: linear-gradient(to bottom, transparent, #141414);
+
+                .show-exit-button-container {
+                  display: flex;
+                  justify-content: end;
+
+                  .show-exit-button {
+                  margin: 15px 15px 0 0;
+
+                  button {
+                    border: none;
+                    border-radius: 50%;
+                    background-color:#141414;
+                    padding: 9px 10px 7px;
+                    cursor: pointer;
+
+                  }
+                }
+                }
+
+                h2 {
+                  margin: 20vw 0 30px 45px;
+                  font-size: 40px;
+                  font-weight: bold;
+                  letter-spacing: 1px;
+                  width: 500px;
+                }
+
+                .show-buttons {
+                  margin: 0 0 0 45px;
+
+                  .title-play-button {
+                    font-size: 17px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    margin: 0 0 0 0;
+                    padding: 5px 60px 5px 21px;
+                    border-radius: 4px;
+                    border: none;
+                    cursor: pointer;
+                    position: relative;
+
+                    img {
+                      margin-right: 10px;
+                    }
+
+                    span {
+                      position: absolute;
+                      top: 15px;
+                    }
+
+                  }
+
+                  .title-play-button:hover {
+                    filter: brightness(70%);
+                  }
+
+                  .mylist-button {
+                    border-radius: 100%;
+                    padding: 4px 5px;
+                    border: 2px solid gray;
+                    background-color: rgba(0, 0, 0, 0.39);
+                    margin: 0 0 0 8px;
+                    cursor: pointer;
+                  }
+                  
+                  .mylist-button:hover {
+                    filter: brightness(150%);
+                  }
+                  
+                  .like-button {
+                    border-radius: 100%;
+                    padding: 4px 5px;
+                    border: 2px solid gray;
+                    background-color: rgba(0, 0, 0, 0.39);
+                    margin: 0 0 0 8px;
+                    cursor: pointer;
+                  }
+                  
+                  .like-button:hover {
+                    filter: brightness(150%);
+                  }
+                  
+                  .dislike-button {
+                    border-radius: 100%;
+                    padding: 4px 5px;
+                    border: 2px solid gray;
+                    background-color: rgba(0, 0, 0, 0.39);
+                    margin: 0 0 0 8px;
+                    cursor: pointer;
+                  }
+
+                  .dislike-button:hover {
+                    filter: brightness(150%);
+                  }
+                }
+
+                .show-info {
+                  display: flex;
+                  margin: -30px 0 70px 0;
+
+                  .main-info {
+
+                    margin: 70px 0 0 50px;
+                    width: 40vw;
+                      h3 {
+                        font-size: 16px;
+                      }
+
+                      img {
+                        width: 25px;
+                        height: auto;
+                        margin: -7px 0;
+                      }
+
+                      h4 {
+                        margin: 20px 0 0 0;
+                        font-size: 18px;
+                        font-weight: lighter;
+                        letter-spacing: 1px;
+                        line-height: 25px;
+                      }
+                  }
+
+                  .genre-info {
+                    margin: 112px 0 0 40px;
+                    font-size: 14px;
+
+                    h4 {
+                      color: gray;
+
+                      span {
+                        color: white;
+                      }
+                    }
+
+                  }
+                }
+              }
+            }
+          }    
+
+        }
+
       }
 
       .browse-categories-container {
-        color: white;
+        z-index: 3;
+        margin: -200px 60px 0;
       }
     }
 
 
   }
 
+  footer {
+    
+    background-color: #141414;
 
+    .links-wrapper {
+      margin: 30px auto;
+    }
+  }
 
 }

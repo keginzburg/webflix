@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router';
+import { fetchAllVideos } from '../../actions/video_actions';
 import LoginHeader from './login_header';
 import LoginHeaderContainer from './login_header_container';
 
@@ -31,6 +32,7 @@ class SplashPage extends React.Component {
 
   handleDemo(e) {
     e.preventDefault();
+    this.props.fetchAllVideos();
     this.props.login({ email: "demouser@gmail.com", password: "demouser" })
   }
 
@@ -45,7 +47,6 @@ class SplashPage extends React.Component {
       return (
         <Redirect to={{
           pathname: '/signup'
-          // state: { newEmail: this.state.email },
         }} />
       )
     } else {

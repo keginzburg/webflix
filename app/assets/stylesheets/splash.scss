@@ -39,6 +39,10 @@
     display: flex;
     justify-content: space-between;
 
+    .root-logo {
+      cursor: pointer;
+    }
+
     .splash-login-link {
       background-color: #e50914;
       color: #fff;

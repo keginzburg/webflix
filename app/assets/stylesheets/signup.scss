@@ -8,6 +8,10 @@
     display: flex;
     justify-content: space-between;
 
+    .root-logo {
+      cursor: pointer;
+    }
+
     .signup-login-link {
       background-color: #fff;
       color: black;
@@ -98,6 +102,10 @@
 
 .signup-container {
   footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin: 0;
     padding: 40px 75px 10px;
     border-top: 1px solid #d1d1d1;

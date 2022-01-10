@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class BrowseHeader extends React.Component {
   constructor(props) {
@@ -18,8 +19,8 @@ class BrowseHeader extends React.Component {
             <div className="browse-header-inner">
               <img src={window.webflixLogoSmall} border="0" />
               <div>
-                <button onClick={() => { this.props.logout(); this.props.logoutCurrentUser() }}>
-                  Sign Out of Netflix
+                <button className="profile-header-signout" onClick={() => { this.props.logout(); this.props.logoutCurrentUser(); this.props.clearVideos(); }}>
+                  Sign Out of Webflix
                 </button>
               </div>
             </div>
@@ -27,7 +28,7 @@ class BrowseHeader extends React.Component {
         )
       } else {
         return (
-          <div className="browse-header-container">
+          <div className="browse-header-container-main">
             <div className="browse-header-inner">
               <div className='logo-category-links-container'>
                 <img src={window.webflixLogoSmall} border="0" />
@@ -35,22 +36,24 @@ class BrowseHeader extends React.Component {
                   <a href="#">Home</a>
                   <a href="#">Popular</a>
                   <a href="#">My List</a>
-                  <a href="#">Comedy</a>
                   <a href="#">Action</a>
+                  <a href="#">Comedy</a>
                   <a href="#">Horror</a>
                   <a href="#">Drama</a>
                 </div>
               </div>
               <div className='settings-container'>
                 <div></div>
-                <button onClick={this.props.logout}>
+                <div className='settings'>
                   <img src={this.props.profiles[this.props.currentProfile]['avatar']} alt="small profile icon" >
                     
                   </img>
                   <div className='dropdown-menu'>
-                    Hello
+                    <p>Hello, {this.props.profiles[this.props.currentProfile].name}</p>
+                    <Link to="/ManageProfiles" onClick={this.props.logoutCurrentProfile}>Manage Profiles</Link>
+                    <button onClick={() => { this.props.logout(); this.props.logoutCurrentUser(); this.props.clearVideos(); }}>Sign Out of Webflix</button>
                   </div>
-                </button>
+                </div>
               </div>
             </div>
           </div>

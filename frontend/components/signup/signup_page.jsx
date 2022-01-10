@@ -1,9 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router';
-//import LoginHeader from '../splash/login_header';
-//import LoginHeaderContainer from '../splash/login_header_container';
 import SignUpHeader from './signup_header';
-import { clearErrors } from "../../actions/session_actions";
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -13,15 +10,19 @@ class SignUp extends React.Component {
       password: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.props.clearErrors();
   }
 
   componentDidMount() {
+    this.props.fetchAllVideos();
     this.setState({ email: this.props.newEmail });
   }
 
   componentWillUnmount() {
     this.props.clearErrors();
   }
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -66,12 +67,12 @@ class SignUp extends React.Component {
                         {/* <label>Email</label> */}
                         {(this.props.errors.length > 0) ?
                         <div>
-                          <input className="input-error" type="password" value={this.state.password} onChange={this.update('password')} />
+                          <input className="input-error" type="password" value={this.state.password} onChange={this.update('password')} placeholder='Password'/>
                           <p>Password is required!</p>
                         </div>
                          : 
                          <div>
-                            <input type="password" value={this.state.password} onChange={this.update('password')} />
+                            <input type="password" value={this.state.password} onChange={this.update('password')} placeholder='Password'/>
                          </div> }
                         {/* <label>Add a password</label> */}
                         <button type="submit">Start Membership</button>
