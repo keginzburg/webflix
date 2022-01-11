@@ -52,6 +52,8 @@ class GenresIndexItem extends React.Component {
     // this.props.destroyLike(like.id)
   }
 
+  // Start by binding these and then adding them to your like and unlike buttons
+
   render() {
     if (this.state.play) {
       return (
