@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import GenresIndexItem from "./genre_index_item";
 import { createMylistedVideo, destroyMylistedVideo } from "../../actions/mylist_actions";
 import { createLike, destroyLike } from "../../actions/like_actions";
+import { fetchAllVideos } from "../../actions/video_actions";
 
 const mapStateToProps = state => {
   return {
@@ -20,6 +21,7 @@ const mapDispatchToProps = dispatch => {
     destroyMylistedVideo: mylistId => dispatch(destroyMylistedVideo(mylistId)),
     createLike: like => dispatch(createLike(like)),
     destroyLike: likeId => dispatch(destroyLike(likeId)),
+    fetchAllVideos: () => dispatch(fetchAllVideos()),
   }
 }
 

@@ -1,3 +1,16 @@
+// export const filterPopularVideos = state => {
+//   let popularVideos = [];
+
+//   let allVideos = Object.values(state.entities.videos);
+//   allVideos.map(video => {
+//     {[video.id]: [video.likes]}
+//   })
+
+//   while (popularVideos.length < 7) {
+
+//   }
+// }
+
 export const filterMylistVideos = (state) => {
   let mylistVideos = [];
   let mylistArray = Object.values(state.entities.mylists);

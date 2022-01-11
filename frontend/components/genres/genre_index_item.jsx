@@ -46,11 +46,13 @@ class GenresIndexItem extends React.Component {
 
   likeVideo(e) {
     this.props.createLike({profile_id: this.props.currentProfile, video_id: this.props.video.id })
+    this.props.fetchAllVideos();
   }
 
   unlikeVideo(e) {
     let like = this.props.likeArr.find(like => like['video_id'] === this.props.video.id);
-    this.props.destroyLike(like.id)
+    this.props.destroyLike(like.id);
+    this.props.fetchAllVideos();
   }
 
   render() {
@@ -65,7 +67,7 @@ class GenresIndexItem extends React.Component {
       // careful here, another error because video is undefined
       <div className="genre-index-item-container">
         <div className="genre-index-item-thumbnail">
-          <img src={this.props.video.thumbnailUrl} alt="movie thumbnail" />
+          {/* <img src={this.props.video.thumbnailUrl} alt="movie thumbnail" /> */}
         </div>
         <div className="genre-index-item-modal">
           <div className="genre-index-item-modal-buttons">
@@ -75,17 +77,17 @@ class GenresIndexItem extends React.Component {
                 <img width="25px" height="25px" src={window.playButton} alt="play icon" />
               </button>
               {/* mylist button */}
-              {this.props.mylistedVideos.some(id => id === this.props.video.id ) ? <button className="mylist-button" onClick={this.deleteVideoFromMylist} >
+              {/* {this.props.mylistedVideos.some(id => id === this.props.video.id ) ? <button className="mylist-button" onClick={this.deleteVideoFromMylist} >
                 <img width="25px" height="25px" src={window.checkmarkButton} alt="my list icon" />
               </button> : <button className="mylist-button" onClick={this.addVideoToMylist} >
                 <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
-              </button>}
+              </button>} */}
               {/* like button */}
-              {this.props.likedVideos.some(id => id === this.props.video.id) ? <button className="like-button" >
+              {/* {this.props.likedVideos.some(id => id === this.props.video.id) ? <button className="like-button" >
                 <img width="25px" height="25px" src={window.likeButtonToggled} alt="like icon" />
               </button> : <button className="like-button" onClick={this.likeVideo} >
                 <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
-              </button>}
+              </button>} */}
               {/* unlike button */}
               <button className="dislike-button" onClick={this.unlikeVideo} >
                 <img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" />
@@ -99,10 +101,10 @@ class GenresIndexItem extends React.Component {
             </div>
           </div>
           <div className="genre-index-item-modal-info">
-            <h3>{this.props.video.year} <img src={window.hdIcon} alt="hd icon" /> {this.props.video.runtime} minutes</h3>
+            {/* <h3>{this.props.video.year} <img src={window.hdIcon} alt="hd icon" /> {this.props.video.runtime} minutes</h3> */}
           </div>
           <div className="genre-index-item-modal-genre">
-            <h3>{this.props.video.genre.genre}</h3>
+            {/* <h3>{this.props.video.genre.genre}</h3> */}
           </div>
         </div>
       </div>

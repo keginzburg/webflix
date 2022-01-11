@@ -1,6 +1,12 @@
 class Api::VideosController < ApplicationController
   def index
+    # debugger
     @videos = Video.all
+    # @videos = Video.left_joins(:likes).group(:id).order('COUNT(likes.video_id DESC)').limit(6)
+
+    # debugger
+    
+    
     render :index
   end
 
