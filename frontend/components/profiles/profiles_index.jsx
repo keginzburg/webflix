@@ -56,7 +56,7 @@ class ProfilesIndex extends React.Component {
           {this.props.profiles.map(profile => {
             return (
               <li className="profile-index-list-item" key={profile.id}>
-                <ProfilesIndexItem profile={profile} fetchMylistedVideos={this.props.fetchMylistedVideos} />
+                <ProfilesIndexItem profile={profile} fetchMylistedVideos={this.props.fetchMylistedVideos} fetchLikes={this.props.fetchLikes} />
               </li>
             )
           })}
