@@ -134,10 +134,14 @@ class GenresIndexItem extends React.Component {
                   </button> : <button className="mylist-button" onClick={this.addVideoToMylist} >
                     <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
                   </button>}
-                  <button className="like-button">
+                  {/* like button */}
+                  {this.props.likedVideos.some(id => id === this.props.video.id) ? <button className="like-button" >
+                    <img width="25px" height="25px" src={window.likeButtonToggled} alt="like icon" />
+                  </button> : <button className="like-button" onClick={this.likeVideo} >
                     <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
-                  </button>
-                  <button className="dislike-button">
+                  </button>}
+                  {/* unlike button */}
+                  <button className="dislike-button" onClick={this.unlikeVideo} >
                     <img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" />
                   </button>
                 </div>
@@ -168,12 +172,16 @@ class GenresIndexItem extends React.Component {
                 </button> : <button className="mylist-button" onClick={this.addVideoToMylist} >
                   <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
                 </button>}
-              <button className="like-button">
-                <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
-              </button>
-              <button className="dislike-button">
-                <img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" />
-              </button>
+                {/* like button */}
+                {this.props.likedVideos.some(id => id === this.props.video.id) ? <button className="like-button" >
+                  <img width="25px" height="25px" src={window.likeButtonToggled} alt="like icon" />
+                </button> : <button className="like-button" onClick={this.likeVideo} >
+                  <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
+                </button>}
+                {/* unlike button */}
+                <button className="dislike-button" onClick={this.unlikeVideo} >
+                  <img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" />
+                </button>
             </div>
             <div className="show-button-div">
               <button className="show-button" onClick={this.openShowModal} >
@@ -196,4 +204,4 @@ class GenresIndexItem extends React.Component {
 
 export default GenresIndexItem
 
-//Potential refactoring needed in changing modal andplay from internal state to redux state.
+//Potential refactoring needed in changing modal and play from internal state to redux state.

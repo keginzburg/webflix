@@ -7,7 +7,7 @@ export const getLikes = (profileId) => {
 }
 
 export const postLike = (like) => {
-  debugger
+  
   return $.ajax({
     method: 'POST',
     url: '/api/likes',

@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import FeaturedTitle from "./featured_title";
 import { createMylistedVideo, destroyMylistedVideo } from "../../actions/mylist_actions";
+import { createLike, destroyLike } from "../../actions/like_actions";
 
 const mapStateToProps = state => {
   return {
@@ -9,6 +10,8 @@ const mapStateToProps = state => {
     currentProfile: state.session.currentProfile,
     mylistedVideos: Object.values(state.entities.mylists).map(mylist => mylist["video_id"]),
     mylistsArr: Object.values(state.entities.mylists),
+    likedVideos: Object.values(state.entities.likes).map(like => like["video_id"]),
+    likeArr: Object.values(state.entities.likes),
   }
 }
 
@@ -16,6 +19,8 @@ const mapDispatchToProps = dispatch => {
   return {
     createMylistedVideo: mylist => dispatch(createMylistedVideo(mylist)),
     destroyMylistedVideo: mylistId => dispatch(destroyMylistedVideo(mylistId)),
+    createLike: like => dispatch(createLike(like)),
+    destroyLike: likeId => dispatch(destroyLike(likeId)),
   }
 }
 

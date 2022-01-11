@@ -12,10 +12,8 @@ class Api::LikesController < ApplicationController
   def create
     @like = Like.new(like_params)
     if @like.save
-      debugger
       render :create
     else
-      debugger
       render json: @like.errors.full_messages
     end
   end
