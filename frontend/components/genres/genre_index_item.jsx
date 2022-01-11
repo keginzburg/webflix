@@ -14,6 +14,8 @@ class GenresIndexItem extends React.Component {
     this.openPlayModal = this.openPlayModal.bind(this);
     this.addVideoToMylist = this.addVideoToMylist.bind(this);
     this.deleteVideoFromMylist = this.deleteVideoFromMylist.bind(this);
+    this.likeVideo = this.likeVideo.bind(this);
+    this.unlikeVideo = this.unlikeVideo.bind(this);
   }
 
   exitShowModal(e) {
@@ -47,12 +49,9 @@ class GenresIndexItem extends React.Component {
   }
 
   unlikeVideo(e) {
-    // let like = this.props.likeArr.find(like => like['video_id'] === this.props.video.id);
-
-    // this.props.destroyLike(like.id)
+    let like = this.props.likeArr.find(like => like['video_id'] === this.props.video.id);
+    this.props.destroyLike(like.id)
   }
-
-  // Start by binding these and then adding them to your like and unlike buttons
 
   render() {
     if (this.state.play) {
@@ -71,22 +70,29 @@ class GenresIndexItem extends React.Component {
         <div className="genre-index-item-modal">
           <div className="genre-index-item-modal-buttons">
             <div className="main-buttons">
+              {/* play button */}
               <button className="title-play-button" onClick={this.openPlayModal} >
                 <img width="25px" height="25px" src={window.playButton} alt="play icon" />
               </button>
+              {/* mylist button */}
               {this.props.mylistedVideos.some(id => id === this.props.video.id ) ? <button className="mylist-button" onClick={this.deleteVideoFromMylist} >
                 <img width="25px" height="25px" src={window.checkmarkButton} alt="my list icon" />
               </button> : <button className="mylist-button" onClick={this.addVideoToMylist} >
                 <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
               </button>}
-              <button className="like-button">
+              {/* like button */}
+              {this.props.likedVideos.some(id => id === this.props.video.id) ? <button className="like-button" >
+                <img width="25px" height="25px" src={window.likeButtonToggled} alt="like icon" />
+              </button> : <button className="like-button" onClick={this.likeVideo} >
                 <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
-              </button>
-              <button className="dislike-button">
+              </button>}
+              {/* unlike button */}
+              <button className="dislike-button" onClick={this.unlikeVideo} >
                 <img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" />
               </button>
             </div>
             <div className="show-button-div">
+              {/* show button */}
               <button className="show-button" onClick={this.openShowModal} >
                 <img width="25px" height="25px" src={window.chevronDown} alt="show icon" />
               </button>

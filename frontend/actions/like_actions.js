@@ -17,7 +17,7 @@ export const fetchLikes = profileId => dispatch => {
 
 export const RECEIVE_LIKE = 'RECEIVE_LIKE';
 export const receiveLike = (like) => {
-
+  debugger
   return {
     type: RECEIVE_LIKE,
     like
@@ -25,7 +25,7 @@ export const receiveLike = (like) => {
 }
 
 export const createLike = like => dispatch => {
-
+  debugger
   return postLike(like)
     .then(like => dispatch(receiveLike(like)))
 }

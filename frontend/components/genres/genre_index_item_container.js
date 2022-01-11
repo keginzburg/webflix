@@ -9,6 +9,7 @@ const mapStateToProps = state => {
     currentProfile: state.session.currentProfile,
     mylistedVideos: Object.values(state.entities.mylists).map(mylist => mylist["video_id"]),
     mylistsArr: Object.values(state.entities.mylists),
+    likedVideos: Object.values(state.entities.likes).map(like => like["video_id"]),
     likeArr: Object.values(state.entities.likes),
   }
 }

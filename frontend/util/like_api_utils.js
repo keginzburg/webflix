@@ -1,13 +1,13 @@
 export const getLikes = (profileId) => {
 
-  return$.ajax({
+  return $.ajax({
     method: 'GET',
     url: `/api/profiles/${profileId}/likes`
   })
 }
 
 export const postLike = (like) => {
-
+  debugger
   return $.ajax({
     method: 'POST',
     url: '/api/likes',

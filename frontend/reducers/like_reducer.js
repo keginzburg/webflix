@@ -9,6 +9,7 @@ const likeReducer = (state = {}, action) => {
       nextState = Object.assign({}, action.likes);
       return nextState;
     case RECEIVE_LIKE:
+      debugger
       nextState[action.like.id] = action.like;
       return nextState;
     case DISCARD_LIKE:
