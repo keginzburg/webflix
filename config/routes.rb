@@ -12,9 +12,12 @@ Rails.application.routes.draw do
 
     resources :profiles do
       resources :mylists, only: [:index]
+      resources :likes, only: [:index]
     end
 
     resources :mylists, only: [:create, :destroy]
+
+    resources :likes, only: [:create, :destroy]
 
     resources :videos, only: [:index, :show]
 

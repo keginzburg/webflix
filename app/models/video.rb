@@ -34,11 +34,17 @@ class Video < ApplicationRecord
     through: :mylists,
     source: :profile
 
-  # has_many :likers,
-  #   through: :likes,
-  #   source: :User
+  has_many :likes,
+    primary_key: :id,
+    foreign_key: :video_id,
+    class_name: :Like,
+    dependent: :destroy
 
-  # association attaches video to video database entry
+  has_many :likers,
+    through: :likes,
+    source: :liker
+
+  # active storage association attaches video to video database entry
   has_one_attached :thumbnail
   has_one_attached :background
   has_one_attached :trailer

@@ -33,4 +33,14 @@ class Profile < ApplicationRecord
     through: :mylists,
     source: :video
 
+  has_many :likes,
+    primary_key: :id,
+    foreign_key: :profile_id,
+    class_name: :Like,
+    dependent: :destroy
+
+  has_many :liked_videos,
+    through: :likes,
+    source: :liked_video
+
 end
