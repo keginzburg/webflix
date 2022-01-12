@@ -1,4 +1,5 @@
 import { RECEIVE_CURRENT_USER_PROFILES, RECEIVE_NEW_PROFILE, UPDATE_PROFILE, DELETE_PROFILE } from "../actions/profile_actions";
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 const profileReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -15,6 +16,9 @@ const profileReducer = (state = {}, action) => {
       return nextState;
     case DELETE_PROFILE:
       delete nextState[action.profile.id];
+      return nextState;
+    case LOGOUT_CURRENT_USER:
+      nextState = Object.assign({}, {});
       return nextState;
     default:
       return state;

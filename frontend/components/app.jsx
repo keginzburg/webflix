@@ -10,6 +10,7 @@ import BrowseContainer from "./browse/browse_container";
 
 import { Route, Switch } from "react-router";
 
+
 const App = () => (
   <div>
     <Switch>

@@ -1,3 +1,15 @@
+export const filterMylistVideos = (state) => {
+  let mylistVideos = [];
+  let mylistArray = Object.values(state.entities.mylists);
+
+  mylistArray.forEach(mylist => {
+    let video = state.entities.videos[mylist['video_id']]
+    mylistVideos.push(video)
+  })
+
+  return mylistVideos;
+}
+
 export const filterActionVideos = (state) => {
   let actionVideos = Object.values(state.entities.videos);
   return actionVideos.filter(video => video["genre"]["genre"] === "Action");

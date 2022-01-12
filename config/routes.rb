@@ -10,6 +10,12 @@ Rails.application.routes.draw do
     
     resources :profiles, only: [:show, :update, :destroy]
 
+    resources :profiles do
+      resources :mylists, only: [:index]
+    end
+
+    resources :mylists, only: [:create, :destroy]
+
     resources :videos, only: [:index, :show]
 
     resource :session, only: [:create, :destroy]

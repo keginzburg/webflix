@@ -7,10 +7,13 @@ class GenresIndexItem extends React.Component {
     this.state = {
       play: false,
       modal: false,
+      mylistId: undefined,
     }
     this.exitShowModal = this.exitShowModal.bind(this);
     this.openShowModal = this.openShowModal.bind(this);
     this.openPlayModal = this.openPlayModal.bind(this);
+    this.addVideoToMylist = this.addVideoToMylist.bind(this);
+    this.deleteVideoFromMylist = this.deleteVideoFromMylist.bind(this);
   }
 
   exitShowModal(e) {
@@ -28,14 +31,27 @@ class GenresIndexItem extends React.Component {
     // this.props.receiveWatch();
   }
 
+  addVideoToMylist(e) {
+    this.props.createMylistedVideo({profile_id: this.props.currentProfile, video_id: this.props.video.id })    
+  }
+
+  deleteVideoFromMylist(e) {
+    
+    let mylist = this.props.mylistsArr.find(mylist => mylist['video_id'] === this.props.video.id);
+    
+    this.props.destroyMylistedVideo(mylist.id)
+  }
+
   render() {
     if (this.state.play) {
       return (
         <Redirect to={`/watch/${this.props.video.id}`} />
       )
     } else if (!this.state.modal) {
+      
     return (
       //Genre Index Item Thumbnail
+      // careful here, another error because video is undefined
       <div className="genre-index-item-container">
         <div className="genre-index-item-thumbnail">
           <img src={this.props.video.thumbnailUrl} alt="movie thumbnail" />
@@ -46,9 +62,11 @@ class GenresIndexItem extends React.Component {
               <button className="title-play-button" onClick={this.openPlayModal} >
                 <img width="25px" height="25px" src={window.playButton} alt="play icon" />
               </button>
-              <button className="mylist-button">
+              {this.props.mylistedVideos.some(id => id === this.props.video.id ) ? <button className="mylist-button" onClick={this.deleteVideoFromMylist} >
+                <img width="25px" height="25px" src={window.checkmarkButton} alt="my list icon" />
+              </button> : <button className="mylist-button" onClick={this.addVideoToMylist} >
                 <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
-              </button>
+              </button>}
               <button className="like-button">
                 <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
               </button>
@@ -93,9 +111,11 @@ class GenresIndexItem extends React.Component {
                     <img src={window.playButton} alt="play icon" />
                     <span>Play</span>
                   </button>
-                  <button className="mylist-button">
+                  {this.props.mylistedVideos.some(id => id === this.props.video.id) ? <button className="mylist-button" onClick={this.deleteVideoFromMylist} >
+                    <img width="25px" height="25px" src={window.checkmarkButton} alt="my list icon" />
+                  </button> : <button className="mylist-button" onClick={this.addVideoToMylist} >
                     <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
-                  </button>
+                  </button>}
                   <button className="like-button">
                     <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
                   </button>
@@ -125,9 +145,11 @@ class GenresIndexItem extends React.Component {
               <button className="title-play-button" onClick={this.openPlayModal} >
                 <img width="25px" height="25px" src={window.playButton} alt="play icon" />
               </button>
-              <button className="mylist-button">
-                <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
-              </button>
+                {this.props.mylistedVideos.some(id => id === this.props.video.id) ? <button className="mylist-button" onClick={this.deleteVideoFromMylist} >
+                  <img width="25px" height="25px" src={window.checkmarkButton} alt="my list icon" />
+                </button> : <button className="mylist-button" onClick={this.addVideoToMylist} >
+                  <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
+                </button>}
               <button className="like-button">
                 <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
               </button>

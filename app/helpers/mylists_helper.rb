@@ -1,0 +1,2 @@
+module MylistsHelper
+end

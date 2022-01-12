@@ -23,4 +23,14 @@ class Profile < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
+  has_many :mylists,
+    primary_key: :id,
+    foreign_key: :profile_id,
+    class_name: :Mylist,
+    dependent: :destroy
+
+  has_many :mylist_videos,
+    through: :mylists,
+    source: :video
+
 end

@@ -16,6 +16,16 @@ class Browse extends React.Component {
   }
 
   componentDidMount() {
+  
+  }
+
+  componentDidUpdate() {
+    // if (this.props.currentProfile) {
+    //   this.props.fetchMylistedVideos(this.props.currentProfile);
+    // }
+    
+      this.props.receiveFeaturedTitle(this.props.videos[Math.ceil(Math.random() * Object.keys(this.props.videos).length)])
+    
   }
 
   render() {

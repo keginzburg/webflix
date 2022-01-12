@@ -69,3 +69,12 @@ export const logout = () => (dispatch) => {
   return deleteUser()
     .then(() => { dispatch(logoutCurrentUser()) }, errors => { dispatch(receiveErrors(errors)) })
 }
+
+export const RECEIVE_FEATURED_TITLE = 'RECEIVE_FEATURED_TITLE';
+export const receiveFeaturedTitle = (featuredTitle) => {
+  
+  return {
+    type: RECEIVE_FEATURED_TITLE,
+    featuredTitle
+  }
+}
