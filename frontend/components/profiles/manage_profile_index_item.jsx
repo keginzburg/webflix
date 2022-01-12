@@ -10,6 +10,7 @@ class ManageProfilesIndexItem extends React.Component {
   }
 
   render() {
+    
       return (
         <div className="profile-index-item-container" onClick={ () => {
           this.props.receiveEditModal();

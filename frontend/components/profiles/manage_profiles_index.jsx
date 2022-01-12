@@ -9,7 +9,7 @@ class ManageProfilesIndex extends React.Component {
       name: "",
       avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png",
       selectedName: "",
-      selectedAvatar: "",
+      selectedAvatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png",
     }
     this.childStateHandler = this.childStateHandler.bind(this);
     this.updateName = this.updateName.bind(this);
@@ -119,7 +119,7 @@ class ManageProfilesIndex extends React.Component {
               </div>
               <div className="profile-icon-container">
                 <h4>Current Icon: </h4>
-                <img src={this.state.selectedAvatar} alt="current icon" />
+                <img src={this.state.avatar} alt="current icon" />
               </div>
             </div>
             <div className="icon-choices-container">
@@ -147,6 +147,7 @@ class ManageProfilesIndex extends React.Component {
         </div>
       )
     } else if (this.props.modal === 'editProfile') {
+      
       return (
         <div className="edit-profile-modal">
           <div className="edit-profile-modal-container">
@@ -159,7 +160,7 @@ class ManageProfilesIndex extends React.Component {
               <div className="pencil-circle">
               </div>
               <img onClick={() => {this.props.receiveIconModal()} } className="pencil" img src={window.editPencilImage} alt="pencil button" />
-              <img className="icon" src={this.state.selectedAvatar} alt="avatar icon" />
+              <img className="icon" src={this.state.avatar} alt="avatar icon" />
               <input type="text" value={this.state.name} placeholder={this.state.selectedName} onChange={this.updateName}/>
             </div>
             <div className="edit-profile-button-container">

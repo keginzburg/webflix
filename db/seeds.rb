@@ -12,12 +12,14 @@ Profile.destroy_all
 Genre.destroy_all
 Video.destroy_all
 Mylist.destroy_all
+Like.destroy_all
 
 ActiveRecord::Base.connection.reset_pk_sequence!("users")
 ActiveRecord::Base.connection.reset_pk_sequence!("profiles")
 ActiveRecord::Base.connection.reset_pk_sequence!("genres")
 ActiveRecord::Base.connection.reset_pk_sequence!("videos")
 ActiveRecord::Base.connection.reset_pk_sequence!("mylists")
+ActiveRecord::Base.connection.reset_pk_sequence!("likes")
 
 user1 = User.create!(email: "keginzburg@gmail.com", password: "password")
 user2 = User.create!(email: "farzam@gmail.com", password: "password")
@@ -296,10 +298,35 @@ moonlight.trailer.attach(io: moonlight_trailer, filename: 'moonlight_trailer.mp4
 mylist1 = Mylist.create!(profile_id: profile5.id, video_id: boyhood.id)
 mylist2 = Mylist.create!(profile_id: profile5.id, video_id: spiderman2.id)
 mylist3 = Mylist.create!(profile_id: profile5.id, video_id: shining.id)
-mylist4 = Mylist.create!(profile_id: profile5.id, video_id: hereditary.id)
-mylist5 = Mylist.create!(profile_id: profile5.id, video_id: social_network.id)
-mylist6 = Mylist.create!(profile_id: profile5.id, video_id: scott_pilgrim.id)
 
 # Andrew Mylists
-mylist7 = Mylist.create!(profile_id: profile6.id, video_id: scream.id)
-mylist8 = Mylist.create!(profile_id: profile6.id, video_id: napoleon_dynamite.id)
+mylist4 = Mylist.create!(profile_id: profile6.id, video_id: scream.id)
+mylist5 = Mylist.create!(profile_id: profile6.id, video_id: napoleon_dynamite.id)
+
+# Tom Mylists
+mylist6 = Mylist.create!(profile_id: profile7.id, video_id: hereditary.id)
+mylist7 = Mylist.create!(profile_id: profile7.id, video_id: social_network.id)
+
+
+# Like Seeds
+
+# Scott Pilgrim Likes
+like1 = Like.create!(profile_id: profile1.id, video_id: scott_pilgrim.id)
+like2 = Like.create!(profile_id: profile2.id, video_id: scott_pilgrim.id)
+like3 = Like.create!(profile_id: profile3.id, video_id: scott_pilgrim.id)
+
+# Spiderman 2 Likes
+like4 = Like.create!(profile_id: profile1.id, video_id: spiderman2.id)
+like5 = Like.create!(profile_id: profile2.id, video_id: spiderman2.id)
+
+# Parasite Likes
+like6 = Like.create!(profile_id: profile1.id, video_id: parasite.id)
+
+# Scream Likes
+like7 = Like.create!(profile_id: profile1.id, video_id: scream.id)
+
+# Boyhood Likes
+like8 = Like.create!(profile_id: profile1.id, video_id: boyhood.id)
+
+# Napoleon Dynamite Likes
+like9 = Like.create!(profile_id: profile1.id, video_id: napoleon_dynamite.id)

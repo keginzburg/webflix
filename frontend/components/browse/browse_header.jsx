@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class BrowseHeader extends React.Component {
   constructor(props) {
@@ -10,7 +11,9 @@ class BrowseHeader extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
+    if (this.props.location.pathname === '/browse') {
+      window.addEventListener('scroll', this.handleScroll)
+    }
   }
 
   handleScroll(e) {
@@ -69,4 +72,4 @@ class BrowseHeader extends React.Component {
   }
 }
 
-export default BrowseHeader;
+export default withRouter(BrowseHeader);
