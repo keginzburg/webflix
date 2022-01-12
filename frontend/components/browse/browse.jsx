@@ -27,6 +27,11 @@ class Browse extends React.Component {
     //this.props.receiveFeaturedTitle(this.props.videos[Math.ceil(Math.random() * Object.keys(this.props.videos).length)])
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+
+  }
+
   render() {
     if (this.props.currentUser) {
       return (
@@ -41,6 +46,7 @@ class Browse extends React.Component {
                   <div className="manage-profiles-container">
                     <div className="manage-profiles-link-container">
                       <Link to="/ManageProfiles">Manage Profiles</Link>
+                      { this.props.errors.length > 0 ? <p className="profiles-errors" >{this.props.errors[0]}</p> : <div></div> }
                     </div>
                   </div>
                 </div>
