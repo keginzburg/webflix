@@ -1,6 +1,6 @@
 import React from "react";
 // import { receiveShowModal } from "../../actions/ui_actions";
-import Slider from 'react-slick';
+// import Slider from 'react-slick';
 import GenresIndexItem from "./genre_index_item";
 import GenresIndexItemContainer from "./genre_index_item_container";
 // import 'slick-carousel/slick/slick.css';

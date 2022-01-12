@@ -38,3 +38,4 @@ export const fetchVideo = videoId => dispatch => {
   return getVideo(videoId)
     .then(video => dispatch(receiveVideo(video)))
 }
+

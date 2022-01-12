@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import { fetchSearchVideos } from "../../actions/search_actions";
 
 class Search extends React.Component {
   constructor(props) {
@@ -19,7 +20,11 @@ class Search extends React.Component {
   }
 
   updateSearchQuery(e) {
-    
+    this.setState({ searchQuery: e.currentTarget.value });
+    this.props.history.push({
+      search: `q=${e.currentTarget.value}`
+    });
+    this.props.fetchSearchVideos(this.state.searchQuery);
   }
 
 
@@ -47,8 +52,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 
   return {
-
+    fetchSearchVideos: search => dispatch(fetchSearchVideos(search)),
   }
 }
 
-export default withRouter(connect(null, null)(Search));
+export default withRouter(connect(null, mapDispatchToProps)(Search));
