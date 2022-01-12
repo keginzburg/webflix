@@ -54,10 +54,11 @@ class BrowseHeader extends React.Component {
                   <img src={this.props.profiles[this.props.currentProfile]['avatar']} alt="small profile icon" >
                     
                   </img>
+                  <div className='dropdown-space'></div>
                   <div className='dropdown-menu'>
                     <p>Hello, {this.props.profiles[this.props.currentProfile].name}</p>
                     <Link to="/ManageProfiles" onClick={this.props.logoutCurrentProfile}>Manage Profiles</Link>
-                    <button onClick={() => { this.props.logout(); this.props.logoutCurrentUser(); this.props.clearVideos(); }}>Sign Out of Webflix</button>
+                    <p className="signout" onClick={() => { this.props.logout(); this.props.logoutCurrentUser(); this.props.clearVideos(); }}>Sign Out of Webflix</p>
                   </div>
                 </div>
               </div>

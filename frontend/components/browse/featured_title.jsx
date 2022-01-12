@@ -130,7 +130,7 @@ class FeaturedTitle extends React.Component {
             </div>
           </div>
           <div className="featured-background-gradient"></div>
-          <img className="featured-title-background" src={this.props.featuredTitle.backgroundUrl} alt="featured movie image" />
+          <img className="featured-title-background" src={window.dummyBackground} alt="featured movie image" />
         </div>
       )
     }
