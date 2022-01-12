@@ -41,11 +41,11 @@ drama = Genre.create!(genre: "Drama")
 spiderman = Video.create!(title: "Spider-Man", description: "When bitten by a genetically modified spider, a nerdy, shy, and awkward high school student gains spider-like abilities that he eventually must use to fight evil as a superhero after tragedy befalls his family.", year: 2002, runtime: 121, genre_id: action.id)
 
 spiderman_thumbnail = URI.open("https://webflix-seeds.s3.amazonaws.com/thumbnails/spiderman_thumbnail.jpg")
-spiderman.thumbnail.attach(io: spiderman_thumbnail, filename: 'spiderman_thumbnail.jpg')
+spiderman.thumbnail.attach(io: spiderman_thumbnail, filename: "spiderman_thumbnail.jpg")
 spiderman_background = URI.open("https://webflix-seeds.s3.amazonaws.com/backgrounds/spiderman_background.jpg")
-spiderman.background.attach(io: spiderman_background, filename: 'spiderman_background.jpg')
+spiderman.background.attach(io: spiderman_background, filename: "spiderman_background.jpg")
 spiderman_trailer = URI.open("https://webflix-seeds.s3.amazonaws.com/trailers/spiderman_trailer.mp4")
-spiderman.trailer.attach(io: spiderman_trailer, filename: 'spiderman_trailer.mp4')
+spiderman.trailer.attach(io: spiderman_trailer, filename: "spiderman_trailer.mp4")
 
 # Spider-Man 2
 # spiderman2 = Video.create!(title: "Spider-Man 2", description: "Peter Parker is beset with troubles in his failing personal life as he battles a brilliant scientist named Doctor Otto Octavius.", year: 2004, runtime: 127, genre_id: 1)
