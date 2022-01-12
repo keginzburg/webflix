@@ -16,6 +16,8 @@ class SplashPage extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchAllVideos()
+      
   }
 
   update(field) {
@@ -32,8 +34,7 @@ class SplashPage extends React.Component {
 
   handleDemo(e) {
     e.preventDefault();
-    
-    this.props.fetchAllVideos();
+    // this.props.fetchAllVideos();
     this.props.login({ email: "demouser@gmail.com", password: "demouser" })
   }
 
@@ -118,7 +119,7 @@ class SplashPage extends React.Component {
             </div>
             <footer>
               <div className='links-wrapper'>
-                <p>Questions? Call 305-962-6631</p>
+                <p>Questions? Check out these links!</p>
 
                 <ul>
                   <li>

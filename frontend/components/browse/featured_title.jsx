@@ -13,6 +13,8 @@ class FeaturedTitle extends React.Component {
     this.openPlayModal = this.openPlayModal.bind(this);
     this.addVideoToMylist = this.addVideoToMylist.bind(this);
     this.deleteVideoFromMylist = this.deleteVideoFromMylist.bind(this);
+    this.likeVideo = this.likeVideo.bind(this);
+    this.unlikeVideo = this.unlikeVideo.bind(this);
   }
 
   componentDidMount() {
@@ -44,6 +46,15 @@ class FeaturedTitle extends React.Component {
     this.props.destroyMylistedVideo(mylist.id)
   }
 
+  likeVideo(e) {
+    this.props.createLike({ profile_id: this.props.currentProfile, video_id: this.props.featuredTitle.id })
+  }
+
+  unlikeVideo(e) {
+    let like = this.props.likeArr.find(like => like['video_id'] === this.props.featuredTitle.id);
+    this.props.destroyLike(like.id)
+  }
+
   render() {
     
     if (this.state.play) {
@@ -53,7 +64,6 @@ class FeaturedTitle extends React.Component {
     } else if (this.state.modal) {
       return (
         <div className="featured-title-inner-container">
-          {/* image goes here as background */}
           <div className="featured-title-info-buttons">
             <h2>{this.props.featuredTitle.title}</h2>
 
@@ -64,13 +74,14 @@ class FeaturedTitle extends React.Component {
             </div>
           </div>
           <div className="featured-background-gradient"></div>
-          <img className="featured-title-background" src={this.props.featuredTitle.backgroundUrl} alt="featured movie image" />
+          {/* <img className="featured-title-background" src={this.props.featuredTitle.backgroundUrl} alt="featured movie image" /> */}
+          <img className="featured-title-background" src={window.dummyBackground} alt="featured movie image" />
           <div className="title-show-container">
             <div className="title-show-modal">
-              <img className="movie-background" src={this.props.featuredTitle.backgroundUrl} alt="movie image" />
+              {/* <img className="movie-background" src={this.props.featuredTitle.backgroundUrl} alt="movie image" /> */}
+              <img className="movie-background" src={window.dummyBackground} alt="movie image" />
               <div className="background-gradient">
               </div>
-              {/* <div className="movie-background"></div> */}
               <div className="show-inner-container">
                 <div className="show-exit-button-container">
                   <div className="show-exit-button">
@@ -85,8 +96,12 @@ class FeaturedTitle extends React.Component {
                   </button> : <button className="mylist-button" onClick={this.addVideoToMylist} >
                     <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
                   </button>}
-                  <button className="like-button"><img width="25px" height="25px" src={window.likeButton} alt="like icon" /></button>
-                  <button className="dislike-button"><img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" /></button>
+                  {/* like button */}
+                  {this.props.likedVideos.some(id => id === this.props.featuredTitle.id) ? <button className="like-button" onClick={this.unlikeVideo} >
+                    <img width="25px" height="25px" src={window.likeButtonToggled} alt="like icon" />
+                  </button> : <button className="like-button" onClick={this.likeVideo} >
+                    <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
+                  </button>}
                 </div>
                 <div className="show-info">
                   <div className="main-info">
@@ -105,7 +120,7 @@ class FeaturedTitle extends React.Component {
       )
     } else {
       // careful here
-      // debugger
+      
       return (
         <div className="featured-title-inner-container">
           <div className="featured-title-info-buttons">
@@ -117,7 +132,7 @@ class FeaturedTitle extends React.Component {
             </div>
           </div>
           <div className="featured-background-gradient"></div>
-          {/* <img className="featured-title-background" src={this.props.featuredTitle.backgroundUrl} alt="featured movie image" /> */}
+          <img className="featured-title-background" src={window.dummyBackground} alt="featured movie image" />
         </div>
       )
     }

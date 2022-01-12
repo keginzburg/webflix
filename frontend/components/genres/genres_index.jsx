@@ -22,6 +22,7 @@ class GenresIndex extends React.Component {
       // careful here, need to refactor this code so errors are not hit
       
       <div className="genres-index">
+        {/* My List */}
         {this.props.mylistVideos.length === 0 ? <div></div> : <div className="genre">
           <h2>My List</h2>
             <ul className="mylist-box">
@@ -34,6 +35,20 @@ class GenresIndex extends React.Component {
             })}
             </ul>
         </div>}
+        {/* Popular on Webflix */}
+        {this.props.popularVideos ? this.props.popularVideos.length === 0 ? <div></div> : <div className="genre">
+          <h2>Popular on Webflix</h2>
+          <ul>
+            {this.props.popularVideos.map((video, idx) => {
+              return (
+                <li key={idx} >
+                  <GenresIndexItemContainer video={video} modal={this.props.modal} receiveShowModal={this.props.receiveShowModal} discardShowModal={this.props.discardShowModal} play={this.props.play} receiveWatch={this.props.receiveWatch} discardWatch={this.props.discardWatch} />
+                </li>
+              )
+            })}
+          </ul>
+        </div> : <div></div>}
+        {/* Action */}
         <div className="genre">
           <h2>Action</h2>
           <ul>
@@ -46,6 +61,7 @@ class GenresIndex extends React.Component {
             })}
           </ul>
         </div>
+        {/* Comedy */}
         <div className="genre">
           <h2>Comedy</h2>
           <ul>
@@ -58,6 +74,7 @@ class GenresIndex extends React.Component {
             })}
           </ul>
         </div>
+        {/* Horror */}
         <div className="genre">
           <h2>Horror</h2>
           <ul>
@@ -70,6 +87,7 @@ class GenresIndex extends React.Component {
             })}
           </ul>
         </div>
+        {/* Drama */}
         <div className="genre">
           <h2>Drama</h2>
           <ul>

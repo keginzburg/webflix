@@ -1,12 +1,15 @@
+
+  
   .browse-header-container-main {
     z-index: 3;
     padding: 8px 30px 0px 35px;
     // need to remove this background color, only here for profiles modal testing purposes
-    background-color: #141414b2;
+    // background-color: rgba(0, 0, 0, 0);
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
+    transition: 0.5s;
 
       .browse-header-inner {
       display: flex;
@@ -27,13 +30,15 @@
           a {
             color: white;
             text-decoration: none;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.39);
             margin: 0 20px 0 0;
-            font-weight: lighter;
+            font-weight: 400;
+            letter-spacing: 1px;
             font-size: 14px;
           }
 
-          a:focus {
-            font-weight: bold;
+          a:hover {
+            text-decoration: underline;
           }
         }
       }
@@ -60,6 +65,10 @@
             
           }
 
+          .dropdown-space {
+            display: none;
+          }
+
           .dropdown-menu {
             display: none;
             
@@ -70,20 +79,31 @@
         }
 
         .settings:hover {
-
+          .dropdown-space {
+            display: block;
+            position: absolute;
+            z-index: 5;
+            right: 50px;
+            width: 82px;
+            height: 15px;
+            opacity: 0;
+            border: 1px solid white;
+          }            
+          
           .dropdown-menu {
               display: flex;
               align-items: start;
               flex-direction: column;
               position: absolute;
+              top: 76px;
               right: 56px;
               width: fit-content;
               height: fit-content;
-              z-index: 5;
+              z-index: 6;
               padding: 5px 0 5px 0;
               box-sizing: margin;
-              border: 2px solid #141414;
-              background-color: black;
+              border: 1px solid #141414;
+              background-color: rgba(8, 8, 8, 0.67);
               color: white;
               font-weight: lighter;
               font-size: 12px;
@@ -103,18 +123,18 @@
                 text-decoration: underline;
               }
 
-              button {
+              .signout {
+                text-decoration: none;
                 border: none;
                 border-top: 1px solid gray;
                 padding: 10px 40px 10px 10px;
-                color: white;
                 font-weight: bold;
                 cursor: pointer;
-                background-color: black;
+                color: white;
                 
               }
 
-              button:hover {
+              .signout:hover {
                 text-decoration: underline;
               }
           }
@@ -360,9 +380,10 @@
           .featured-background-gradient {
                 z-index: 1;
                 background-image: linear-gradient(transparent,#14141477, #141414f3, #141414);
-                width: 100vw;
+                width: 98.95vw;
                 margin: 0 0 0 -60px;
-                height: 400px;
+                min-height: 400px;
+                height: 45vh;
                 position: absolute;
               }
 
@@ -370,7 +391,7 @@
             z-index: 0;
             position: absolute;
             top: 0;
-            width: 100vw;
+            width: 98.95vw;
             margin: 0 0 0 -60px;
           }
 

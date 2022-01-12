@@ -109,7 +109,7 @@
             width: 302.5px;
             height: 170.244px;
             border-radius: 4px;
-            transition: width 1s, height 1s;
+            transition: 1s;
 
             img {
               width: 302.5px;
@@ -133,6 +133,7 @@
             border-bottom-right-radius: 4px;
             background-color: #141414;
             box-shadow: 0 3px 10px black;
+            transition: 1s;
 
             .genre-index-item-modal-buttons {
                 display: flex;
@@ -153,16 +154,97 @@
                   }
 
                   .mylist-button {
+                    position: relative;
                     border-radius: 100%;
                     padding: 5px 5px 3px;
                     border: 2px solid gray;
                     background-color: rgba(0, 0, 0, 0.39);
                     margin: 0 0 0 8px;
                     cursor: pointer;
+
+                    .mylist-button-info {
+                      display: inline-block;
+                      position: absolute;
+                      top: -45px;
+                      left: -145%;
+                      z-index: -1;
+                      width: fit-content;
+                      height: fit-content;
+                      color: black;
+                      background-color: white;
+                      font-size: 15px;
+                      font-weight: bold;
+                      letter-spacing: 1px;
+                      white-space: nowrap;
+                      padding: 6px 10px;
+                      border-radius: 4px;
+                      opacity: 0;
+                      transition: 0.3s;
+                    }
+
+                    .mylist-button-info-remove {
+                      display: inline-block;
+                      position: absolute;
+                      top: -45px;
+                      left: -180%;
+                      z-index: -1;
+                      width: fit-content;
+                      height: fit-content;
+                      color: black;
+                      background-color: white;
+                      font-size: 15px;
+                      font-weight: bold;
+                      letter-spacing: 1px;
+                      white-space: nowrap;
+                      padding: 6px 10px;
+                      border-radius: 4px;
+                      opacity: 0;
+                      transition: 0.3s;
+                    }
                   }
                   
                   .mylist-button:hover {
                     filter: brightness(150%);
+
+                    .mylist-button-info {
+                      display: inline-block;
+                      position: absolute;
+                      top: -45px;
+                      left: -145%;
+                      z-index: 4;
+                      width: fit-content;
+                      height: fit-content;
+                      color: black;
+                      background-color: white;
+                      font-size: 15px;
+                      font-weight: bold;
+                      letter-spacing: 1px;
+                      white-space: nowrap;
+                      padding: 6px 10px;
+                      border-radius: 4px;
+                      opacity: 1;
+                      transition: 0s;
+                    }
+
+                    .mylist-button-info-remove {
+                      display: inline-block;
+                      position: absolute;
+                      top: -45px;
+                      left: -180%;
+                      z-index: 4;
+                      width: fit-content;
+                      height: fit-content;
+                      color: black;
+                      background-color: white;
+                      font-size: 15px;
+                      font-weight: bold;
+                      letter-spacing: 1px;
+                      white-space: nowrap;
+                      padding: 6px 10px;
+                      border-radius: 4px;
+                      opacity: 1;
+                      transition: 0s;
+                    }
                   }
                   
                   .like-button {
@@ -172,24 +254,105 @@
                     background-color: rgba(0, 0, 0, 0.39);
                     margin: 0 0 0 8px;
                     cursor: pointer;
+                    position: relative;
+
+                      .like-button-info {
+                      display: inline-block;
+                      position: absolute;
+                      top: -45px;
+                      left: -85%;
+                      z-index: 4;
+                      width: fit-content;
+                      height: fit-content;
+                      color: black;
+                      background-color: white;
+                      font-size: 15px;
+                      font-weight: bold;
+                      letter-spacing: 1px;
+                      white-space: nowrap;
+                      padding: 6px 10px;
+                      border-radius: 4px;
+                      opacity: 0;
+                      transition: 0.3s;
+                    }
+
+                    .like-button-info-remove {
+                      display: inline-block;
+                      position: absolute;
+                      top: -45px;
+                      left: -95%;
+                      z-index: 4;
+                      width: fit-content;
+                      height: fit-content;
+                      color: black;
+                      background-color: white;
+                      font-size: 15px;
+                      font-weight: bold;
+                      letter-spacing: 1px;
+                      white-space: nowrap;
+                      padding: 6px 10px;
+                      border-radius: 4px;
+                      opacity: 0;
+                      transition: 0.3s;
+                    }
                   }
                   
                   .like-button:hover {
                     filter: brightness(150%);
+
+                      .like-button-info {
+                      display: inline-block;
+                      position: absolute;
+                      top: -45px;
+                      left: -85%;
+                      z-index: 4;
+                      width: fit-content;
+                      height: fit-content;
+                      color: black;
+                      background-color: white;
+                      font-size: 15px;
+                      font-weight: bold;
+                      letter-spacing: 1px;
+                      white-space: nowrap;
+                      padding: 6px 10px;
+                      border-radius: 4px;
+                      opacity: 1;
+                    }
+
+                    .like-button-info-remove {
+                      display: inline-block;
+                      position: absolute;
+                      top: -45px;
+                      left: -95%;
+                      z-index: 4;
+                      width: fit-content;
+                      height: fit-content;
+                      color: black;
+                      background-color: white;
+                      font-size: 15px;
+                      font-weight: bold;
+                      letter-spacing: 1px;
+                      white-space: nowrap;
+                      padding: 6px 10px;
+                      border-radius: 4px;
+                      opacity: 1;
+                    }
                   }
                   
-                  .dislike-button {
-                    border-radius: 100%;
-                    padding: 4px 5px;
-                    border: 2px solid gray;
-                    background-color: rgba(0, 0, 0, 0.39);
-                    margin: 0 0 0 8px;
-                    cursor: pointer;
-                  }
+                  // .dislike-button {
+                  //   border-radius: 100%;
+                  //   padding: 4px 5px;
+                  //   border: 2px solid gray;
+                  //   background-color: rgba(0, 0, 0, 0.39);
+                  //   margin: 0 0 0 8px;
+                  //   cursor: pointer;
+                  // }
 
-                  .dislike-button:hover {
-                    filter: brightness(150%);
-                  }
+                  // .dislike-button:hover {
+                  //   filter: brightness(150%);
+                  // }
+
+                  
               }
 
               .show-button-div {
@@ -201,10 +364,51 @@
                     background-color: rgba(0, 0, 0, 0.39);
                     margin: 0 8px 0 0;
                     cursor: pointer;
+                    position: relative;
+
+                    .show-button-info {
+                      display: inline-block;
+                      position: absolute;
+                      top: -45px;
+                      left: -130%;
+                      z-index: -1;
+                      width: fit-content;
+                      height: fit-content;
+                      color: black;
+                      background-color: white;
+                      font-size: 15px;
+                      font-weight: bold;
+                      letter-spacing: 1px;
+                      white-space: nowrap;
+                      padding: 6px 10px;
+                      border-radius: 4px;
+                      opacity: 0;
+                      transition: 0.3s;
+                    }
                   }
 
                   .show-button:hover {
                     filter: brightness(150%);
+
+                    .show-button-info {
+                      display: inline-block;
+                      position: absolute;
+                      top: -45px;
+                      left: -130%;
+                      z-index: -1;
+                      width: fit-content;
+                      height: fit-content;
+                      color: black;
+                      background-color: white;
+                      font-size: 15px;
+                      font-weight: bold;
+                      letter-spacing: 1px;
+                      white-space: nowrap;
+                      padding: 6px 10px;
+                      border-radius: 4px;
+                      opacity: 1;
+                      transition: 0.3s;
+                    }
                   }
               }
 
@@ -366,18 +570,18 @@
                     filter: brightness(150%);
                   }
                   
-                  .dislike-button {
-                    border-radius: 100%;
-                    padding: 4px 5px;
-                    border: 2px solid gray;
-                    background-color: rgba(0, 0, 0, 0.39);
-                    margin: 0 0 0 8px;
-                    cursor: pointer;
-                  }
+                  // .dislike-button {
+                  //   border-radius: 100%;
+                  //   padding: 4px 5px;
+                  //   border: 2px solid gray;
+                  //   background-color: rgba(0, 0, 0, 0.39);
+                  //   margin: 0 0 0 8px;
+                  //   cursor: pointer;
+                  // }
 
-                  .dislike-button:hover {
-                    filter: brightness(150%);
-                  }
+                  // .dislike-button:hover {
+                  //   filter: brightness(150%);
+                  // }
                 }
 
                 .show-info {

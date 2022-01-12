@@ -1,4 +1,5 @@
 import { getUserProfiles, postUserProfile, patchUserProfile, deleteUserProfile } from "../util/profile_api_utils";
+import { receiveErrors } from "./session_actions";
 
 export const RECEIVE_CURRENT_USER_PROFILES = 'RECEIVE_CURRENT_USER_PROFILES';
 export const receiveCurrentUserProfiles = (profiles) => {
@@ -24,7 +25,7 @@ export const receiveNewProfile = (profile) => {
 export const createNewUserProfile = newProfile => dispatch => {
   
   return postUserProfile(newProfile)
-    .then(profile => dispatch(receiveNewProfile(profile)))
+    .then(profile => dispatch(receiveNewProfile(profile)), errors => dispatch(receiveErrors(errors)))
 }
 
 
