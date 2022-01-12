@@ -12,10 +12,10 @@ Profile.destroy_all
 Genre.destroy_all
 Video.destroy_all
 
-ActiveRecord::Base.connection.reset_pk_sequence!("users")
-ActiveRecord::Base.connection.reset_pk_sequence!("profiles")
-ActiveRecord::Base.connection.reset_pk_sequence!("genres")
-ActiveRecord::Base.connection.reset_pk_sequence!("videos")
+# ActiveRecord::Base.connection.reset_pk_sequence!("users")
+# ActiveRecord::Base.connection.reset_pk_sequence!("profiles")
+# ActiveRecord::Base.connection.reset_pk_sequence!("genres")
+# ActiveRecord::Base.connection.reset_pk_sequence!("videos")
 
 user1 = User.create!(email: "keginzburg@gmail.com", password: "password")
 user2 = User.create!(email: "farzam@gmail.com", password: "password")
