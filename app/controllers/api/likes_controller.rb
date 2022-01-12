@@ -1,10 +1,11 @@
 class Api::LikesController < ApplicationController
 
   def index
-    @likes = []
-    current_user.profiles.each do |profile|
-      @likes += profile.likes
-    end
+    # @likes = []
+    # current_user.profiles.each do |profile|
+    #   @likes += profile.likes
+    # end
+    @likes = Like.all
 
     render :index
   end

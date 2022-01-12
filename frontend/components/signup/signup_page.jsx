@@ -84,7 +84,7 @@ class SignUp extends React.Component {
             </div>
             <footer>
               <div className='links-wrapper'>
-                <p>Questions? Call 305-962-6631</p>
+                <p>Questions? Check out these links!</p>
 
                 <ul>
                   <li>

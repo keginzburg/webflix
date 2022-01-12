@@ -5,6 +5,7 @@ import { receiveShowModal, discardShowModal, receiveWatch, discardWatch } from "
 
 const mapStateToProps = (state) => {
   return {
+    popularVideos: Selectors.filterPopularVideos(state),
     mylistVideos: Selectors.filterMylistVideos(state),
     actionVideos: Selectors.filterActionVideos(state),
     horrorVideos: Selectors.filterHorrorVideos(state),

@@ -50,7 +50,7 @@ class GenresIndexItem extends React.Component {
   }
 
   unlikeVideo(e) {
-    let like = this.props.likeArr.find(like => like['video_id'] === this.props.video.id);
+    let like = this.props.likeArr.find(like => like['video_id'] === this.props.video.id && like['profile_id'] === this.props.currentProfile);
     this.props.destroyLike(like.id);
     this.props.fetchAllVideos();
   }
@@ -67,7 +67,7 @@ class GenresIndexItem extends React.Component {
       // careful here, another error because video is undefined
       <div className="genre-index-item-container">
         <div className="genre-index-item-thumbnail">
-          {/* <img src={this.props.video.thumbnailUrl} alt="movie thumbnail" /> */}
+          <img src={this.props.video.thumbnailUrl} alt="movie thumbnail" />
         </div>
         <div className="genre-index-item-modal">
           <div className="genre-index-item-modal-buttons">
@@ -77,34 +77,34 @@ class GenresIndexItem extends React.Component {
                 <img width="25px" height="25px" src={window.playButton} alt="play icon" />
               </button>
               {/* mylist button */}
-              {/* {this.props.mylistedVideos.some(id => id === this.props.video.id ) ? <button className="mylist-button" onClick={this.deleteVideoFromMylist} >
-                <img width="25px" height="25px" src={window.checkmarkButton} alt="my list icon" />
+              {this.props.mylistedVideos.some(id => id === this.props.video.id ) ? <button className="mylist-button" onClick={this.deleteVideoFromMylist} >
+                <img width="25px" height="25px" src={window.checkmarkButton} alt="my list icon" /><div className="mylist-button-info-remove">Remove from My List</div>
               </button> : <button className="mylist-button" onClick={this.addVideoToMylist} >
                 <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
-              </button>} */}
+                <div className="mylist-button-info">Add to My List</div>
+              </button>}
               {/* like button */}
-              {/* {this.props.likedVideos.some(id => id === this.props.video.id) ? <button className="like-button" >
+              {this.props.likedVideos.some(id => id === this.props.video.id) ? <button className="like-button" onClick={this.unlikeVideo} >
                 <img width="25px" height="25px" src={window.likeButtonToggled} alt="like icon" />
+                <div className="like-button-info-remove">Not for me</div>
               </button> : <button className="like-button" onClick={this.likeVideo} >
                 <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
-              </button>} */}
-              {/* unlike button */}
-              <button className="dislike-button" onClick={this.unlikeVideo} >
-                <img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" />
-              </button>
+                <div className="like-button-info">I like this</div>
+              </button>}
             </div>
             <div className="show-button-div">
               {/* show button */}
               <button className="show-button" onClick={this.openShowModal} >
                 <img width="25px" height="25px" src={window.chevronDown} alt="show icon" />
+                <div className="show-button-info">More info</div>
               </button>
             </div>
           </div>
           <div className="genre-index-item-modal-info">
-            {/* <h3>{this.props.video.year} <img src={window.hdIcon} alt="hd icon" /> {this.props.video.runtime} minutes</h3> */}
+            <h3>{this.props.video.year} <img src={window.hdIcon} alt="hd icon" /> {this.props.video.runtime} minutes</h3>
           </div>
           <div className="genre-index-item-modal-genre">
-            {/* <h3>{this.props.video.genre.genre}</h3> */}
+            <h3>{this.props.video.genre.genre}</h3>
           </div>
         </div>
       </div>
@@ -137,15 +137,11 @@ class GenresIndexItem extends React.Component {
                     <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
                   </button>}
                   {/* like button */}
-                  {this.props.likedVideos.some(id => id === this.props.video.id) ? <button className="like-button" >
+                  {this.props.likedVideos.some(id => id === this.props.video.id) ? <button className="like-button" onClick={this.unlikeVideo} >
                     <img width="25px" height="25px" src={window.likeButtonToggled} alt="like icon" />
                   </button> : <button className="like-button" onClick={this.likeVideo} >
                     <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
                   </button>}
-                  {/* unlike button */}
-                  <button className="dislike-button" onClick={this.unlikeVideo} >
-                    <img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" />
-                  </button>
                 </div>
                 <div className="show-info">
                   <div className="main-info">
@@ -175,15 +171,11 @@ class GenresIndexItem extends React.Component {
                   <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
                 </button>}
                 {/* like button */}
-                {this.props.likedVideos.some(id => id === this.props.video.id) ? <button className="like-button" >
+                {this.props.likedVideos.some(id => id === this.props.video.id) ? <button className="like-button" onClick={this.unlikeVideo} >
                   <img width="25px" height="25px" src={window.likeButtonToggled} alt="like icon" />
                 </button> : <button className="like-button" onClick={this.likeVideo} >
                   <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
                 </button>}
-                {/* unlike button */}
-                <button className="dislike-button" onClick={this.unlikeVideo} >
-                  <img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" />
-                </button>
             </div>
             <div className="show-button-div">
               <button className="show-button" onClick={this.openShowModal} >
@@ -207,3 +199,10 @@ class GenresIndexItem extends React.Component {
 export default GenresIndexItem
 
 //Potential refactoring needed in changing modal and play from internal state to redux state.
+
+
+// Discarded Unlike Button
+{/* unlike button */ }
+{/* <button className="dislike-button" onClick={this.unlikeVideo} >
+    <img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" />
+</button> */}

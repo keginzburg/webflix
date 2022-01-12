@@ -16,7 +16,7 @@ class Browse extends React.Component {
   }
 
   componentDidMount() {
-  
+    this.props.receiveFeaturedTitle(this.props.videos[Math.ceil(Math.random() * Object.keys(this.props.videos).length)])
   }
 
   componentDidUpdate() {
@@ -24,7 +24,7 @@ class Browse extends React.Component {
     //   this.props.fetchMylistedVideos(this.props.currentProfile);
     // }
     
-      this.props.receiveFeaturedTitle(this.props.videos[Math.ceil(Math.random() * Object.keys(this.props.videos).length)])
+      // this.props.receiveFeaturedTitle(this.props.videos[Math.ceil(Math.random() * Object.keys(this.props.videos).length)])
     
   }
 
@@ -62,7 +62,7 @@ class Browse extends React.Component {
                 </div>
                 <footer className="browse-footer">
                   <div className='links-wrapper'>
-                    <p>Questions? Call 305-962-6631</p>
+                    <p>Questions? Check out these links!</p>
 
                     <ul>
                       <li>

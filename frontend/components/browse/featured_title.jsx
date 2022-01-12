@@ -64,7 +64,6 @@ class FeaturedTitle extends React.Component {
     } else if (this.state.modal) {
       return (
         <div className="featured-title-inner-container">
-          {/* image goes here as background */}
           <div className="featured-title-info-buttons">
             <h2>{this.props.featuredTitle.title}</h2>
 
@@ -81,7 +80,6 @@ class FeaturedTitle extends React.Component {
               <img className="movie-background" src={this.props.featuredTitle.backgroundUrl} alt="movie image" />
               <div className="background-gradient">
               </div>
-              {/* <div className="movie-background"></div> */}
               <div className="show-inner-container">
                 <div className="show-exit-button-container">
                   <div className="show-exit-button">
@@ -97,15 +95,11 @@ class FeaturedTitle extends React.Component {
                     <img width="25px" height="25px" src={window.mylistButton} alt="my list icon" />
                   </button>}
                   {/* like button */}
-                  {this.props.likedVideos.some(id => id === this.props.featuredTitle.id) ? <button className="like-button" >
+                  {this.props.likedVideos.some(id => id === this.props.featuredTitle.id) ? <button className="like-button" onClick={this.unlikeVideo} >
                     <img width="25px" height="25px" src={window.likeButtonToggled} alt="like icon" />
                   </button> : <button className="like-button" onClick={this.likeVideo} >
                     <img width="25px" height="25px" src={window.likeButton} alt="like icon" />
                   </button>}
-                  {/* unlike button */}
-                  <button className="dislike-button" onClick={this.unlikeVideo} >
-                    <img width="25px" height="25px" src={window.dislikeButton} alt="dislike icon" />
-                  </button>
                 </div>
                 <div className="show-info">
                   <div className="main-info">
@@ -124,19 +118,18 @@ class FeaturedTitle extends React.Component {
       )
     } else {
       // careful here
-      // debugger
       return (
         <div className="featured-title-inner-container">
           <div className="featured-title-info-buttons">
-            {/* <h2>{this.props.featuredTitle.title}</h2> */}
-            {/* <h3>{this.props.featuredTitle.description}</h3> */}
+            <h2>{this.props.featuredTitle.title}</h2>
+            <h3>{this.props.featuredTitle.description}</h3>
             <div className="featured-title-buttons">
               <button className="featured-title-play-button" onClick={this.openPlayModal}><img src={window.playButton} alt="play icon" />Play</button>
               <button className="featured-title-info-button" onClick={this.openShowModal}><img width="30px" height="30px" src={window.infoButton} alt="info icon" />More Info</button>
             </div>
           </div>
           <div className="featured-background-gradient"></div>
-          {/* <img className="featured-title-background" src={this.props.featuredTitle.backgroundUrl} alt="featured movie image" /> */}
+          <img className="featured-title-background" src={this.props.featuredTitle.backgroundUrl} alt="featured movie image" />
         </div>
       )
     }

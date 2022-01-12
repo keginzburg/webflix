@@ -1,15 +1,33 @@
-// export const filterPopularVideos = state => {
-//   let popularVideos = [];
+export const filterPopularVideos = state => {
+  let popularVideos = [];
+  let likes = Object.values(state.entities.likes);
+  let likedVideosHash = {};
+  likes.forEach(like => {
+    let videoId = like["video_id"];
+    if (!likedVideosHash[videoId]) likedVideosHash[videoId] = 0;
+    likedVideosHash[videoId] += 1;
+  })
+  
+  let sortedArray = [];
+  for (let key in likedVideosHash) {
+    sortedArray.push([key, likedVideosHash[key]]);
+  }
 
-//   let allVideos = Object.values(state.entities.videos);
-//   allVideos.map(video => {
-//     {[video.id]: [video.likes]}
-//   })
+  sortedArray.sort(function(first, next) {
+    return first[1] - next[1];
+  });
 
-//   while (popularVideos.length < 7) {
-
-//   }
-// }
+  for (let i = sortedArray.length-1; i >= 0; i--) {
+    let id = sortedArray[i][0];
+    popularVideos.push(state.entities.videos[id]);
+  }
+  
+  if (popularVideos.length > 6) {
+    return popularVideos.slice(7);
+  } else if (popularVideos.length > 0 && popularVideos.length < 7) {
+    return popularVideos;
+  }
+}
 
 export const filterMylistVideos = (state) => {
   let mylistVideos = [];

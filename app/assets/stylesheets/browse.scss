@@ -1,12 +1,15 @@
+
+  
   .browse-header-container-main {
     z-index: 3;
     padding: 8px 30px 0px 35px;
     // need to remove this background color, only here for profiles modal testing purposes
-    background-color: #141414b2;
+    background-color: rgba(0, 0, 0, 0);
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
+    transition: 0.5s;
 
       .browse-header-inner {
       display: flex;
