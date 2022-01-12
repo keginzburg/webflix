@@ -1,4 +1,5 @@
 import React from 'react';
+import Search from '../search/search';
 import { Link } from 'react-router-dom';
 
 class BrowseHeader extends React.Component {
@@ -49,7 +50,9 @@ class BrowseHeader extends React.Component {
                 </div>
               </div>
               <div className='settings-container'>
-                <div></div>
+                <div className='search-bar'>
+                  <Search />
+                </div>
                 <div className='settings'>
                   <img src={this.props.profiles[this.props.currentProfile]['avatar']} alt="small profile icon" >
                     
