@@ -8,10 +8,11 @@
     "test": "test"
   },
   "engines": {
-    "node": "14.18.2",
+    "node": "16.10.0",
     "npm": "7.24.0"
   },
   "scripts": {
+    "webpack": "webpack --watch --mode=development",
     "postinstall": "webpack"
   },
   "repository": {
