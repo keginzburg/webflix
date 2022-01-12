@@ -46,13 +46,13 @@ class GenresIndexItem extends React.Component {
 
   likeVideo(e) {
     this.props.createLike({profile_id: this.props.currentProfile, video_id: this.props.video.id })
-    this.props.fetchAllVideos();
+    //this.props.fetchAllVideos();
   }
 
   unlikeVideo(e) {
     let like = this.props.likeArr.find(like => like['video_id'] === this.props.video.id && like['profile_id'] === this.props.currentProfile);
     this.props.destroyLike(like.id);
-    this.props.fetchAllVideos();
+    //this.props.fetchAllVideos();
   }
 
   render() {

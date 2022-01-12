@@ -16,7 +16,8 @@ class SplashPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllVideos();
+    this.props.fetchAllVideos()
+      
   }
 
   update(field) {

@@ -1,4 +1,5 @@
 import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_NEW_EMAIL, REMOVE_NEW_EMAIL, RECEIVE_CURRENT_PROFILE, LOGOUT_CURRENT_PROFILE, RECEIVE_EDIT_PROFILE, DISCARD_EDIT_PROFILE, RECEIVE_FEATURED_TITLE } from "../actions/session_actions";
+import { RECEIVE_VIDEOS } from "../actions/video_actions";
 
 
 const _nullSession = {
@@ -24,6 +25,11 @@ const sessionReducer = (state = _nullSession, action) => {
       return nextState;
     case REMOVE_NEW_EMAIL:
       nextState["newEmail"] = null;
+      return nextState;
+    case RECEIVE_VIDEOS:
+      // debugger
+      nextState["featuredTitle"] = action.videos[Math.ceil(Math.random() * Object.keys(action.videos).length)];
+      // debugger
       return nextState;
     case RECEIVE_CURRENT_PROFILE:
       nextState["currentProfile"] = action.currentProfile;

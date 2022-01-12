@@ -1,4 +1,5 @@
 import { getAllVideos, getVideo } from "../util/video_api_utils";
+import { receiveFeaturedTitle } from "./session_actions";
 
 export const RECEIVE_VIDEOS = 'RECEIVE_VIDEOS';
 export const receiveVideos = (videos) => {
