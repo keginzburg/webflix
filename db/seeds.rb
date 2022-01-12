@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
-User.delete_all
-Profile.delete_all
-Genre.delete_all
-Video.delete_all
+User.destroy_all
+Profile.destroy_all
+Genre.destroy_all
+Video.destroy_all
 
 ActiveRecord::Base.connection.reset_pk_sequence!("users")
 ActiveRecord::Base.connection.reset_pk_sequence!("profiles")
