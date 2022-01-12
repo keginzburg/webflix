@@ -10,6 +10,7 @@ class Search extends React.Component {
       searchQuery: "",
     }
     this.expandSearchBar = this.expandSearchBar.bind(this);
+    this.updateSearchQuery = this.updateSearchQuery.bind(this);
   }
 
 
@@ -27,7 +28,7 @@ class Search extends React.Component {
       this.state.searchOpen ? 
         <div className="search-bar-container-open" >
           <img className="search-icon" src={window.searchIcon} alt="search icon" onClick={this.expandSearchBar}/>
-          <input type="text" placeholder="Titles" value={this.state.searchQuery}/>
+          <input type="text" placeholder="Titles" value={this.state.searchQuery} onChange={this.updateSearchQuery}/>
         </div> : 
         <div className="search-bar-container" onClick={this.expandSearchBar} >
           <img className="search-icon" src={window.searchIcon} alt="search icon" />
