@@ -1,4 +1,6 @@
 class Api::ProfilesController < ApplicationController
+  before_action :check_profile_quota, only: [:create]
+
   def index
     @profiles = Profile.all
     render :index
@@ -28,6 +30,12 @@ class Api::ProfilesController < ApplicationController
       render :destroy
     else
       render json: @profile.errors.full_messages
+    end
+  end
+
+  def check_profile_quota
+    if current_user.profiles.count >= 4
+      render json: ["Sorry, you've reached your profile limit."], status: 403
     end
   end
 
