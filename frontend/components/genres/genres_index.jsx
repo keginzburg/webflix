@@ -25,7 +25,7 @@ class GenresIndex extends React.Component {
         {/* My List */}
         {this.props.mylistVideos.length === 0 ? <div></div> : <div className="genre">
           <h2>My List</h2>
-            <ul className="mylist-box">
+          <ul className="mylist-box">
             {this.props.mylistVideos.map( (video, idx) => {
               return (
                 <li key={idx} >
@@ -33,7 +33,7 @@ class GenresIndex extends React.Component {
                 </li>
               )
             })}
-            </ul>
+          </ul>
         </div>}
         {/* Popular on Webflix */}
         {this.props.popularVideos ? this.props.popularVideos.length === 0 ? <div></div> : <div className="genre">

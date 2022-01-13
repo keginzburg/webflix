@@ -75,8 +75,10 @@
           font-weight: bold;
           // border: 1px solid white;
           border-radius: 4px;
-          width: 215px;
-          height: 121px;
+          // width: 215px;
+          width: 14.9vw;
+          // height: 121px;
+          height: 8.4vw;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -85,8 +87,10 @@
           .genre-index-item-thumbnail {
             z-index: 2;
             img {
-              width: 215px;
-              height: 121px;
+              // width: 215px;
+              width: 14.9vw;
+              // height: 121px;
+              height: 8.4vw;
               border-radius: 4px;
               // transition: 1s;
             }
