@@ -27,9 +27,7 @@ const sessionReducer = (state = _nullSession, action) => {
       nextState["newEmail"] = null;
       return nextState;
     case RECEIVE_VIDEOS:
-      // debugger
       nextState["featuredTitle"] = action.videos[Math.ceil(Math.random() * Object.keys(action.videos).length)];
-      // debugger
       return nextState;
     case RECEIVE_CURRENT_PROFILE:
       nextState["currentProfile"] = action.currentProfile;

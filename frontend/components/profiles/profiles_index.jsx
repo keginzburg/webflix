@@ -77,7 +77,6 @@ class ProfilesIndex extends React.Component {
         </ul>
       )
     } else if (this.state.add) {
-      debugger
       return (
         <div className="add-profile-modal">
           <div className="add-profile-modal-container">
