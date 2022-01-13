@@ -18,7 +18,7 @@ Webflix is a clone of the Netflix website at the time of creation. Netflix is a 
 
 A Webflix user is able to create new profiles, which persist to both the front and backend, and select existing or newly created profiles in order to begin browsing:
 
-`
+```
   render() {
     if (!this.state.add) {
       return (
@@ -63,11 +63,11 @@ A Webflix user is able to create new profiles, which persist to both the front a
       )
     }
   }
-`
+```
 
 A webflix user can also manage their profiles, allowing them to change a profile's name and avatar and delete existing profiles:
 
-`
+```
     if (this.props.modal === 'editProfile') {
       
       return (
@@ -95,13 +95,13 @@ A webflix user can also manage their profiles, allowing them to change a profile
         </div>
       )
     } 
-`
+```
 
 ## Browse/Watch
 
 Upon logging in with one of their profiles, a Webflix user is greeted by Webflix's featured film, which is randomly generated every time the user signs in to Webflix:
 
-`
+```
 render() {
       // careful here
       
@@ -120,10 +120,11 @@ render() {
         </div>
       )
     }
-`
+```
+
 Otherwise, a Webflix user also has access to Webflix's entire library of curated films. By hovering over film thumbnails, the user can play a title, add it to their My List category, or like a film:
 
-`
+```
 render() {
   return (
         <div className="genre-index-item-modal">
@@ -159,17 +160,16 @@ render() {
         </div>
   )
 }
-`
+```
 
 They can also open that title's show modal, which provides more information about the film along with the previously available functionality:
-
 
 
 ## My List
 
 If a Webflix user desires, they can add specific titles to their My List, a top level category that will only display if a user has added titles to their My List. Users can also discard titles from their My List whenever they please.
 
-` 
+```
   render() {
     let style = {
       position: "relative",
@@ -203,7 +203,7 @@ If a Webflix user desires, they can add specific titles to their My List, a top 
       </div>
     )
   }
-`
+```
 
 If a user adds more than 6 titles to their My List, the row will be given "scroll" functionality with left and right arrow buttons that will lose functionality once the user has reached the end of the row:
 
@@ -213,7 +213,7 @@ If a user adds more than 6 titles to their My List, the row will be given "scrol
 
 In addition to adding titles to their My List, Webflix users can also like film titles in the library. This won't add titles to a Likes category, but instead will change that film's standing in Webflix's library. Deending on their number of likes across all profiles and users, only the "most popular" Webflix titles will be added to Webflix's "Popular on Webflix" category, another dynamic, top-level row:
 
-`
+```
 export const filterPopularVideos = state => {
   let popularVideos = [];
   let likes = Object.values(state.entities.likes);
@@ -244,9 +244,9 @@ export const filterPopularVideos = state => {
     return popularVideos;
   }
 }
-`
+```
 
-`
+```
     render() {
       return (  
         {this.props.popularVideos ? this.props.popularVideos.length === 0 ? <div></div> : <div className="genre">
@@ -263,7 +263,7 @@ export const filterPopularVideos = state => {
         </div> : <div></div>}
       )
     }
-`
+```
 
 ### Thanks
 
