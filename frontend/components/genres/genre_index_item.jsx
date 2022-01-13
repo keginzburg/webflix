@@ -1,4 +1,5 @@
 import React from "react";
+import { createRef } from "react";
 import { Redirect } from "react-router-dom";
 
 class GenresIndexItem extends React.Component {
@@ -16,7 +17,23 @@ class GenresIndexItem extends React.Component {
     this.deleteVideoFromMylist = this.deleteVideoFromMylist.bind(this);
     this.likeVideo = this.likeVideo.bind(this);
     this.unlikeVideo = this.unlikeVideo.bind(this);
+    // this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    // this.wrapperRef = React.createRef();
+    // this.wrapperRef2 = React.createRef();
+    
   }
+
+  // componentDidUpdate() {
+  //   if (this.state.modal) {
+  //     document.getElementById('show-modal-shade').addEventListener('click', this.handleOutsideClick);
+  //   }
+  // }
+
+  // handleOutsideClick(e) {
+  //   if (!this.wrapperRef.current.contains(e.currentTarget)) {
+  //     this.exitShowModal();
+  //   }
+  // }
 
   exitShowModal(e) {
     this.setState({ modal: false });
@@ -63,12 +80,12 @@ class GenresIndexItem extends React.Component {
     } else if (!this.state.modal) {
       
     return (
-      //Genre Index Item Thumbnail
+      //Genre Index Item Thumbnail and Hover Modal
       // careful here, another error because video is undefined
       <div className="genre-index-item-container">
         <div className="genre-index-item-thumbnail">
-          {/* <img src={this.props.video.thumbnailUrl} alt="movie thumbnail" /> */}
-          <img src={window.dummyThumbnail} alt="" />
+          <img src={this.props.video.thumbnailUrl} alt="movie thumbnail" />
+          {/* <img src={window.dummyThumbnail} alt="" /> */}
         </div>
         <div className="genre-index-item-modal">
           <div className="genre-index-item-modal-buttons">
@@ -112,10 +129,10 @@ class GenresIndexItem extends React.Component {
     )
     } else if (this.state.modal) {
       return (
-      //Genre Index Item Thumbnail
+      //Genre Index Item Show Modal
       <div className="genre-index-item-container">
-          <div className="title-show-container">
-            <div className="title-show-modal">
+          <div className="title-show-container" id="show-modal-shade">
+            <div className="title-show-modal" id="show-modal">
               <img className="movie-background" src={this.props.video.backgroundUrl} alt="movie image" />
               <div className="background-gradient"></div>
               <div className="show-inner-container">
