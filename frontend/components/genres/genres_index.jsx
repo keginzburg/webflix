@@ -9,15 +9,57 @@ import GenresIndexItemContainer from "./genre_index_item_container";
 class GenresIndex extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {};
-
+    this.state = {
+      xOffset: 0,
+      yOffset: 0,
+      scrollDistance: 220,
+      rightScrollCount: 0,
+      leftScrollCount: 0,
+    };
+    this.scrollLeft = this.scrollLeft.bind(this);
+    this.scrollRight = this.scrollRight.bind(this);
+    // this.myListReset = this.myListReset.bind(this);
   }
 
   componentDidMount() {
   }
 
+  // Must pass this down to my list button handler at some point.
+  // myListReset(e) {
+  //   this.setState({
+  //     xOffset: 0,
+  //     rightScrollCount: 0,
+  //     leftScrollCount: 0,
+  //   })
+  // }
+
+  scrollLeft(e) {
+    let mylist = document.getElementById("mylist-row");
+    if (this.state.leftScrollCount <= 0) {
+      return;
+    } else {
+      this.setState({ xOffset: this.state.xOffset += this.state.scrollDistance })
+      this.setState({ leftScrollCount: this.state.leftScrollCount - 1 })
+      this.setState({ rightScrollCount: this.state.rightScrollCount - 1})
+    }
+  }
+
+  scrollRight(e) {
+    let mylist = document.getElementById("mylist-row");
+    if (this.state.rightScrollCount >= mylist.childElementCount-6) {
+      return;
+    } else {
+      this.setState({ xOffset: this.state.xOffset -= this.state.scrollDistance })
+      this.setState({ rightScrollCount: this.state.rightScrollCount + 1 })
+      this.setState({ leftScrollCount: this.state.leftScrollCount + 1 })
+    }    
+  }
+
   render() {
-      
+    let style = {
+      position: "relative",
+      left: `${this.state.xOffset}px`,
+    }
     return (
       // careful here, need to refactor this code so errors are not hit
       
@@ -25,19 +67,27 @@ class GenresIndex extends React.Component {
         {/* My List */}
         {this.props.mylistVideos.length === 0 ? <div></div> : <div className="genre">
           <h2>My List</h2>
-          <ul className="mylist-box">
-            {this.props.mylistVideos.map( (video, idx) => {
-              return (
-                <li key={idx} >
-                  <GenresIndexItemContainer video={video} modal={this.props.modal} receiveShowModal={this.props.receiveShowModal} discardShowModal={this.props.discardShowModal} play={this.props.play} receiveWatch={this.props.receiveWatch} discardWatch={this.props.discardWatch} />
-                </li>
-              )
-            })}
-          </ul>
+          <div className="my-list-header-and-buttons">
+            {/* { this.props.mylistVideos.length < 7 ? <div></div> : <button className="left-scroll-button" onClick={this.scrollLeft}><img src={window.scrollChevronLeft} alt="left scroll" /></button>}
+            { this.props.mylistVideos.length < 7 ? <div></div> : <button className="right-scroll-button" onClick={this.scrollRight}><img src={window.scrollChevronRight} alt="right scroll" /></button>} */}
+            <button className="left-scroll-button" onClick={this.scrollLeft}><img src={window.scrollChevronLeft} alt="left scroll" /></button>
+            <button className="right-scroll-button" onClick={this.scrollRight}><img src={window.scrollChevronRight} alt="right scroll" /></button>
+          </div>
+          <div className="row-overflow">
+            <ul style={style} id="mylist-row">
+              {this.props.mylistVideos.map((video, idx) => {
+                return (
+                  <li key={idx} >
+                    <GenresIndexItemContainer video={video} modal={this.props.modal} receiveShowModal={this.props.receiveShowModal} discardShowModal={this.props.discardShowModal} play={this.props.play} receiveWatch={this.props.receiveWatch} discardWatch={this.props.discardWatch} />
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
         </div>}
         {/* Popular on Webflix */}
         {this.props.popularVideos ? this.props.popularVideos.length === 0 ? <div></div> : <div className="genre">
-          <h2>Popular on Webflix</h2>
+          <h2 className="popular-heading">Popular on Webflix</h2>
           <ul>
             {this.props.popularVideos.map((video, idx) => {
               return (

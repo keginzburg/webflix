@@ -310,7 +310,7 @@ mylist7 = Mylist.create!(profile_id: profile7.id, video_id: social_network.id)
 
 # Like Seeds
 
-# Scott Pilgrim Likes
+# # Scott Pilgrim Likes
 # like1 = Like.create!(profile_id: profile1.id, video_id: scott_pilgrim.id)
 # like2 = Like.create!(profile_id: profile2.id, video_id: scott_pilgrim.id)
 # like3 = Like.create!(profile_id: profile3.id, video_id: scott_pilgrim.id)
