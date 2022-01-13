@@ -169,9 +169,7 @@ If a Webflix user desires, they can add specific titles to their My List, a top 
       position: "relative",
       left: `${this.state.xOffset}px`,
     }
-    return (
-      // careful here, need to refactor this code so errors are not hit
-      
+    return (      
       <div className="genres-index">
         {this.props.mylistVideos.length === 0 ? <div></div> : <div className="genre">
           <h2>My List</h2>
