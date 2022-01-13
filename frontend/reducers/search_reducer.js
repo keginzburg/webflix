@@ -5,7 +5,8 @@ const searchReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_SEARCH_VIDEOS:
-      nextState = Object.assign({}, action.videos);
+      let keys = Object.keys(action.videos)
+      nextState = Object.assign({}, {...keys});
       return nextState;
     case CLEAR_SEARCH_VIDEOS:
       nextState = Object.assign({}, {});

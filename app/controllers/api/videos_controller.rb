@@ -1,9 +1,14 @@
 class Api::VideosController < ApplicationController
   def index
-    debugger
-    @videos = Video.all
-    
-    render :index
+    if params[:search] != ""
+      @videos = Video.where('title LIKE ?',"%#{params[:search]}")
+      debugger
+      render :index
+    else
+      @videos = Video.all
+      debugger
+      render :index
+    end
   end
 
   def show

@@ -7,6 +7,7 @@ import LoginContainer from "./login/login_container";
 import ManageProfilesContainer from "./profiles/manage_profiles";
 import ShowTitleContainer from "./show/show_title";
 import BrowseContainer from "./browse/browse_container";
+import SearchResult from "./search/search_result";
 
 import { Route, Switch } from "react-router";
 
@@ -17,6 +18,7 @@ const App = () => (
       <AuthRoute path="/login" component={LoginContainer}/>
       <AuthRoute path="/signup" component={SignUpContainer} />
       <ProtectedRoute path="/ManageProfiles" component={ManageProfilesContainer} />
+      <ProtectedRoute path="/search" component={SearchResult} />
       <ProtectedRoute path="/watch/:videoId" component={ShowTitleContainer} />
       <ProtectedRoute path="/browse" component={BrowseContainer} />
       <AuthRoute path="/" component={SplashPageContainer} />
