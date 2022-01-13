@@ -45,13 +45,10 @@ A Webflix user is able to create new profiles, which persist to both the front a
             <div className="add-profile-headings-container">
               <h2>Add Profile</h2>
               <h3>Add a profile for another person watching Netflix.</h3>
-              
             </div>
             <div className="add-profiles-main-container">
-              
-                <img width="115px" height="115px" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="default image" />
+                <img width="115px" height="115px" src={window.profileIcon} alt="default image" />
                 <input type="text" placeholder="Name" value={this.state.name} onChange={this.updateName} />
-            
             </div>
             <div className="add-profiles-button-container">
               <button className="profile-continue" onClick={this.continueAdd}>Continue</button>
@@ -69,7 +66,6 @@ A webflix user can also manage their profiles, allowing them to change a profile
 
 ```
     if (this.props.modal === 'editProfile') {
-      
       return (
         <div className="edit-profile-modal">
           <div className="edit-profile-modal-container">
@@ -102,9 +98,7 @@ A webflix user can also manage their profiles, allowing them to change a profile
 Upon logging in with one of their profiles, a Webflix user is greeted by Webflix's featured film, which is randomly generated every time the user signs in to Webflix:
 
 ```
-render() {
-      // careful here
-      
+render() {      
       return (
         <div className="featured-title-inner-container">
           <div className="featured-title-info-buttons">
@@ -179,7 +173,6 @@ If a Webflix user desires, they can add specific titles to their My List, a top 
       // careful here, need to refactor this code so errors are not hit
       
       <div className="genres-index">
-        {/* My List */}
         {this.props.mylistVideos.length === 0 ? <div></div> : <div className="genre">
           <h2>My List</h2>
           <div className="my-list-header-and-buttons">
