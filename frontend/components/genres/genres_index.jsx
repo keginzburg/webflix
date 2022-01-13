@@ -56,12 +56,13 @@ class GenresIndex extends React.Component {
       <div className="genres-index">
         {/* My List */}
         {this.props.mylistVideos.length === 0 ? <div></div> : <div className="genre">
-          <h2>My List
+          <h2>My List</h2>
+          <div className="my-list-header-and-buttons">
             {/* { this.props.mylistVideos.length < 7 ? <div></div> : <button className="left-scroll-button" onClick={this.scrollLeft}><img src={window.scrollChevronLeft} alt="left scroll" /></button>}
             { this.props.mylistVideos.length < 7 ? <div></div> : <button className="right-scroll-button" onClick={this.scrollRight}><img src={window.scrollChevronRight} alt="right scroll" /></button>} */}
             <button className="left-scroll-button" onClick={this.scrollLeft}><img src={window.scrollChevronLeft} alt="left scroll" /></button>
             <button className="right-scroll-button" onClick={this.scrollRight}><img src={window.scrollChevronRight} alt="right scroll" /></button>
-          </h2>
+          </div>
           <ul style={style} id="mylist-row">
             {this.props.mylistVideos.map( (video, idx) => {
               return (
@@ -74,7 +75,7 @@ class GenresIndex extends React.Component {
         </div>}
         {/* Popular on Webflix */}
         {this.props.popularVideos ? this.props.popularVideos.length === 0 ? <div></div> : <div className="genre">
-          <h2>Popular on Webflix</h2>
+          <h2 className="popular-heading">Popular on Webflix</h2>
           <ul>
             {this.props.popularVideos.map((video, idx) => {
               return (
