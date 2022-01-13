@@ -51,12 +51,18 @@ class ManageProfilesIndex extends React.Component {
   }
 
   saveProfile(e) {
+    if (this.state.name.length < 1 || this.state.name.length > 8) {
+      this.props.receiveErrors({ "responseJSON": ["Your profile name must be between 1 and 8 characters."] })
+      return;
+    }
+
     let updatedProfile = {};
     updatedProfile["id"] = this.props.editProfile;
     updatedProfile["name"] = this.state.name;
     updatedProfile["avatar"] = this.state.avatar;
     updatedProfile["user_id"] = this.props.currentUser;
     this.props.updateUserProfile(updatedProfile);
+    this.props.clearErrors();
     this.props.discardEditModal();
     this.setState({ name: "" });
     this.setState({ avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" });
@@ -64,11 +70,13 @@ class ManageProfilesIndex extends React.Component {
 
   cancelEdit(e) {
     this.props.discardEditModal();
+    this.props.clearErrors();
   }
 
   deleteProfile(e) {
     this.props.destroyUserProfile(this.props.editProfile);
     this.props.discardEditModal();
+    this.props.clearErrors();
   }
 
   addProfile(e) {
@@ -79,11 +87,17 @@ class ManageProfilesIndex extends React.Component {
   continueAdd(e) {
 
     e.preventDefault();
+    if (this.state.name.length < 1 || this.state.name.length > 8) {
+      this.props.receiveErrors({ "responseJSON": ["Your profile name must be between 1 and 8 characters."] })
+      return;
+    }
+
     let newProfile = {}
     newProfile["name"] = this.state.name;
     newProfile["avatar"] = this.state.avatar;
     newProfile["user_id"] = this.props.currentUser;
 
+    this.props.clearErrors();
     this.props.createNewUserProfile(newProfile);
 
     setTimeout(() => {
@@ -95,6 +109,7 @@ class ManageProfilesIndex extends React.Component {
     e.preventDefault();
     this.setState({ add: false });
     this.setState({ name: "" });
+    this.props.clearErrors();
   }
 
   addChildToState(name, avatar) {
@@ -168,6 +183,7 @@ class ManageProfilesIndex extends React.Component {
               <button className="edit-profile-cancel" onClick={this.cancelEdit} >Cancel</button>
               <button className="edit-profile-cancel" onClick={this.deleteProfile} >Delete Profile</button>
             </div>
+            {this.props.errors ? <h3 style={{ fontSize: "14px", color: "#e87c03" }}>{this.props.errors[0]}</h3> : <div></div>}
           </div>
         </div>
       )
@@ -207,6 +223,7 @@ class ManageProfilesIndex extends React.Component {
               <button className="profile-continue" onClick={this.continueAdd}>Continue</button>
               <button className="profile-cancel" onClick={this.cancelAdd}>Cancel</button>
             </div>
+            {this.props.errors ? <h3 style={{ fontSize: "14px", color: "#e87c03" }}>{this.props.errors[0]}</h3> : <div></div>}
           </div>
         </div>
       )

@@ -33,7 +33,7 @@ class ProfilesIndex extends React.Component {
     
     e.preventDefault();
     if (this.state.name.length < 1 || this.state.name.length > 8) {
-      this.props.receiveErrors(["Your profile name must be between 1 and 8 characters."])
+      this.props.receiveErrors({"responseJSON": ["Your profile name must be between 1 and 8 characters."]})
       return;
     }
 
@@ -43,6 +43,7 @@ class ProfilesIndex extends React.Component {
     newProfile["user_id"] = this.props.currentUser;
     
     this.props.createNewUserProfile(newProfile);
+    this.props.clearErrors();
     
     setTimeout(()=>{
       this.setState({ add: false });
@@ -53,6 +54,7 @@ class ProfilesIndex extends React.Component {
     e.preventDefault();
     this.setState({ add: false });
     this.setState({ name: "" });
+    this.props.clearErrors();
   }
 
   render() {
@@ -75,12 +77,14 @@ class ProfilesIndex extends React.Component {
         </ul>
       )
     } else if (this.state.add) {
+      debugger
       return (
         <div className="add-profile-modal">
           <div className="add-profile-modal-container">
             <div className="add-profile-headings-container">
               <h2>Add Profile</h2>
               <h3>Add a profile for another person watching Netflix.</h3>
+              
             </div>
             <div className="add-profiles-main-container">
               
@@ -92,6 +96,7 @@ class ProfilesIndex extends React.Component {
               <button className="profile-continue" onClick={this.continueAdd}>Continue</button>
               <button className="profile-cancel" onClick={this.cancelAdd}>Cancel</button>
             </div>
+            {this.props.errors ? <h3 className="errors">{this.props.errors[0]}</h3> : <div></div>}
           </div>
         </div>
       )
