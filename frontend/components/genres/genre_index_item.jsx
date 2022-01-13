@@ -85,7 +85,6 @@ class GenresIndexItem extends React.Component {
       <div className="genre-index-item-container">
         <div className="genre-index-item-thumbnail">
           <img src={this.props.video.thumbnailUrl} alt="movie thumbnail" />
-          {/* <img src={window.dummyThumbnail} alt="" /> */}
         </div>
         <div className="genre-index-item-modal">
           <div className="genre-index-item-modal-buttons">
