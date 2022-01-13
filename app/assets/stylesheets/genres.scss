@@ -67,6 +67,7 @@
     .my-list-header-and-buttons {
       z-index: 5;
       position: relative;
+      width: 95vw;
 
       .left-scroll-button {
         z-index: 5;
@@ -90,7 +91,8 @@
         z-index: 5;
         position: absolute;
         top: 5px;
-        right: 178px;
+        // right: 178px;
+        right: 0px;
         outline: none;
         background-color: transparent;
         padding: 30px 0;
