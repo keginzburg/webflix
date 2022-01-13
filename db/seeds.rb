@@ -310,23 +310,23 @@ mylist7 = Mylist.create!(profile_id: profile7.id, video_id: social_network.id)
 
 # Like Seeds
 
-# Scott Pilgrim Likes
-like1 = Like.create!(profile_id: profile1.id, video_id: scott_pilgrim.id)
-like2 = Like.create!(profile_id: profile2.id, video_id: scott_pilgrim.id)
-like3 = Like.create!(profile_id: profile3.id, video_id: scott_pilgrim.id)
+# # Scott Pilgrim Likes
+# like1 = Like.create!(profile_id: profile1.id, video_id: scott_pilgrim.id)
+# like2 = Like.create!(profile_id: profile2.id, video_id: scott_pilgrim.id)
+# like3 = Like.create!(profile_id: profile3.id, video_id: scott_pilgrim.id)
 
-# Spiderman 2 Likes
-like4 = Like.create!(profile_id: profile1.id, video_id: spiderman2.id)
-like5 = Like.create!(profile_id: profile2.id, video_id: spiderman2.id)
+# # Spiderman 2 Likes
+# like4 = Like.create!(profile_id: profile1.id, video_id: spiderman2.id)
+# like5 = Like.create!(profile_id: profile2.id, video_id: spiderman2.id)
 
-# Parasite Likes
-like6 = Like.create!(profile_id: profile1.id, video_id: parasite.id)
+# # Parasite Likes
+# like6 = Like.create!(profile_id: profile1.id, video_id: parasite.id)
 
-# Scream Likes
-like7 = Like.create!(profile_id: profile1.id, video_id: scream.id)
+# # Scream Likes
+# like7 = Like.create!(profile_id: profile1.id, video_id: scream.id)
 
-# Boyhood Likes
-like8 = Like.create!(profile_id: profile1.id, video_id: boyhood.id)
+# # Boyhood Likes
+# like8 = Like.create!(profile_id: profile1.id, video_id: boyhood.id)
 
-# Napoleon Dynamite Likes
-like9 = Like.create!(profile_id: profile1.id, video_id: napoleon_dynamite.id)
+# # Napoleon Dynamite Likes
+# like9 = Like.create!(profile_id: profile1.id, video_id: napoleon_dynamite.id)

@@ -22,7 +22,6 @@ class GenresIndex extends React.Component {
   }
 
   componentDidMount() {
-    debugger
   }
 
   // Must pass this down to my list button handler at some point.
@@ -36,7 +35,6 @@ class GenresIndex extends React.Component {
 
   scrollLeft(e) {
     let mylist = document.getElementById("mylist-row");
-    debugger
     if (this.state.leftScrollCount <= 0) {
       return;
     } else {
@@ -48,7 +46,6 @@ class GenresIndex extends React.Component {
 
   scrollRight(e) {
     let mylist = document.getElementById("mylist-row");
-    debugger
     if (this.state.rightScrollCount >= mylist.childElementCount-6) {
       return;
     } else {
