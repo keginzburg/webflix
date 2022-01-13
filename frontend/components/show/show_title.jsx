@@ -21,11 +21,24 @@ class ShowTitle extends React.Component {
     this.props.history.push("/browse");
   }
 
+  // showButton(e) {
+  //   let timeout;
+  //   let backButton = document.getElementById('video-back-button')
+
+  //   if (!this.state.hidden) {
+  //     this.setState({ hidden: false });
+  //     clearTimeout(timeout);
+  //     backButton.classList.add("show");
+  //     timeout = setTimeout(() => { backButton.classList.remove("show") }, 5000);
+  //   }
+  // }
+
   showButton(e) {
+    let timeout;
     let backButton = document.getElementById('video-back-button')
     backButton.classList.add("show");
     clearTimeout(timeout);
-    let timeout = setTimeout(() => { backButton.classList.remove("show") }, 5000);
+    timeout = setTimeout(() => { backButton.classList.remove("show") }, 5000);
   }
 
   render() {
