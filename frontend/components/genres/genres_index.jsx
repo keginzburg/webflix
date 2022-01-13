@@ -9,23 +9,60 @@ import GenresIndexItemContainer from "./genre_index_item_container";
 class GenresIndex extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {};
-
+    this.state = {
+      xOffset: 0,
+      yOffset: 0,
+      scrollDistance: 220,
+      rightScrollCount: 0,
+      leftScrollCount: 0,
+    };
+    this.scrollLeft = this.scrollLeft.bind(this);
+    this.scrollRight = this.scrollRight.bind(this);
   }
 
   componentDidMount() {
   }
 
+  scrollLeft(e) {
+    let mylist = document.getElementById("mylist-row");
+    if (this.state.leftScrollCount <= 0) {
+      return;
+    } else {
+      this.setState({ xOffset: this.state.xOffset += this.state.scrollDistance })
+      this.setState({ leftScrollCount: this.state.leftScrollCount - 1 })
+      this.setState({ rightScrollCount: this.state.rightScrollCount - 1})
+    }
+  }
+
+  scrollRight(e) {
+    let mylist = document.getElementById("mylist-row");
+    if (this.state.rightScrollCount >= mylist.childElementCount-6) {
+      return;
+    } else {
+      this.setState({ xOffset: this.state.xOffset -= this.state.scrollDistance })
+      this.setState({ rightScrollCount: this.state.rightScrollCount + 1 })
+      this.setState({ leftScrollCount: this.state.leftScrollCount + 1 })
+    }    
+  }
+
   render() {
-      
+    let style = {
+      position: "relative",
+      left: `${this.state.xOffset}px`,
+    }
     return (
       // careful here, need to refactor this code so errors are not hit
       
       <div className="genres-index">
         {/* My List */}
         {this.props.mylistVideos.length === 0 ? <div></div> : <div className="genre">
-          <h2>My List</h2>
-            <ul className="mylist-box">
+          <h2>My List
+            {/* { this.props.mylistVideos.length < 7 ? <div></div> : <button className="left-scroll-button" onClick={this.scrollLeft}><img src={window.scrollChevronLeft} alt="left scroll" /></button>}
+            { this.props.mylistVideos.length < 7 ? <div></div> : <button className="right-scroll-button" onClick={this.scrollRight}><img src={window.scrollChevronRight} alt="right scroll" /></button>} */}
+            <button className="left-scroll-button" onClick={this.scrollLeft}><img src={window.scrollChevronLeft} alt="left scroll" /></button>
+            <button className="right-scroll-button" onClick={this.scrollRight}><img src={window.scrollChevronRight} alt="right scroll" /></button>
+          </h2>
+          <ul style={style} id="mylist-row">
             {this.props.mylistVideos.map( (video, idx) => {
               return (
                 <li key={idx} >
@@ -33,7 +70,7 @@ class GenresIndex extends React.Component {
                 </li>
               )
             })}
-            </ul>
+          </ul>
         </div>}
         {/* Popular on Webflix */}
         {this.props.popularVideos ? this.props.popularVideos.length === 0 ? <div></div> : <div className="genre">

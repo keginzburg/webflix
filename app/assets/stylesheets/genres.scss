@@ -56,21 +56,64 @@
     flex-direction: column;
 
     h2 {
-      z-index: 2;
+      z-index: 4;
+      width: 100px;
       font-size: 20px;
       font-weight: bold;
       letter-spacing: 1px;
       margin: 10px 0 10px;
+      position: relative;
+
+      .left-scroll-button {
+        z-index: 4;
+        position: absolute;
+        top: 34px;
+        left: -60px;
+        outline: none;
+        background-color: transparent;
+        padding: 30px 0;
+        opacity: 0;
+        transition: 0.5s;
+        border: none;
+      }
+
+      .left-scroll-button:hover {
+        opacity: 1;
+        background-color: #141414b2;
+      }
+
+      .right-scroll-button {
+        z-index: 4;
+        position: absolute;
+        top: 34px;
+        right: -1260px;
+        outline: none;
+        background-color: transparent;
+        padding: 30px 0;
+        opacity: 0;
+        transition: 0.5s;
+        border: none;
+      }
+
+      .right-scroll-button:hover {
+        opacity: 1;
+        background-color: #141414b2;
+      }
     }
+
+    
 
     ul {
       display: flex;
       margin: 0 0 50px 0;
+      transition: 0.5s;
+      
 
       li {
         margin: 0 5px 0 0;
 
         .genre-index-item-container {
+          z-index: 2;
           font-size: 12px;
           font-weight: bold;
           // border: 1px solid white;
@@ -83,8 +126,9 @@
           position: relative;
 
           .genre-index-item-thumbnail {
-            z-index: 2;
+            // z-index: 2;
             img {
+              // z-index: 2;
               width: 215px;
               height: 121px;
               border-radius: 4px;
@@ -99,12 +143,12 @@
         }
 
         .genre-index-item-container:hover {
-          
+          z-index: 3;
           
           .genre-index-item-thumbnail {
             display:block;
-            z-index: 3;
             position: absolute;
+            // z-index: 3;
             bottom: 60px;
             width: 302.5px;
             height: 170.244px;
@@ -112,6 +156,7 @@
             transition: 1s;
 
             img {
+              // z-index: 3;
               width: 302.5px;
               height: 170.244px;
               border-top-left-radius: 4px;
@@ -124,8 +169,8 @@
 
           .genre-index-item-modal {
             display: block;
-            z-index: 3;
             position: absolute;
+            // z-index: 4;
             top: 60px;
             width: 302.5px;
             height: 170.244px;
@@ -211,7 +256,7 @@
                       position: absolute;
                       top: -45px;
                       left: -145%;
-                      z-index: 4;
+                      // z-index: 4;
                       width: fit-content;
                       height: fit-content;
                       color: black;
@@ -231,7 +276,7 @@
                       position: absolute;
                       top: -45px;
                       left: -180%;
-                      z-index: 4;
+                      // z-index: 4;
                       width: fit-content;
                       height: fit-content;
                       color: black;
@@ -261,7 +306,7 @@
                       position: absolute;
                       top: -45px;
                       left: -85%;
-                      z-index: 4;
+                      z-index: -1;
                       width: fit-content;
                       height: fit-content;
                       color: black;
@@ -281,7 +326,7 @@
                       position: absolute;
                       top: -45px;
                       left: -95%;
-                      z-index: 4;
+                      z-index: -1;
                       width: fit-content;
                       height: fit-content;
                       color: black;
@@ -305,7 +350,7 @@
                       position: absolute;
                       top: -45px;
                       left: -85%;
-                      z-index: 4;
+                      // z-index: 4;
                       width: fit-content;
                       height: fit-content;
                       color: black;
@@ -324,7 +369,7 @@
                       position: absolute;
                       top: -45px;
                       left: -95%;
-                      z-index: 4;
+                      // z-index: 4;
                       width: fit-content;
                       height: fit-content;
                       color: black;
@@ -395,7 +440,7 @@
                       position: absolute;
                       top: -45px;
                       left: -130%;
-                      z-index: -1;
+                      // z-index: -1;
                       width: fit-content;
                       height: fit-content;
                       color: black;
