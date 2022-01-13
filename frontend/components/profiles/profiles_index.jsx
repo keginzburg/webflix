@@ -1,4 +1,5 @@
 import React from "react";
+import { receiveErrors } from "../../actions/session_actions";
 import ProfilesIndexItem from "./profiles_index_item";
 
 class ProfilesIndex extends React.Component {
@@ -31,6 +32,11 @@ class ProfilesIndex extends React.Component {
   continueAdd(e) {
     
     e.preventDefault();
+    if (this.state.name.length < 1 || this.state.name.length > 8) {
+      this.props.receiveErrors(["Your profile name must be between 1 and 8 characters."])
+      return;
+    }
+
     let newProfile = {}
     newProfile["name"] = this.state.name;
     newProfile["avatar"] = this.state.avatar;
