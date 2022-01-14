@@ -23,7 +23,7 @@ export const filterPopularVideos = state => {
   }
   
   if (popularVideos.length > 6) {
-    return popularVideos.slice(7);
+    return popularVideos.slice(0, 6);
   } else if (popularVideos.length > 0 && popularVideos.length < 7) {
     return popularVideos;
   }
