@@ -18,6 +18,8 @@ Webflix is a clone of the Netflix website at the time of creation. Netflix is a 
 
 A Webflix user is able to create new profiles, which persist to both the front and backend, and select existing or newly created profiles in order to begin browsing:
 
+![gif of profiles](app/assets/images/login.gif)
+
 ```
   render() {
     if (!this.state.add) {
@@ -64,6 +66,8 @@ A Webflix user is able to create new profiles, which persist to both the front a
 
 A webflix user can also manage their profiles, allowing them to change a profile's name and avatar and delete existing profiles:
 
+![gif of managing profiles](app/assets/images/manage_profiles.gif)
+
 ```
     if (this.props.modal === 'editProfile') {
       return (
@@ -97,6 +101,8 @@ A webflix user can also manage their profiles, allowing them to change a profile
 
 Upon logging in with one of their profiles, a Webflix user is greeted by Webflix's featured film, which is randomly generated every time the user signs in to Webflix:
 
+![gif of browse play](app/assets/images/browse_play.gif)
+
 ```
 render() {      
       return (
@@ -117,6 +123,8 @@ render() {
 ```
 
 Otherwise, a Webflix user also has access to Webflix's entire library of curated films. By hovering over film thumbnails, the user can play a title, add it to their My List category, or like a film:
+
+![gif of browse page](app/assets/images/browse_page.gif)
 
 ```
 render() {
@@ -156,12 +164,14 @@ render() {
 }
 ```
 
-They can also open that title's show modal, which provides more information about the film along with the previously available functionality:
+They can also open that title's show modal, which provides more information about the film along with the previously available functionality.
 
 
 ## My List
 
-If a Webflix user desires, they can add specific titles to their My List, a top level category that will only display if a user has added titles to their My List. Users can also discard titles from their My List whenever they please.
+If a Webflix user desires, they can add specific titles to their My List, a top level category that will only display if a user has added titles to their My List. Users can also discard titles from their My List whenever they please. If a user adds more than 6 titles to their My List, the row will be given "scroll" functionality with left and right arrow buttons that will lose functionality once the user has reached the end of the row:
+
+![gif of mylist](app/assets/images/my_list.gif)
 
 ```
   render() {
@@ -196,13 +206,12 @@ If a Webflix user desires, they can add specific titles to their My List, a top 
   }
 ```
 
-If a user adds more than 6 titles to their My List, the row will be given "scroll" functionality with left and right arrow buttons that will lose functionality once the user has reached the end of the row:
-
-
 
 ## Likes
 
 In addition to adding titles to their My List, Webflix users can also like film titles in the library. This won't add titles to a Likes category, but instead will change that film's standing in Webflix's library. Deending on their number of likes across all profiles and users, only the "most popular" Webflix titles will be added to Webflix's "Popular on Webflix" category, another dynamic, top-level row:
+
+![gif of likes](app/assets/images/likes.gif)
 
 ```
 export const filterPopularVideos = state => {
