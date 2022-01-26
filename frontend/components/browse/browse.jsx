@@ -74,10 +74,10 @@ class Browse extends React.Component {
                         <a href="https://github.com/keginzburg/webflix">GitHub</a>
                       </li>
                       <li>
-                        <a href="#">My AngelList</a>
+                        <a href="https://angel.co/u/kyle-ginzburg">AngelList</a>
                       </li>
                       <li>
-                        <a href="https://www.linkedin.com/in/kyleginzburg/">My LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/kyleginzburg/">LinkedIn</a>
                       </li>
                     </ul>
                   </div>
