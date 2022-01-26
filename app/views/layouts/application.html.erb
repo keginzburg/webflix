@@ -6,6 +6,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta property="og:title" content="Webflix">
+    <meta property="og:image" content="<%= image_url('webflix_thumbnail.png') %>">
+    <meta property="og:description"
+      content="Webflix is a full stack clone of the streaming service Netflix using React-Redux, Ruby on Rails, and AWS S3."
+    >
+    <meta property="og:url"
+      content="https://webflix-clone.herokuapp.com/#/"
+    >
+
     <script type="text/javascript">
       window.chevronURL = "<%= image_url('chevron_right.png') %>"
       window.chevronDown = "<%= image_url('chevron_down.png') %>"
