@@ -47,7 +47,7 @@ class BrowseHeader extends React.Component {
                 <img src={window.webflixLogoSmall} border="0" />
                 <div className='links-container'>
                   <a href="https://github.com/keginzburg/webflix">Github</a>
-                  <a href="#">AngelList</a>
+                  <a href="https://angel.co/u/kyle-ginzburg">AngelList</a>
                   <a href="https://www.linkedin.com/in/kyleginzburg/">LinkedIn</a>
                 </div>
               </div>
