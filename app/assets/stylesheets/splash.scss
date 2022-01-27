@@ -97,6 +97,8 @@
     padding: 0 47.5px 20px;
     font-weight: lighter;
   }
+
+
 }
 
 .tagline-signup {
@@ -108,6 +110,19 @@
     margin: 0 auto;
     width: 682px;
     max-width: 682px;
+    position: relative;
+
+    h5 {
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 4px 0;
+    font-weight: lighter;
+    color: #b92d2b;
+    }
   
     div {
       display: flex;

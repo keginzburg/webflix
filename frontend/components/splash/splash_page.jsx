@@ -10,6 +10,7 @@ class SplashPage extends React.Component {
     this.state = {
       email: "",
       newEmail: false,
+      validEmail: true,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
@@ -28,8 +29,15 @@ class SplashPage extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.receiveNewEmail(this.state.email);
-    this.setState({ newUser: true })
+    // front-end email format validation
+    if (this.state.email.split("@").length !== 2 || !this.state.email.split("@")[1].includes(".")) {
+      debugger
+      this.setState({validEmail: false});
+    } else {
+      this.props.receiveNewEmail(this.state.email);
+      this.setState({ validEmail: true })
+      this.setState({ newUser: true })  
+    }
   }
 
   handleDemo(e) {
@@ -67,6 +75,7 @@ class SplashPage extends React.Component {
                     <form onSubmit={this.handleSubmit}>
                       <h4>Ready to watch? Enter your email to create or restart your bloodpact.</h4>
                       <div className="signup-email-div">
+                        {!this.state.validEmail ? <h5>Invalid email: formatting must match "example@mail.com".</h5> : <div></div>}
                         <div>
                           <input type="text" value={this.state.email} onChange={this.update('email')} placeholder='Email address' />
                           {/* <label>Email address</label> */}
