@@ -8,6 +8,7 @@ class SignUp extends React.Component {
     this.state = {
       email: "",
       password: "",
+      validEmail: true,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -26,8 +27,28 @@ class SignUp extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state);
-    this.props.removeNewEmail();
+    // front-end email format validation
+    debugger
+    if (this.state.email === null) {
+      let user = {
+        'email': this.state.email,
+        'password': this.state.password
+      }
+      this.props.processForm(user);
+      this.props.removeNewEmail();
+    } else if (this.state.email.split("@").length !== 2 || !this.state.email.split("@")[1].includes(".")) {
+      debugger
+      this.setState({ validEmail: false });
+    } else {
+      this.setState({ validEmail: true });
+      let user = {
+        'email': this.state.email,
+        'password': this.state.password
+      }
+      this.props.processForm(user);
+      this.props.removeNewEmail();
+    }
+    
   }
 
   update(field) {
@@ -58,10 +79,13 @@ class SignUp extends React.Component {
                         {(this.props.errors.length > 0) ? 
                         <div>
                             <input className="input-error" type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email" />
-                            <p>Email is required!</p>
+                            <p>Email is required{!this.state.validEmail ? " and formatting must match 'example@mail.com'." : "!"}</p>
+                            {/* {!this.state.validEmail ? "Invalid email: formatting must match 'example@mail.com'." : ""} */}
                         </div> : 
                         <div>
                             <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email" />
+                            {!this.state.validEmail ? <p>Invalid email: formatting must match "example@mail.com".</p> : <div></div>}
+
                         </div>
                         }
                         {/* <label>Email</label> */}
