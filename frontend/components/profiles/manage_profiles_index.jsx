@@ -71,6 +71,8 @@ class ManageProfilesIndex extends React.Component {
   cancelEdit(e) {
     this.props.discardEditModal();
     this.props.clearErrors();
+    this.setState({ name: "" });
+    this.setState({ avatar: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" });
   }
 
   deleteProfile(e) {
